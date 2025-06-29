@@ -15,12 +15,14 @@
   <meta name="description" content="HLPFL Consulting — we turn chaos into clarity through high-impact, automation-driven strategy." />
   <title>HLPFL Co | Chaos → Clarity</title>
 
-   <!-- — meta / fonts / favicon— -->
+   <!-- — meta / fonts / favicon— -->
   <link rel="icon" href="images/ipohkozqzjaj8y6d2yum.webp" type="image/webp" /> 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- Locomotive Scroll core stylesheet (needs to load before render) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" crossorigin="anonymous" />
@@ -228,9 +230,9 @@
     <section id="contact" class="contact" data-scroll-section>
       <div class="container contact__content">
         <div class="contact__info">
-          <header class="section-header" style="text-align:left"><span class="section-number">04</span><h2 class="animate-text">Let’s talk</h2></header>
+          <header class="section-header" style="text-align:left"><span class="section-number">04</span><h2 class="animate-text">Let's talk</h2></header>
           <p>Ready to go from chaos to clarity?
-            Drop your details—we’ll respond within one business day.</p>
+            Drop your details—we'll respond within one business day.</p>
         </div>
         <form name="contact" netlify data-netlify="true" class="contact__form">
           <div class="form-group"><label for="name">Name</label><input id="name" name="name" required /></div>
@@ -243,64 +245,34 @@
   </main>
 
   <!-- Footer -->
-<!-- Footer section -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Logo Section -->
-      <div class="footer-logo">
-        <img src="images/pfpwhitelines.png" alt="Logo" />
-      </div>
-      <!-- Social Links Section -->
-      <div class="footer-social">
-        <ul class="social-links">
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- Menu Section -->
-      <div class="footer-menu">
-        <ul class="menu-links">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Copyright Section -->
-      <div class="footer-copyright">
-        <p>© HLPFL Co. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="images/pfpwhitelines.png" alt="HLPFL Consulting logo" />
+          <p>© <span id="year"></span> HLPFL Co. All rights reserved.</p>
+        </div>
+        <div class="footer__social">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#hero" data-scroll-to>Home</a></li>
+            <li><a href="#about" data-scroll-to>About</a></li>
+            <li><a href="#services" data-scroll-to>Services</a></li>
+            <li><a href="#contact" data-scroll-to>Contact</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 
   <!-- Custom cursor -->
   <div class="custom-cursor" aria-hidden="true"></div>
@@ -321,7 +293,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       /* ---------------- Guard: verify libs loaded ---------------- */
       if (!(window.gsap && window.ScrollTrigger && window.LocomotiveScroll && window.SplitType && window.THREE)) {
-        console.error('One یا more required libraries failed to load.');
+        console.error('One or more required libraries failed to load.');
         return;
       }
 
@@ -436,4 +408,4 @@
     });
   </script>
 </body>
-</html> 
+</html>
