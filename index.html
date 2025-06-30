@@ -60,8 +60,8 @@
       overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
-      cursor:none; /* hide OS cursor */
-    }
+      cursor: url('noboxfaviconArtboard 1.webp'), auto;
+      }
     img{max-width:100%;display:block;height:auto}
     a{color:var(--c-white);text-decoration:none;transition:color var(--tr-quick)}
     a:hover,a:focus-visible{color:var(--c-gold)}
@@ -278,8 +278,8 @@
   </footer>
 
   <!-- Custom cursor -->
-  <div class="custom-cursor" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor" aria-hidden="false"></div>
+  <div class="cursor-dot" aria-hidden="false"></div>
 
   <!-- ======== JS libraries (defer keeps parse-blocking minimal) ========= -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
