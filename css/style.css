@@ -36,7 +36,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* cursor: none; removed for better usability */
+  cursor: url('noboxfaviconArtboard 1@0.75x.webp'), auto; 
 }
 
 /* Container class */
