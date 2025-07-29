@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-  HLPFL CONSULTING · Chaos → Clarity
-  Interactive résumé / agency site 
-  This version fixes "Script error" issues by:
-  • Loading every external library via jsDelivr CDN with crossorigin="anonymous" + defer so they execute in order after parsing.
-  • Wrapping all bespoke JS inside a DOMContentLoaded listener to guarantee the libs are present before use.
-  • Adding simple guard clauses that bail gracefully if any lib fails to load, avoiding uncaught reference errors.
--->
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HLPFL Consulting transforms business chaos into clarity with custom e-commerce solutions, seamless software integration, and attention-grabbing digital marketing that delivers weekly results." />
+  <meta name="description" content="HLPFL Consulting transforms business chaos into clarity with custom business setup, legal protection, and privacy implementation that helps entrepreneurs avoid costly mistakes." />
   <title>HLPFL Co | Chaos → Clarity</title>
 
-   <!-- — meta / fonts / favicon— -->
+  <!-- meta / fonts / favicon -->
   <link rel="icon" href="images/favicon/noboxfaviconArtboard 1.webp" type="image/webp" /> 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +19,7 @@
   <!-- Locomotive Scroll core stylesheet (needs to load before render) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" crossorigin="anonymous" />
 
-  <!-- ∙∙∙ Global Theme / Component Styles -->
+  <!-- Global Theme / Component Styles -->
   <style>
     :root {
       --c-bg-primary:       #000;
@@ -138,51 +130,102 @@
     @media(max-width:768px){.hero__title{font-size:2.4rem}.section-header h2{font-size:2.2rem}.footer__content{grid-template-columns:1fr;text-align:center}}
 
     body::after{content:"";position:fixed;inset:0;pointer-events:none;background:url("https://cdn.jsdelivr.net/gh/stephenn/rgba-noise@master/noise.png");opacity:.04;mix-blend-mode:overlay;}
+    
+    /* Service List Styling */
     .service-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
-}
-
-.service-list li {
-  margin-bottom: 10px;
-  padding-left: 25px;
-  position: relative;
-}
-
-.service-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--c-gold);
-}
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+    
+    .service-list li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .service-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--c-gold);
+    }
+    
+    /* Red Flag Guide Section */
+    .red-flag {
+      background: var(--c-bg-secondary);
+    }
+    
+    .red-flag-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .red-flag-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    
+    .red-flag-list li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .red-flag-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--c-gold);
+    }
+    
+    .red-flag-image .image-placeholder {
+      width: 100%;
+      height: 400px;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #999;
+      font-style: italic;
+      border-radius: var(--radius);
+    }
+    
+    @media(max-width: 768px) {
+      .red-flag-content {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body data-scroll-container>
   <a href="#main" class="skip-link">Skip to content</a>
   <!-- Header / nav -->
-<header class="header" data-scroll data-scroll-sticky>
-  <div class="container">
-    <a href="#hero" class="logo" data-scroll-to>
-      <img src="images/footer/footerlogowebsitev2.webp" alt="HLPFL Consulting logo" />
-    </a>
-    <nav aria-label="Main navigation">
-      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
-        <span></span><span></span><span></span>
-      </button>
-    <ul class="nav__list" id="main-menu">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-  <li><a href="shop.html">Shop</a></li>
-  <li><a href="book.html">Book</a></li>
-  <li><a href="contact.html" class="btn btn--primary">Let's talk</a></li>
-</ul>
-    </nav>
-  </div>
-</header>
+  <header class="header" data-scroll data-scroll-sticky>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/footer/footerlogowebsitev2.webp" alt="HLPFL Consulting logo" />
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__list" id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="contact.html" class="btn btn--primary">Let's talk</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Main content -->
   <main id="main">
@@ -193,8 +236,8 @@
         <h1 class="hero__title animate-text">Chaos → Clarity</h1>
         <p class="hero__subtitle animate-text">Dream. Design. Disrupt. Repeat.</p>
         <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary" data-scroll-to>Get Your Red Flag Guide</a>
-          <a href="#about" class="btn btn--secondary" data-scroll-to>Learn More</a>
+          <a href="red-flag-guide.html" class="btn btn--primary">GET YOUR RED FLAG GUIDE</a>
+          <a href="#about" class="btn btn--secondary" data-scroll-to>LEARN MORE</a>
         </div>
       </div>
     </section>
@@ -205,21 +248,22 @@
         <header class="section-header"><span class="section-number">01</span><h2 class="animate-text">What, Why, How</h2></header>
         <div class="services__grid">
           <article class="service-card animate-text" data-speed="0.08">
-           <h3>What We Do</h3>
+            <h3>What We Do</h3>
             <p>At HLPFL, we guide first-time entrepreneurs in creating and developing their businesses with proper foundations through our comprehensive services: business structure setup, legal protection packages, privacy implementation, and brand development—ensuring you avoid the traditional pitfalls and failures that often come with becoming a business owner.</p>
           </article>
-        <article class="service-card animate-text" data-speed="0.04">
-        <h3>Our Services</h3>
-        <ul class="service-list">
-        <li><strong>Business Foundation Services</strong> - Entity formation, banking setup, and operational systems</li>
-        <li><strong>Legal Protection Services</strong> - Contracts, agreements, and liability shields</li>
-        <li><strong>Brand & Digital Services</strong> - Logo design, website development, and digital presence</li>
-        <li><strong>Privacy Protection Services</strong> - Personal information security and business privacy strategies</li>
-        </ul>
-      </article>
+          <article class="service-card animate-text" data-speed="0.04">
+            <h3>Our Services</h3>
+            <p>We provide four essential service categories to protect and develop your business:</p>
+            <ul class="service-list">
+              <li><strong>Business Foundation Services</strong> - Entity formation, banking setup, and operational systems</li>
+              <li><strong>Legal Protection Services</strong> - Contracts, agreements, and liability shields</li>
+              <li><strong>Brand & Digital Services</strong> - Logo design, website development, and digital presence</li>
+              <li><strong>Privacy Protection Services</strong> - Personal information security and business privacy strategies</li>
+            </ul>
+          </article>
           <article class="service-card animate-text" data-speed="0.02">
             <h3>How We Do It</h3>
-            <p>No lengthy contracts, sharing percentages of revenue, or free gimmicks here.  We only offer various packages as well as an a la carte menu so you get exactly what you need to fit your goals, nothing more, and nothing less.  Our consultants guarantee to provide the best possible combination of services for you so you can do what you do best - change the world.</p>
+            <p>No lengthy contracts, sharing percentages of revenue, or free gimmicks here. We only offer various packages as well as an a la carte menu so you get exactly what you need to fit your goals, nothing more, and nothing less. Our consultants guarantee to provide the best possible combination of services for you so you can do what you do best - change the world.</p>
           </article>
         </div>
       </div>
@@ -230,9 +274,9 @@
       <div class="container about__content">
         <div class="about__text">
           <header class="section-header" style="text-align:left"><span class="section-number">02</span><h2 class="animate-text">About HLPFL</h2></header>
-          <p>HLPFL was founded on the principle of just that - to be helpful.  We specialize in assiting the dreamer, visionary, entrepreneur with providing all of the necessary tools to ensure your business has the proper foundation in order to create a thriving and successful business, no strings attached. </p>
+          <p>HLPFL was founded on the principle of just that - to be helpful. We specialize in assisting the dreamer, visionary, entrepreneur with providing all of the necessary tools to ensure your business has the proper foundation in order to create a thriving and successful business, no strings attached.</p>
           <ul>
-            <li>Founded by a 24 year old entrepreneur who may not know exactly what to do, but can help others not make the same mistakes he did that led to bankruptcy, busines failures and loss of friendships along the way.</li>
+            <li>Founded by a 24 year old entrepreneur who may not know exactly what to do, but can help others not make the same mistakes he did that led to bankruptcy, business failures and loss of friendships along the way.</li>
             
             <li>We handle everything from legal to web development and everything in between, ensuring you have all the necessary ingredients for your business to be successful in today's volatile economy.</li>
             
@@ -253,43 +297,43 @@
           <div class="service-card animate-text"><span class="section-number">Ⅰ</span><h3>Dream</h3><p>We start with a simple meeting to find out where you are, where you want to be, and how we could potentially bridge that gap.</p></div>
           <div class="service-card animate-text"><span class="section-number">Ⅱ</span><h3>Disrupt</h3><p>Next, we go over the options that work best for you, based on your businesses' current state and goals.</p></div>
           <div class="service-card animate-text"><span class="section-number">Ⅲ</span><h3>Design</h3><p>Once you've decided what works best for you, we get to work building your business from the ground up, with the proper legal and privacy foundation set up before anything else.</p></div>
-          <div class="service-card animate-text"><span class="section-number">IV</span><h3>Repeat</h3><p>As a wise man once said, "I believe in starts" and that is all we focus on.  Once you're satisfied with the results, you're on your own! We wish you the best of luck, but the consultant's goal is to not tie you down with a contract - it's to provide you with all the necessary tools needed to succeed.</p></div>
+          <div class="service-card animate-text"><span class="section-number">IV</span><h3>Repeat</h3><p>As a wise man once said, "I believe in starts" and that is all we focus on. Once you're satisfied with the results, you're on your own! We wish you the best of luck, but the consultant's goal is to not tie you down with a contract - it's to provide you with all the necessary tools needed to succeed.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Red Flag Guide Section -->
-<section id="red-flag" class="red-flag" data-scroll-section>
-  <div class="container">
-    <header class="section-header"><span class="section-number">04</span><h2 class="animate-text">Free Red Flag Guide</h2></header>
-    <div class="red-flag-content">
-      <div class="red-flag-info">
-        <h3>Protect Your Business Before It's Too Late</h3>
-        <p>Our comprehensive guide identifies the 15 most common pitfalls that threaten entrepreneurs' success, personal assets, and relationships.</p>
-        
-        <ul class="red-flag-list">
-          <li>Identify critical vulnerabilities in your business structure</li>
-          <li>Protect yourself from partnership disasters</li>
-          <li>Secure your intellectual property and digital assets</li>
-          <li>Create a foundation for sustainable growth</li>
-        </ul>
-        
-        <a href="red-flag-guide.html" class="btn btn--primary">Get Free Guide</a>
+    <section id="red-flag" class="red-flag" data-scroll-section>
+      <div class="container">
+        <header class="section-header"><span class="section-number">04</span><h2 class="animate-text">Free Red Flag Guide</h2></header>
+        <div class="red-flag-content">
+          <div class="red-flag-info">
+            <h3>Protect Your Business Before It's Too Late</h3>
+            <p>Our comprehensive guide identifies the 15 most common pitfalls that threaten entrepreneurs' success, personal assets, and relationships.</p>
+            
+            <ul class="red-flag-list">
+              <li>Identify critical vulnerabilities in your business structure</li>
+              <li>Protect yourself from partnership disasters</li>
+              <li>Secure your intellectual property and digital assets</li>
+              <li>Create a foundation for sustainable growth</li>
+            </ul>
+            
+            <a href="red-flag-guide.html" class="btn btn--primary">GET FREE GUIDE</a>
+          </div>
+          
+          <div class="red-flag-image">
+            <!-- Replace with actual image when available -->
+            <div class="image-placeholder">Red Flag Guide Cover</div>
+          </div>
+        </div>
       </div>
-      
-      <div class="red-flag-image">
-        <!-- Replace with actual image when available -->
-        <div class="image-placeholder">Red Flag Guide Cover</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Contact -->
     <section id="contact" class="contact" data-scroll-section>
       <div class="container contact__content">
         <div class="contact__info">
-          <header class="section-header" style="text-align:left"><span class="section-number">04</span><h2 class="animate-text">Have Any Questions?</h2></header>
+          <header class="section-header" style="text-align:left"><span class="section-number">05</span><h2 class="animate-text">Have Any Questions?</h2></header>
           <p>Shoot Us a Message Below!</p>
         </div>
         <form name="contact" netlify data-netlify="true" class="contact__form">
@@ -322,10 +366,13 @@
         <div class="footer__links">
           <h3>Navigation</h3>
           <ul>
-            <li><a href="#hero" data-scroll-to>Home</a></li>
-            <li><a href="#about" data-scroll-to>About</a></li>
-            <li><a href="#services" data-scroll-to>Services</a></li>
-            <li><a href="#contact" data-scroll-to>Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="book.html">Book</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
