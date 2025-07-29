@@ -277,6 +277,55 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
+/* Red Flag Guide Section */
+.red-flag {
+  background: var(--c-bg-secondary);
+}
+
+.red-flag-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.red-flag-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.red-flag-list li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.red-flag-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--c-gold);
+}
+
+.red-flag-image .image-placeholder {
+  width: 100%;
+  height: 400px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-style: italic;
+  border-radius: var(--radius);
+}
+
+@media(max-width: 768px) {
+  .red-flag-content {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Contact styles */
 .contact {
   background: var(--secondary-color);
