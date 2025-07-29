@@ -480,3 +480,11 @@ body {
     justify-content: center;
   }
 }
+/* Simplified animations for mobile */
+.reduce-motion .animate-text {
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+.reduce-motion [data-speed] {
+  transform: none !important;
+}
