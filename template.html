@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PAGE TITLE - HLPFL Consulting</title>
+  <meta name="description" content="PAGE DESCRIPTION">
+  <link rel="canonical" href="https://hlpfl.org/PAGE-URL">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HLPFL Consulting">
+  <meta property="og:description" content="Chaos → Clarity for your startup.">
+  <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
+
+  <!-- meta / fonts / favicon -->
+  <link rel="icon" href="images/favicon/noboxfaviconArtboard 1.webp" type="image/webp" /> 
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Locomotive Scroll core stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" crossorigin="anonymous" />
+</head>
+
+<body data-scroll-container>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <img src="images/header/websiteheader.webp" alt="HLPFL Consulting" class="loading-logo">
+  </div>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  
+  <!-- Header will be loaded here -->
+  <div id="header-container"></div>
+
+  <!-- Main content -->
+  <main id="main">
+    <!-- PAGE CONTENT GOES HERE -->
+  </main>
+
+  <!-- Footer will be loaded here -->
+  <div id="footer-container"></div>
+
+  <!-- Custom cursor -->
+  <div class="custom-cursor" aria-hidden="false"></div>
+  <div class="cursor-dot" aria-hidden="false"></div>
+
+  <!-- JS libraries -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/dist/umd/index.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.min.js" crossorigin="anonymous"></script>
+  
+  <!-- Component loader -->
+  <script src="js/components.js"></script>
+  
+  <!-- Page-specific scripts -->
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Wait for components to load
+      document.addEventListener('componentLoaded', () => {
+        /* ---------------- Guard: verify libs loaded ---------------- */
+        if (!(window.gsap && window.ScrollTrigger && window.LocomotiveScroll && window.SplitType && window.THREE)) {
+          console.error('One or more required libraries failed to load.');
+          return;
+        }
+
+        /* ---------------- Locomotive Scroll ---------------- */
+        const scrollContainer = document.querySelector('[data-scroll-container]');
+        const loco = new LocomotiveScroll({
+          el: scrollContainer,
+          smooth: true,
+          lerp: 0.08,
+          smartphone: { smooth: true },
+          tablet: { smooth: true }
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.scrollerProxy(scrollContainer, {
+          scrollTop(value) {
+            return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
+          },
+          getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+          },
+          pinType: scrollContainer.style.transform ? 'transform' : 'fixed'
+        });
+        loco.on('scroll', ScrollTrigger.update);
+        ScrollTrigger.addEventListener('refresh', () => loco.update());
+        ScrollTrigger.defaults({ scroller: scrollContainer });
+
+        /* ---------------- Text reveal animations ---------------- */
+        document.querySelectorAll('.animate-text').forEach(el => {
+          const split = new SplitType(el, { types: 'lines,words' });
+          gsap.from(split.lines, {
+            yPercent: 100,
+            opacity: 0,
+            ease: 'power4.out',
+            duration: 1.1,
+            stagger: 0.06,
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 80%'
+            }
+          });
+        });
+
+        /* ---------------- Header shrink ---------------- */
+        const header = document.querySelector('.header');
+        ScrollTrigger.create({
+          trigger: 'main',
+          start: 'top+=100 top',
+          onEnter: () => header.classList.add('scrolled'),
+          onLeaveBack: () => header.classList.remove('scrolled')
+        });
+
+        /* ---------------- Nav toggle ---------------- */
+        const toggle = document.querySelector('.nav__toggle');
+        const navList = document.querySelector('.nav__list');
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('active');
+          navList.classList.toggle('active');
+        });
+
+        /* ---------------- Custom cursor ---------------- */
+        const cursor = document.querySelector('.custom-cursor');
+        const dot = document.querySelector('.cursor-dot');
+        let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+        const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+        document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; });
+        gsap.ticker.add(() => { curX = lerp(curX, mouseX, 0.2); curY = lerp(curY, mouseY, 0.2); cursor.style.transform = `translate(${curX}px,${curY}px)`; });
+        document.querySelectorAll('a, button, .interactive').forEach(el => {
+          el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
+          el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
+        });
+
+        /* ---------------- Hero Three.js abstract shape ---------------- */
+        const canvas = document.getElementById('heroCanvas');
+        if (canvas) {
+          const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+          camera.position.z = 4;
+          const geometry = new THREE.IcosahedronGeometry(1.4, 0);
+          const material = new THREE.MeshStandardMaterial({ color: 0x646464, flatShading: true, metalness: 0.9, roughness: 0.2 });
+          const mesh = new THREE.Mesh(geometry, material);
+          scene.add(mesh);
+          scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+          const light = new THREE.DirectionalLight(0xffffff, 1);
+          light.position.set(3, 2, 5); scene.add(light);
+          renderer.setPixelRatio(window.devicePixelRatio);
+          function resize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+          }
+          resize(); window.addEventListener('resize', resize);
+          gsap.ticker.add(() => {
+            mesh.rotation.x += 0.004;
+            mesh.rotation.y += 0.006;
+            renderer.render(scene, camera);
+          });
+        }
+
+        /* Finally: refresh ScrollTrigger once build is done */
+        ScrollTrigger.refresh();
+      });
+    });
+  </script>
+</body>
+</html>
