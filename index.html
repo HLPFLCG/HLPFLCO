@@ -49,6 +49,20 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
+      <!-- Add this at the top of your body tag in each page -->
+<div id="loading-screen" class="loading-screen">
+  <img src="images/header/websiteheader.webp" alt="HLPFL Consulting" class="loading-logo">
+</div>
+
+<!-- Add this script before your closing body tag -->
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('loading-screen').classList.add('hidden');
+    }, 500);
+  });
+</script>
+
       font:400 1rem/1.8 var(--ff-body);
       color:var(--c-text);
       background:var(--c-bg-primary) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='%23050505'/><rect x='2' y='2' width='1' height='1' fill='%23050505'/></svg>") repeat fixed;
