@@ -8,6 +8,8 @@
   --gold-color: #d4af37; /* Changed to actual gold color */
   --text-on-gold-color: #000; /* Better contrast on gold */
   --border-color: #333;
+  --c-text: #f0f0f0; /* Brighter than before */
+  --c-text-muted: #aaaaaa; /* Brighter than before */
   --shadow-sm: 0 5px 15px rgba(0,0,0,0.2);
   --shadow-md: 0 15px 30px rgba(0,0,0,0.3);
   --font-display: "Iceland", system-ui, sans-serif;
@@ -68,14 +70,15 @@ body {
 
 /* Header styles */
 .header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  width: 100vw;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   background: rgba(0,0,0,.8);
   backdrop-filter: blur(5px);
   padding: 20px 0;
   z-index: 1000;
-  transition: padding var(--transition-quick), box-shadow var(--transition-quick), background var(--transition-quick);
+  transition: padding var(--tr-quick), box-shadow var(--tr-quick);
 }
 
 .header .container {
