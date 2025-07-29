@@ -196,6 +196,13 @@ function initScrollAnimations() {
   });
 }
 
+// Disable heavy animations on mobile
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+if (isMobile) {
+  // Simpler animations for mobile
+  document.body.classList.add('reduce-motion');
+}
+
 function initNavigation(scroll) {
   const toggle = document.querySelector('.nav__toggle');
   const navList = document.querySelector('.nav__list');
