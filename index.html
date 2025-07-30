@@ -344,6 +344,9 @@
         </div>
       </div>
     </section>
+  </section>
+    <div id="footer-placeholder"></div>
+  </section>
   </main>
 
   <!-- ======== JS libraries (defer keeps parse-blocking minimal) ========= -->
@@ -475,5 +478,12 @@
       ScrollTrigger.refresh();
     });
   </script>
+  <script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 </body>
 </html>
