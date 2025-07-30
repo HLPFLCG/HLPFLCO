@@ -104,6 +104,12 @@ table {
     padding: 15px;
     text-align: left;
   }
+
+  .menu-container {
+  display: flex;
+  justify-content: center;
+}
+
   
   /* Mobile-optimized landing page */
   
@@ -112,6 +118,11 @@ table {
     padding: 40px 20px;
     text-align: center;
   }
+
+  .hero-text {
+  color: #333; /* Darker color for better contrast */
+}
+
   
   .hero h1 {
     font-size: 2rem;
@@ -372,4 +383,13 @@ table {
   padding-top: 20px;
   text-align: center;
   font-size: 14px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-logo {
+  animation: spin 2s linear infinite;
 }
