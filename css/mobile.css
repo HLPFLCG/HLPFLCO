@@ -1,0 +1,87 @@
+/* Make images and media responsive */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve text readability */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Make tables scroll horizontally on small screens */
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Mobile navigation */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Full-width elements on mobile */
+  .mobile-full {
+    width: 100% !important;
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Larger touch targets */
+  a, button, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  /* Form elements */
+  input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  
+  /* Hide desktop navigation */
+  .desktop-nav {
+    display: none;
+  }
+  
+  /* Show mobile navigation */
+  .mobile-nav {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .menu-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .mobile-menu {
+    display: none;
+    background: #f1f1f1;
+  }
+  
+  .mobile-menu a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .mobile-menu.show {
+    display: block;
+  }
+}
