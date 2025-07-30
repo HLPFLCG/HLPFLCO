@@ -498,3 +498,44 @@ body {
 .reduce-motion [data-speed] {
   transform: none !important;
 }
+
+ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.footer-form {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #000; /* optional: unify the background */
+}
+
+.footer-form .section-header h2 {
+  font-size: 1.75rem;
+}
+
+.footer-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.footer-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff; /* or your brand color */
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #111;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.footer-form button {
+  margin-top: 1rem;
+}
