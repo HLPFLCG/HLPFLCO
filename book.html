@@ -40,5 +40,13 @@
     <div class="loader"></div>
     <p>If you are not redirected automatically, <a href="https://calendly.com/founder-hlpfl/30min">click here</a>.</p>
   </div>
+  <script>
+  // Mobile navigation toggle
+  document.querySelector('.nav__toggle').addEventListener('click', function() {
+    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+    this.setAttribute('aria-expanded', !expanded);
+    document.getElementById('main-menu').classList.toggle('show');
+  });
+</script>
 </body>
 </html>
