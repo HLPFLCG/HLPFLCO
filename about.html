@@ -289,7 +289,6 @@
             <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
             <li><a href="shop.html">Shop</a></li>
             <li><a href="book.html">Book</a></li>
-            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -392,12 +391,13 @@
       ScrollTrigger.refresh();
     });
   </script>
-  <script>
-  fetch('footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer-placeholder').innerHTML = html;
-    });
+   <script>
+  // Mobile navigation toggle
+  document.querySelector('.nav__toggle').addEventListener('click', function() {
+    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+    this.setAttribute('aria-expanded', !expanded);
+    document.getElementById('main-menu').classList.toggle('show');
+  });
 </script>
 </body>
 </html>
