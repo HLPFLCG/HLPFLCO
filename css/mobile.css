@@ -17,11 +17,7 @@ table {
   overflow-x: auto;
 }
 
-/* Mobile navigation */
-.mobile-nav {
-  display: none;
-}
-
+/* Mobile-specific styles */
 @media (max-width: 768px) {
   /* Full-width elements on mobile */
   .mobile-full {
@@ -46,42 +42,58 @@ table {
     margin-bottom: 15px;
   }
   
-  /* Hide desktop navigation */
-  .desktop-nav {
-    display: none;
-  }
-  
-  /* Show mobile navigation */
-  .mobile-nav {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .menu-button {
-    background: #333;
-    color: white;
-    border: none;
+  /* Enhance existing navigation */
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
+  }
+  
+  .logo img {
+    max-height: 40px;
+  }
+  
+  .nav__toggle {
+    display: block;
+    z-index: 101;
+  }
+  
+  /* Hide menu by default on mobile */
+  .nav__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+  }
+  
+  /* Show menu when expanded */
+  .nav__list.show {
+    display: block;
+  }
+  
+  /* Style menu items */
+  .nav__list li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav__list li a {
+    display: block;
+    padding: 15px;
     text-align: left;
   }
   
-  .mobile-menu {
-    display: none;
-    background: #f1f1f1;
-  }
-  
-  .mobile-menu a {
-    display: block;
-    padding: 12px 15px;
-    text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .mobile-menu.show {
-    display: block;
+  /* Make the button full width on mobile */
+  .nav__list li a.btn {
+    margin: 10px 15px;
+    text-align: center;
   }
 }
