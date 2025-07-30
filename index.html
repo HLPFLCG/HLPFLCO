@@ -293,10 +293,12 @@
         <div class="about__text">
           <header class="section-header" style="text-align:left"><span class="section-number">02</span><h2 class="animate-text">About HLPFL</h2></header>
           <p>HLPFL was founded on the principle of just that - to be helpful. We specialize in assisting the dreamer, visionary, entrepreneur with providing all of the necessary tools to ensure your business has the proper foundation in order to create a thriving and successful business, no strings attached.</p>
-           <ul>
-            <li>We help first-time founders go from chaos to clarity in under 60 days.</li>
-            <li>Our process simplifies LLC setup, legal compliance, branding, and privacy protection.</li>
-            <li>We’ve built a no-fluff system that removes guesswork and minimizes risk.</li>
+          <ul>
+            <li>Founded by a 24 year old entrepreneur who may not know exactly what to do, but can help others not make the same mistakes he did that led to bankruptcy, business failures and loss of friendships along the way.</li>
+            
+            <li>We handle everything from legal to web development and everything in between, ensuring you have all the necessary ingredients for your business to be successful in today's volatile economy.</li>
+            
+            <li>We're not your traditional consulting agency - we focus on the little guy, ensuring your original idea and vision is protected from not only yourself, but those around you seeking to take down what you've worked so hard to build.</li>
           </ul>
         </div>
         <figure class="about__image" data-speed="-0.1">
@@ -344,10 +346,60 @@
         </div>
       </div>
     </section>
-  </section>
-    <div id="footer-placeholder"></div>
-  </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" data-scroll-section>
+      <div class="container contact__content">
+        <div class="contact__info">
+          <header class="section-header" style="text-align:left"><span class="section-number">05</span><h2 class="animate-text">Have Any Questions?</h2></header>
+          <p>Shoot Us a Message Below!</p>
+        </div>
+        <form name="contact" netlify data-netlify="true" class="contact__form">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" required /></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required /></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <button class="btn btn--primary" type="submit">Send it!</button>
+        </form>
+      </div>
+    </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+          <p>© <span id="year"></span> HLPFL Co. All rights reserved.</p>
+        </div>
+        <div class="footer__social">
+          <h3>Connect with Us</h3>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="book.html">Book</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom cursor -->
+  <div class="custom-cursor" aria-hidden="false"></div>
+  <div class="cursor-dot" aria-hidden="false"></div>
 
   <!-- ======== JS libraries (defer keeps parse-blocking minimal) ========= -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
@@ -478,12 +530,5 @@
       ScrollTrigger.refresh();
     });
   </script>
-  <script>
-  fetch('footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer-placeholder').innerHTML = html;
-    });
-</script>
 </body>
 </html>
