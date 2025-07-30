@@ -1,25 +1,114 @@
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="mobile.css">
-  <meta http-equiv="refresh" content="3;url=https://hlpfl.vip" />
+  <meta http-equiv="refresh" content="3;url=https://hlpfl.vip">
   <title>VIP | HLPFL</title>
-  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="mobile.css">
+  
   <style>
+    :root {
+      --c-bg-primary: #000;
+      --c-text: #f5f5f5;
+      --c-gold: #646464;
+    }
+    
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: var(--c-bg-primary) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='%23050505'/><rect x='2' y='2' width='1' height='1' fill='%23050505'/></svg>") repeat fixed;
+      color: var(--c-text);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
     .redirect-container {
-@@ -34,7 +34,7 @@
+      text-align: center;
+      padding: 2rem;
+      max-width: 90%;
+    }
+    
+    h1 {
+      font-family: 'Iceland', sans-serif;
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+    
+    a {
+      color: var(--c-text);
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--c-gold);
+    }
+    
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--c-gold);
+      margin: 0 auto;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .logo img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .loader {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .logo img {
+        max-width: 120px;
+      }
+    }
+  </style>
 </head>
-      <script>
-  // Mobile navigation toggle
-  document.querySelector('.nav__toggle').addEventListener('click', function() {
-    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-    this.setAttribute('aria-expanded', !expanded);
-    document.getElementById('main-menu').classList.toggle('show');
-  });
-</script>
 
-<body>
+<body class="redirect-page">
   <div class="redirect-container">
+    <div class="logo">
+      <img src="images/footer/footerlogowebsitev2.webp" alt="HLPFL Logo">
+    </div>
     <h1>Redirecting to VIP</h1>
     <div class="loader"></div>
     <p>If you are not redirected automatically, <a href="https://hlpfl.vip">click here</a>.</p>
   </div>
+</body>
+</html>
