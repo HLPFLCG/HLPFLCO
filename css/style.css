@@ -509,11 +509,6 @@ ul {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #000; /* optional: unify the background */
-}
-
-.footer-form .section-header h2 {
-  font-size: 1.75rem;
 }
 
 .footer-form .form-group {
@@ -523,7 +518,7 @@ ul {
 .footer-form label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #fff; /* or your brand color */
+  color: #fff;
 }
 
 .footer-form input,
