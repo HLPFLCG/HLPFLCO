@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
 
   <!-- meta / fonts / favicon -->
-  <link rel="icon" href="images/favicon/noboxfaviconArtboard 1.webp" type="image/webp" /> 
+  <link rel="icon" href="images/logo/logo-icon.png" type="image/png" /> 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,7 +80,7 @@
     .header{position:fixed;inset:0 0 auto;background:rgba(0,0,0,.8);backdrop-filter:blur(5px);padding:20px 0;z-index:1000;transition:padding var(--tr-quick),box-shadow var(--tr-quick)}
     .header.scrolled{padding:15px 0;box-shadow:0 4px 15px rgba(0,0,0,.3)}
     .header .container{display:flex;justify-content:space-between;align-items:center}
-    .logo img{width:auto;height:auto}
+    .logo img{width:auto;height:40px}
     .nav__list{display:flex;gap:30px;align-items:center}
     .nav__list a{font:500 1rem var(--ff-display);position:relative}
     .nav__list a:not(.btn)::after{content:"";position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--c-gold);transition:width .3s ease-out}
@@ -102,7 +102,7 @@
     .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-inline:20px;position:relative}
     .hero__canvas{position:absolute;inset:0;z-index:0}
     .hero {
-      background-image: url('images/background/matej-rieciciar-SdDvoAvu384-unsplash.jpg');
+      background-image: url('images/background/mountain.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -120,12 +120,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.85) 100%);
+      background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 100%);
       z-index: -1;
     }
     .hero__content{position:relative;z-index:1;max-width:800px;margin-inline:auto}
-    .hero__title{font:800 clamp(2.5rem,7vw,4rem)/1.1 var(--ff-display);letter-spacing:-.03em;color:var(--c-white);margin-bottom:20px}
-    .hero__subtitle{font-size:clamp(1rem,2.4vw,1.25rem);color:var(--c-text-muted);max-width:600px;margin-inline:auto;margin-bottom:40px}
+    .hero__title{font:800 clamp(2.5rem,7vw,4rem)/1.1 var(--ff-display);letter-spacing:-.03em;color:var(--c-white);margin-bottom:20px;text-shadow: 2px 2px 4px rgba(0,0,0,0.5);}
+    .hero__subtitle{font-size:clamp(1rem,2.4vw,1.25rem);color:var(--c-text);max-width:600px;margin-inline:auto;margin-bottom:40px;text-shadow: 1px 1px 3px rgba(0,0,0,0.5);}
 
     section{padding-block:100px;background:var(--c-bg-primary)}
     .services-preview{background:var(--c-bg-tertiary);text-align:center;}
@@ -136,6 +136,28 @@
     .section-header{text-align:center;margin-bottom:60px}
     .section-number{font:300 3.5rem var(--ff-display);color:var(--c-text-muted);margin-bottom:10px}
     .section-header h2{font:700 3rem/1 var(--ff-display);color:var(--c-white);letter-spacing:-.02em}
+
+    /* Red Flag Guide */
+    .red-flag-promo {
+      background-color: var(--c-bg-tertiary);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .red-flag-cover {
+      max-width: 250px;
+      margin: 0 auto 30px;
+      box-shadow: var(--shadow-md);
+    }
+    .red-flag-content h3 {
+      font: 700 2rem var(--ff-display);
+      margin-bottom: 15px;
+      color: var(--c-white);
+    }
+    .red-flag-content p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+    }
 
     /* WWH Grid */
     .wwh-grid {
@@ -201,26 +223,30 @@
       font-size: 1.1rem;
     }
 
-    /* Red Flag Guide */
-    .red-flag-promo {
-      background-color: var(--c-bg-tertiary);
+    /* VIP and Shop Sections */
+    .vip-section, .shop-section {
+      background-color: var(--c-bg-secondary);
       padding: 60px 20px;
       text-align: center;
+      margin-bottom: 30px;
     }
-    .red-flag-cover {
-      max-width: 250px;
-      margin: 0 auto 30px;
-      box-shadow: var(--shadow-md);
+    .vip-section {
+      background-color: var(--c-bg-tertiary);
     }
-    .red-flag-content h3 {
+    .section-content h3 {
       font: 700 2rem var(--ff-display);
       margin-bottom: 15px;
       color: var(--c-white);
     }
-    .red-flag-content p {
+    .section-content p {
       max-width: 600px;
       margin: 0 auto 25px;
       font-size: 1.1rem;
+    }
+    .section-icon {
+      font-size: 3rem;
+      color: var(--c-gold);
+      margin-bottom: 20px;
     }
 
     .custom-cursor{position:fixed;top:0;left:0;width:40px;height:40px;border:2px solid var(--c-gold);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:transform .15s ease-out,opacity .15s}
@@ -347,20 +373,21 @@
 
     body::after{content:"";position:fixed;inset:0;pointer-events:none;background:url("https://cdn.jsdelivr.net/gh/stephenn/rgba-noise@master/noise.png");opacity:.04;mix-blend-mode:overlay;}
   </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 
 <body data-scroll-container>
   <a href="#main" class="skip-link">Skip to content</a>
   
   <div id="loading-screen" class="loading-screen">
-    <img src="images/header/websiteheader.webp" alt="HLPFL Consulting" class="loading-logo">
+    <img src="images/logo/logo-icon.png" alt="HLPFL Consulting" class="loading-logo">
   </div>
   
   <!-- Header / nav -->
   <header class="header" data-scroll data-scroll-sticky>
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="images/footer/footerlogowebsitev2.webp" alt="HLPFL Consulting logo" />
+        <img src="images/logo/logo-white.png" alt="HLPFL Consulting logo" />
       </a>
       <nav aria-label="Main navigation">
         <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
@@ -371,9 +398,9 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="vip.html">VIP</a></li>
-          <li><a href="book.html" class="btn btn--primary">Let's talk</a></li>
+          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
+          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary">Let's talk</a></li>
         </ul>
       </nav>
     </div>
@@ -387,9 +414,23 @@
         <div class="hero-overlay"></div>
       </div>
       <div class="container">
-        <h1>From Chaos to Clarity</h1>
-        <p>Expert guidance to transform your healthcare practice operations</p>
-        <a href="book.html" class="btn btn--primary">Get Started</a>
+        <h1 class="hero__title">From Chaos to Clarity</h1>
+        <p class="hero__subtitle">Expert guidance to transform your healthcare practice operations</p>
+        <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Red Flag Guide Promo -->
+    <section class="red-flag-promo">
+      <div class="container">
+        <div class="red-flag-cover">
+          <img src="images/guides/red-flag-guide-cover.jpg" alt="Red Flag Guide" />
+        </div>
+        <div class="red-flag-content">
+          <h3>Practice Red Flags</h3>
+          <p>Identify warning signs before they become major problems</p>
+          <a href="red-flag-guide.html" class="btn btn--alert">Download Free Guide</a>
+        </div>
       </div>
     </section>
 
@@ -432,7 +473,7 @@
     <section class="about-banner">
       <div class="container">
         <div class="founder-image">
-          <img src="images/founder.jpg" alt="HLPFL Founder" />
+          <img src="images/founder/founder.jpg" alt="HLPFL Founder" />
         </div>
         <div class="founder-content">
           <h3>Healthcare Operations Expert</h3>
@@ -442,16 +483,30 @@
       </div>
     </section>
 
-    <!-- Red Flag Guide Promo -->
-    <section class="red-flag-promo">
+    <!-- VIP Section -->
+    <section class="vip-section">
       <div class="container">
-        <div class="red-flag-cover">
-          <img src="images/red-flag-guide-cover.jpg" alt="Red Flag Guide" />
+        <div class="section-icon">
+          <i class="fas fa-crown"></i>
         </div>
-        <div class="red-flag-content">
-          <h3>Practice Red Flags</h3>
-          <p>Identify warning signs before they become major problems</p>
-          <a href="red-flag-guide.html" class="btn btn--alert">Download Free Guide</a>
+        <div class="section-content">
+          <h3>Join Our VIP Program</h3>
+          <p>Get exclusive access to premium resources, personalized guidance, and priority support.</p>
+          <a href="https://app.grouped.com/hlpflco" target="_blank" class="btn btn--secondary">Join VIP</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+      <div class="container">
+        <div class="section-icon">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="section-content">
+          <h3>Shop Our Resources</h3>
+          <p>Discover tools, templates, and guides designed to help your practice thrive.</p>
+          <a href="https://hlpfl.store" target="_blank" class="btn btn--secondary">Visit Shop</a>
         </div>
       </div>
     </section>
@@ -461,7 +516,7 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-logo">
-          <img src="images/footer/footerlogowebsitev2.webp" alt="HLPFL Consulting logo" />
+          <img src="images/logo/logo-white.png" alt="HLPFL Consulting logo" />
         </div>
         
         <div class="footer-contact">
@@ -485,8 +540,8 @@
           <h4>Resources</h4>
           <ul>
             <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="vip.html">VIP</a></li>
+            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
           </ul>
         </div>
         
@@ -494,7 +549,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="book.html">Let's Talk</a></li>
+            <li><a href="https://calendly.com/founder-hlpfl/30min">Let's Talk</a></li>
             <li><a href="index.html">Home</a></li>
           </ul>
         </div>
