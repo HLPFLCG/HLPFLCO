@@ -549,17 +549,68 @@ ul {
   font-family: 'Iceland', sans-serif;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.loading-logo {
-  height: 100px;
-  width: 100px;
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* or dark background if you prefer */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: spin 2s linear infinite;
+  z-index: 9999;
+  overflow: hidden;
+}
 
+.static-logo {
+  width: 150px;  /* adjust as needed */
+  height: auto;
+  opacity: 0;
+  animation: fadeInBar 3s forwards;
+}
+
+.spinning-logo {
+  width: 80px;  /* adjust size */
+  height: auto;
+  margin-top: 20px;
+  animation: spin 2s linear infinite, fadeOut 1s forwards;
+  animation-delay: 3s; /* start fade out after loading completes */
+}
+
+.loading-bar {
+  width: 0;
+  height: 4px;
+  background: linear-gradient(to right, #FF5F6D, #FFC371); /* Example gradient */
+  margin-top: 30px;
+  animation: loadBar 3s forwards;
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInBar {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loadBar {
+  from { width: 0; }
+  to { width: 200px; } /* adjust bar width */
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Optional: Hide loading screen after done */
+body.loaded .loading-screen {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
 }
