@@ -379,7 +379,7 @@
 <body data-scroll-container>
   <a href="#main" class="skip-link">Skip to content</a>
   
-    <div id="loading-screen" class="loading-screen">
+  <div id="loading-screen" class="loading-screen">
     <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL Consulting" class="loading-logo">
   </div>
   
@@ -387,7 +387,7 @@
   <header class="header" data-scroll data-scroll-sticky>
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+        <img src="images/updatedimages/headerlogoaugust.svg" alt="HLPFL Consulting logo" />
       </a>
       <nav aria-label="Main navigation">
         <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
@@ -461,34 +461,51 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__content">
-        <div class="footer__brand">
-          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo">
-          <p>© <span id="year"></span> HLPFL Co. All rights reserved.</p>
+      <div class="footer-main">
+        <div class="footer-logo">
+          <img src="images/logo/logo-white.png" alt="HLPFL Consulting logo" />
         </div>
-        <div class="footer__social">
-          <h3>Connect with Us</h3>
+        
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@hlpfl.org">info@hlpfl.org</a></p>
+          <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+        </div>
+      </div>
+      
+      <nav class="footer-nav">
+        <div class="footer-nav-column">
+          <h4>Services</h4>
           <ul>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="services.html">Practice Assessment</a></li>
+            <li><a href="services.html">Workflow Optimization</a></li>
+            <li><a href="services.html">Compliance Solutions</a></li>
           </ul>
         </div>
-        <div class="footer__links">
-          <h3>Navigation</h3>
+        
+        <div class="footer-nav-column">
+          <h4>Resources</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="book.html">Book</a></li>
+            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
           </ul>
         </div>
+        
+        <div class="footer-nav-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="https://calendly.com/founder-hlpfl/30min">Let's Talk</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="footer-bottom">
+        <p>© <span id="year">2023</span> HLPFL Consulting. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -497,15 +514,55 @@
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Scripts -->
+  <!-- JS libraries -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/dist/umd/index.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
-  <script defer>
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav__toggle');
+      const navMenu = document.getElementById('main-menu');
+      
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          this.classList.toggle('active');
+          navMenu.classList.toggle('show');
+          navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!navMenu.contains(event.target) && !navToggle.contains(event.target) && 
+              (navMenu.classList.contains('show') || navMenu.classList.contains('active'))) {
+            navMenu.classList.remove('show');
+            navMenu.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.classList.remove('active');
+          }
+        });
+      }
+      
+      // Update copyright year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+    
+    // Loading screen
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loading-screen').classList.add('hidden');
+      }, 500);
+    });
+    
     window.addEventListener('DOMContentLoaded', () => {
-      /* Libraries check */
-      if (!(window.gsap && window.ScrollTrigger && window.LocomotiveScroll && window.SplitType)) {
+      /* Guard: verify libs loaded */
+      if (!(window.gsap && window.ScrollTrigger && window.LocomotiveScroll && window.SplitType && window.THREE)) {
         console.error('One or more required libraries failed to load.');
         return;
       }
@@ -534,38 +591,13 @@
       ScrollTrigger.addEventListener('refresh', () => loco.update());
       ScrollTrigger.defaults({ scroller: scrollContainer });
 
-      /* Text animations */
-      document.querySelectorAll('.animate-text').forEach(el => {
-        const split = new SplitType(el, { types: 'lines,words' });
-        gsap.from(split.lines, {
-          yPercent: 100,
-          opacity: 0,
-          ease: 'power4.out',
-          duration: 1.1,
-          stagger: 0.06,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%'
-          }
-        });
-      });
-
-      /* Header behavior */
+      /* Header shrink */
       const header = document.querySelector('.header');
       ScrollTrigger.create({
-        trigger: 'main',
-        start: 'top+=100 top',
+        trigger: '.hero',
+        start: 'bottom top+=60',
         onEnter: () => header.classList.add('scrolled'),
         onLeaveBack: () => header.classList.remove('scrolled')
-      });
-
-      /* Mobile navigation */
-      const toggle = document.querySelector('.nav__toggle');
-      const navList = document.querySelector('.nav__list');
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        navList.classList.toggle('active');
-        toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
       });
 
       /* Custom cursor */
@@ -573,17 +605,25 @@
       const dot = document.querySelector('.cursor-dot');
       let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
       const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-      document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; });
-      gsap.ticker.add(() => { curX = lerp(curX, mouseX, 0.2); curY = lerp(curY, mouseY, 0.2); cursor.style.transform = `translate(${curX}px,${curY}px)`; });
+      
+      document.addEventListener('mousemove', e => { 
+        mouseX = e.clientX; 
+        mouseY = e.clientY; 
+        dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
+      });
+      
+      gsap.ticker.add(() => { 
+        curX = lerp(curX, mouseX, 0.2); 
+        curY = lerp(curY, mouseY, 0.2); 
+        cursor.style.transform = `translate(${curX}px,${curY}px)`; 
+      });
+      
       document.querySelectorAll('a, button, .interactive').forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
       });
 
-      /* Footer year */
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      /* Refresh ScrollTrigger */
+      /* Finally: refresh ScrollTrigger */
       ScrollTrigger.refresh();
     });
   </script>
