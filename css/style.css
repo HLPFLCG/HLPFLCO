@@ -197,7 +197,7 @@ body {
   justify-content: center;
   text-align: center;
   padding-inline: 20px;
-  background: url(images/background/landingpagemainhero.jpg) center/cover no-repeat;
+  background: rgba(0,0,0,0)
 }
 
 .hero::before {
