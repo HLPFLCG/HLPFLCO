@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>HLPFL Consulting – Consulting for Dreamers, Visionaries and Pioneers</title>
-  <meta name="description" content="We help first-time founders create legally solid, privacy-first businesses with standout brands. Entity filing, contracts, web, more.">
-  <link rel="canonical" href="https://hlpfl.org/">
+  <title>About Us - HLPFL Consulting</title>
+  <meta name="description" content="Learn about HLPFL Consulting, our mission, values, and the expert team helping founders create legally solid, privacy-first businesses.">
+  <link rel="canonical" href="https://hlpfl.org/about">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="mobile.css">
 
@@ -15,7 +15,7 @@
 
   <!-- meta / fonts / favicon -->
   <link rel="icon" href="images/logo/logo-icon.png" type="image/png" /> 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -49,418 +49,356 @@
       --wrapper-max:1200px;
     }
 
+    /* Global Reset */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{
-      font:400 1rem/1.8 var(--ff-body);
-      color:var(--c-text);
-      background:var(--c-bg-primary) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='%23050505'/><rect x='2' y='2' width='1' height='1' fill='%23050505'/></svg>") repeat fixed;
-      overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      cursor: url('noboxfaviconArtboard 1.webp'), auto;
-    }
-    img{max-width:100%;display:block;height:auto}
-    a{color:var(--c-white);text-decoration:none;transition:color var(--tr-quick)}
-    a:hover,a:focus-visible{color:var(--c-gold)}
+    body{font-family:var(--ff-body);line-height:1.6;color:var(--c-text);background:var(--c-bg-primary);overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
     ul{list-style:none}
-    .container{width:var(--wrapper);max-width:var(--wrapper-max);margin-inline:auto;padding-inline:20px}
-
-    .skip-link{position:absolute;left:-1000px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:var(--c-gold);color:var(--c-text-on-gold);padding:.5rem 1rem;z-index:999}
-
-    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
-    .btn{display:inline-block;cursor:pointer;text-transform:uppercase;letter-spacing:.6px;border:1px solid var(--c-white);background:transparent;font:500 15px var(--ff-display);padding:14px 35px;color:var(--c-white);transition:transform var(--tr-quick),box-shadow var(--tr-quick),background var(--tr-quick),color var(--tr-quick)}
-    .btn:hover,.btn:focus-visible{background:var(--c-gold);color:var(--c-text-on-gold);transform:translateY(-3px);box-shadow:var(--shadow-md)}
-    .btn--primary{border-color:var(--c-gold);background:var(--c-gold);color:var(--c-text-on-gold)}
-    .btn--secondary{border-color:var(--c-white)}
-    .btn--alert{background-color:#dc3545;border-color:#dc3545;color:white;}
-
-    .header{position:fixed;inset:0 0 auto;background:rgba(0,0,0,.8);backdrop-filter:blur(5px);padding:20px 0;z-index:1000;transition:padding var(--tr-quick),box-shadow var(--tr-quick)}
-    .header.scrolled{padding:15px 0;box-shadow:0 4px 15px rgba(0,0,0,.3)}
-    .header .container{display:flex;justify-content:space-between;align-items:center}
-    .logo img{width:auto;height:40px}
-    .nav__list{display:flex;gap:30px;align-items:center}
-    .nav__list a{font:500 1rem var(--ff-display);position:relative}
-    .nav__list a:not(.btn)::after{content:"";position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--c-gold);transition:width .3s ease-out}
+    
+    /* Container */
+    .container{width:min(var(--wrapper),var(--wrapper-max));margin-inline:auto}
+    
+    /* Loading Screen */
+    .loading-screen{position:fixed;inset:0;z-index:9999;background:var(--c-bg-primary);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .5s ease-out,visibility .5s ease-out}
+    .loading-screen.hidden{opacity:0;visibility:hidden}
+    .loading-logo{width:80px;height:80px;margin-bottom:20px;animation:spin 2s linear infinite}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    
+    /* Header */
+    .header{position:fixed;top:0;left:0;width:100%;z-index:100;padding-block:20px;transition:background-color .3s ease,padding .3s ease}
+    .header.scrolled{background-color:rgba(0,0,0,.9);padding-block:10px;backdrop-filter:blur(10px)}
+    .header .container{display:flex;align-items:center;justify-content:space-between}
+    .logo{display:block;width:120px;transition:transform var(--tr-quick)}
+    .logo:hover{transform:scale(1.05)}
+    .logo img{width:100%}
+    
+    /* Navigation */
+    .nav__list{display:flex;align-items:center;gap:30px}
+    .nav__list a{font-weight:500;position:relative;transition:color var(--tr-quick)}
+    .nav__list a:not(.btn)::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--c-gold);transition:width var(--tr-quick)}
+    .nav__list a:not(.btn):hover{color:var(--c-white)}
     .nav__list a:not(.btn):hover::after{width:100%}
-    .nav__toggle{display:none;flex-direction:column;justify-content:space-between;width:25px;height:20px;background:none;border:0;cursor:pointer;z-index:1002}
-    .nav__toggle span{display:block;width:100%;height:2px;background:var(--c-white);transition:transform var(--tr-quick),opacity var(--tr-quick)}
-    .nav__toggle.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-    .nav__toggle.active span:nth-child(2){opacity:0}
-    .nav__toggle.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-
-    @media(max-width:992px){
-      .nav__toggle{display:flex}
-      .nav__list{position:fixed;inset:0;width:100%;height:100vh;right:-100%;background:var(--c-bg-secondary);flex-direction:column;justify-content:center;gap:25px;transition:right .4s cubic-bezier(.2,.8,.2,1);box-shadow:-5px 0 20px rgba(0,0,0,.4)}
-      .nav__list.active{right:0}
-      .nav__list.show{right:0}
-      .nav__list a{font-size:1.8rem;font-weight:600}
-    }
-
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-inline:20px;position:relative}
-    .hero__canvas{position:absolute;inset:0;z-index:0}
-    .hero {
-      background-image: url('images/background/landingpagemainhero.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 50%);
-      z-index: -1;
-    }
-    .hero__content{position:relative;z-index:1;max-width:800px;margin-inline:auto}
-    .hero__title{font:800 clamp(2.5rem,7vw,4rem)/1.1 var(--ff-display);letter-spacing:-.03em;color:var(--c-white);margin-bottom:20px;text-shadow: 2px 2px 4px rgba(0,0,0,0.5);}
-    .hero__subtitle{font-size:clamp(1rem,2.4vw,1.25rem);color:var(--c-text);max-width:600px;margin-inline:auto;margin-bottom:40px;text-shadow: 1px 1px 3px rgba(0,0,0,0.5);}
-
-    section{padding-block:100px;background:var(--c-bg-primary)}
-    .services-preview{background:var(--c-bg-tertiary);text-align:center;}
-    .services-preview h2{font:700 2.5rem/1 var(--ff-display);color:var(--c-white);margin-bottom:40px;}
-    .about{background:var(--c-bg-secondary)}
-    .process{background:var(--c-bg-tertiary)}
-    .contact{background:var(--c-bg-secondary)}
-    .section-header{text-align:center;margin-bottom:60px}
-    .section-number{font:300 3.5rem var(--ff-display);color:var(--c-text-muted);margin-bottom:10px}
-    .section-header h2{font:700 3rem/1 var(--ff-display);color:var(--c-white);letter-spacing:-.02em}
-
-    /* Red Flag Guide */
-    .red-flag-promo {
+    .nav__toggle{display:none;background:none;border:none;cursor:pointer;width:30px;height:20px;position:relative;z-index:101}
+    .nav__toggle span{display:block;width:100%;height:2px;background:var(--c-white);position:absolute;left:0;transition:transform .3s ease,opacity .3s ease}
+    .nav__toggle span:first-child{top:0}
+    .nav__toggle span:nth-child(2){top:50%;transform:translateY(-50%)}
+    .nav__toggle span:last-child{bottom:0}
+    .nav__toggle[aria-expanded="true"] span:first-child{transform:translateY(9px) rotate(45deg)}
+    .nav__toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__toggle[aria-expanded="true"] span:last-child{transform:translateY(-9px) rotate(-45deg)}
+    
+    /* Buttons */
+    .btn{display:inline-block;padding:12px 24px;border-radius:var(--radius);font-weight:700;text-align:center;transition:transform var(--tr-quick),background-color var(--tr-quick),color var(--tr-quick);cursor:pointer}
+    .btn:hover{transform:translateY(-3px)}
+    .btn--primary{background:var(--c-gold);color:var(--c-text-on-gold)}
+    .btn--primary:hover{background:var(--c-white);color:var(--c-bg-primary)}
+    .btn--secondary{background:transparent;border:2px solid var(--c-gold);color:var(--c-gold)}
+    .btn--secondary:hover{background:var(--c-gold);color:var(--c-text-on-gold)}
+    .btn--alert{background:#e74c3c;color:white}
+    .btn--alert:hover{background:#c0392b}
+    
+    /* Page Header */
+    .page-header {
+      padding-top: 150px;
+      padding-bottom: 80px;
       background-color: var(--c-bg-tertiary);
-      padding: 60px 20px;
       text-align: center;
     }
-    .red-flag-cover {
-      max-width: 250px;
-      margin: 0 auto 30px;
-      box-shadow: var(--shadow-md);
-    }
-    .red-flag-content h3 {
-      font: 700 2rem var(--ff-display);
-      margin-bottom: 15px;
+    .page-header h1 {
+      font: 800 clamp(2.5rem,7vw,4rem)/1.1 var(--ff-display);
+      letter-spacing: -.03em;
       color: var(--c-white);
-    }
-    .red-flag-content p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      font-size: 1.1rem;
-    }
-
-    /* WWH Grid */
-    .wwh-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-    .wwh-card {
-      background: var(--c-bg-secondary);
-      padding: 30px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--tr-quick), box-shadow var(--tr-quick);
-    }
-    .wwh-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    .wwh-icon {
       margin-bottom: 20px;
     }
-    .wwh-icon img {
-      width: 60px;
-      height: 60px;
+    .page-header p {
+      font-size: clamp(1rem,2.4vw,1.25rem);
+      color: var(--c-text);
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding-block: 80px;
+      background: var(--c-bg-secondary);
+    }
+    .content-container {
+      max-width: 800px;
       margin: 0 auto;
     }
-    .wwh-card h3 {
-      font: 600 1.4rem var(--ff-display);
-      margin-bottom: 15px;
+    .content-section h2 {
+      font: 700 2.5rem/1.2 var(--ff-display);
       color: var(--c-white);
-    }
-
-    .service-card{padding:40px;border-radius:var(--radius);background:var(--c-bg-secondary);box-shadow:var(--shadow-sm);transition:transform var(--tr-quick),box-shadow var(--tr-quick);margin-bottom:20px;}
-    .service-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:var(--shadow-md)}
-    .service-card h3{font:600 1.6rem var(--ff-display);margin-bottom:20px;color:var(--c-white)}
-
-    /* About Banner */
-    .about-banner {
-      background-color: var(--c-bg-secondary);
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .founder-image {
       margin-bottom: 30px;
     }
+    .content-section h3 {
+      font: 700 1.8rem/1.2 var(--ff-display);
+      color: var(--c-white);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .content-section p {
+      margin-bottom: 20px;
+    }
+    .content-section ul {
+      list-style: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .content-section ul li {
+      margin-bottom: 10px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding-block: 80px;
+      background: var(--c-bg-tertiary);
+      text-align: center;
+    }
+    .cta-section h2 {
+      font: 700 2.5rem/1.2 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* Footer */
+    .footer{background:var(--c-bg-tertiary);padding-top:60px;padding-bottom:20px}
+    .footer-main{display:flex;justify-content:space-between;margin-bottom:40px}
+    .footer-logo{width:150px}
+    .footer-contact h4{font:700 1.2rem var(--ff-display);color:var(--c-white);margin-bottom:15px}
+    .footer-contact p{margin-bottom:5px}
+    .footer-contact a{color:var(--c-text-muted);transition:color var(--tr-quick)}
+    .footer-contact a:hover{color:var(--c-white)}
+    .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:40px}
+    .footer-nav-column h4{font:700 1.2rem var(--ff-display);color:var(--c-white);margin-bottom:15px}
+    .footer-nav-column ul li{margin-bottom:10px}
+    .footer-nav-column ul li a{color:var(--c-text-muted);transition:color var(--tr-quick)}
+    .footer-nav-column ul li a:hover{color:var(--c-white)}
+    .footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--c-border)}
+    .footer-bottom p{color:var(--c-text-muted);font-size:.9rem}
+
+    /* Custom Cursor */
+    .custom-cursor{position:fixed;width:40px;height:40px;border:2px solid var(--c-gold);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);z-index:9999;opacity:0;transition:opacity .3s ease}
+    .cursor-dot{position:fixed;width:8px;height:8px;background:var(--c-gold);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);z-index:9999;transition:transform .1s ease}
+    body:hover .custom-cursor,body:hover .cursor-dot{opacity:1}
+    
+    /* Mobile Styles */
+    @media (max-width:992px){
+      .nav__list{position:fixed;top:0;right:-100%;width:80%;max-width:400px;height:100vh;background:var(--c-bg-primary);flex-direction:column;justify-content:center;transition:right .3s ease;z-index:100}
+      .nav__list.active{right:0}
+      .nav__toggle{display:block}
+      
+      .footer-main,.footer-nav{flex-direction:column;text-align:center}
+      .footer-logo,.footer-contact{margin-bottom:30px}
+      .footer-logo{margin-inline:auto}
+      .footer-nav{grid-template-columns:1fr}
+      
+      .page-header {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+      .page-header h1 {
+        font-size: 2.4rem;
+      }
+      
+      .content-section h2 {
+        font-size: 2rem;
+      }
+      
+      .content-section h3 {
+        font-size: 1.5rem;
+      }
+      
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* PAGE SPECIFIC STYLES */
+    .founder-profile {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    
+    .founder-image {
+      text-align: center;
+    }
+    
     .founder-image img {
-      width: 180px;
-      height: 180px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto;
-      border: 3px solid var(--c-white);
+      border: 3px solid var(--c-gold);
     }
-    .founder-content h3 {
-      font: 700 2rem var(--ff-display);
-      margin-bottom: 15px;
-      color: var(--c-white);
+    
+    .founder-bio h3 {
+      margin-top: 0;
     }
-    .founder-content p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      font-size: 1.1rem;
-    }
-
-    /* VIP and Shop Sections */
-    .vip-section, .shop-section {
-      background-color: var(--c-bg-secondary);
-      padding: 60px 20px;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .vip-section {
-      background-color: var(--c-bg-tertiary);
-    }
-    .section-content h3 {
-      font: 700 2rem var(--ff-display);
-      margin-bottom: 15px;
-      color: var(--c-white);
-    }
-    .section-content p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      font-size: 1.1rem;
-    }
-    .section-icon {
-      font-size: 3rem;
-      color: var(--c-gold);
-      margin-bottom: 20px;
-    }
-
-    .custom-cursor{position:fixed;top:0;left:0;width:40px;height:40px;border:2px solid var(--c-gold);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:transform .15s ease-out,opacity .15s}
-    .custom-cursor.cursor-active{transform:translate(-50%,-50%) scale(1.4)}
-    .cursor-dot{position:fixed;top:0;left:0;width:6px;height:6px;background:var(--c-gold);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:opacity .15s}
-
-    /* Footer */
-    .footer {
-      background: var(--c-bg-primary);
-      padding: 60px 0 20px;
-      color: var(--c-text-muted);
-    }
-    .footer-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 40px;
-    }
-    .footer-logo img {
-      max-width: 150px;
-      margin-bottom: 20px;
-    }
-    .footer-contact h4 {
-      color: var(--c-white);
-      margin-bottom: 15px;
-      font-size: 18px;
-    }
-    .footer-contact p {
-      margin-bottom: 10px;
-    }
-    .footer-nav {
+    
+    .values-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 30px;
-      margin-bottom: 40px;
+      margin-top: 40px;
     }
-    .footer-nav-column h4 {
+    
+    .value-card {
+      background: var(--c-bg-tertiary);
+      padding: 30px;
+      border-radius: var(--radius);
+    }
+    
+    .value-card h4 {
+      font: 700 1.4rem/1.2 var(--ff-display);
       color: var(--c-white);
-      margin-bottom: 20px;
-      font-size: 18px;
+      margin-bottom: 15px;
     }
-    .footer-nav-column ul {
-      padding: 0;
+    
+    .value-icon {
+      font-size: 2rem;
+      color: var(--c-gold);
+      margin-bottom: 15px;
     }
-    .footer-nav-column li {
-      margin-bottom: 10px;
-    }
-    .footer-bottom {
-      border-top: 1px solid var(--c-border);
-      padding-top: 20px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    /* Loading Screen */
-    .loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--c-bg-primary);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    .loading-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .loading-logo {
-      max-width: 80%;
-      max-height: 80%;
-    }
-
-    @media(max-width:768px){
-      .hero{height:auto;min-height:80vh;padding-top:100px;padding-bottom:60px;}
-      .hero__title{font-size:2.4rem}
-      .section-header h2{font-size:2.2rem}
-      
-      section {
-        padding-block: 60px;
-      }
-      
-      .wwh-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .service-card {
-        padding: 25px;
-      }
-      
-      .founder-image img {
-        width: 150px;
-        height: 150px;
-      }
-      
-      .founder-content h3,
-      .red-flag-content h3 {
-        font-size: 1.8rem;
-      }
-      
-      .footer-main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .footer-nav {
+    
+    @media (max-width: 768px) {
+      .founder-profile {
         grid-template-columns: 1fr;
         text-align: center;
       }
       
-      .btn {
-        padding: 12px 25px;
-        width: 100%;
-        max-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
+      .values-grid {
+        grid-template-columns: 1fr;
       }
     }
-
-    body::after{content:"";position:fixed;inset:0;pointer-events:none;background:url("https://cdn.jsdelivr.net/gh/stephenn/rgba-noise@master/noise.png");opacity:.04;mix-blend-mode:overlay;}
   </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 
-<body data-scroll-container>
-  <a href="#main" class="skip-link">Skip to content</a>
-  
-  <div id="loading-screen" class="loading-screen">
-    <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL Consulting" class="loading-logo">
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <img src="images/logo/logo-icon.png" alt="HLPFL Consulting logo" class="loading-logo">
   </div>
-  
-  <!-- Header / nav -->
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Header -->
   <header class="header" data-scroll data-scroll-sticky>
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="images/updatedimages/headerlogoaugust.svg" alt="HLPFL Consulting logo" />
+        <img src="images/logo/logo-white.png" alt="HLPFL Consulting logo" />
       </a>
       <nav aria-label="Main navigation">
         <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
           <span></span><span></span><span></span>
         </button>
-         <ul class="nav__list" id="main-menu">
+        <ul class="nav__list" id="main-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
           <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
           <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
-          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary">Let's talk</a></li>
+          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main content -->
-  <main id="main">
-    <section class="hero about-hero" data-scroll-section>
-      <div class="hero__content">
-        <h1 class="hero__title animate-text">About HLPFL</h1>
-        <p class="hero__subtitle animate-text">Our Story & Mission</p>
+  <main data-scroll-container>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>About HLPFL Consulting</h1>
+        <p>Helping dreamers, visionaries, and pioneers build legally solid businesses with standout brands.</p>
       </div>
     </section>
 
-    <section class="about-content" data-scroll-section>
-      <div class="container">
-        <div class="about-story">
-          <h2>Our Story</h2>
-          <p>HLPFL was founded on the principle of being helpful to entrepreneurs with big dreams. We specialize in assisting visionaries and dreamers by providing all the necessary tools to ensure your business has the proper foundation for success—no strings attached.</p>
-          
-          <p>Founded by a 24-year-old entrepreneur who learned valuable lessons through bankruptcy, business failures, and lost friendships, we're committed to helping others avoid these same pitfalls on their entrepreneurial journey.</p>
-          
-          <h2>Our Mission</h2>
-          <p>Our mission is to help first-time entrepreneurs establish their businesses correctly from the start, avoiding the costly mistakes and pitfalls that derail so many promising ventures. We believe that with the right foundation, any business can thrive.</p>
-          
-          <h2>Our Approach</h2>
-          <p>We're not your traditional consulting agency. We focus on the little guy, ensuring your original idea and vision is protected—not only from external threats but also from common mistakes entrepreneurs make when starting out.</p>
-          
-          <p>From legal formation to web development and everything in between, we handle all aspects of building your business foundation, ensuring you have all the necessary ingredients for success in today's challenging economy.</p>
-          
-          <div class="about-values">
-            <div class="value-card">
+    <!-- Main Content Section -->
+    <section class="content-section">
+      <div class="container content-container">
+        <h2>Our Story</h2>
+        <p>HLPFL Consulting was founded with a simple mission: to help first-time founders navigate the complex world of business formation, legal compliance, and brand development. We believe that great ideas deserve the best foundation to grow and thrive.</p>
+        
+        <p>After witnessing countless entrepreneurs struggle with the legal and operational aspects of starting a business, we created a comprehensive solution that combines legal expertise, business strategy, and creative branding to provide a holistic approach to business development.</p>
+        
+        <div class="founder-profile">
+          <div class="founder-image">
+            <img src="images/founder/founder.jpg" alt="HLPFL Founder" />
+          </div>
+          <div class="founder-bio">
+            <h3>Meet Our Founder</h3>
+            <p>With over a decade of experience in business law and strategy, our founder has helped hundreds of entrepreneurs build legally solid, privacy-first businesses with standout brands.</p>
+            <p>Combining expertise in legal compliance, business operations, and digital strategy, our founder created HLPFL Consulting to provide comprehensive solutions that address the unique challenges faced by first-time business owners.</p>
+          </div>
+        </div>
+        
+        <h3>Our Approach</h3>
+        <p>At HLPFL Consulting, we believe in a holistic approach to business development. We don't just help you file paperwork or create a logo—we help you build a solid foundation for long-term success.</p>
+        
+        <p>Our process begins with understanding your vision and goals, then creating a customized plan that addresses your specific needs and challenges. We work closely with you every step of the way, providing guidance, support, and expertise to help you navigate the complex world of business ownership.</p>
+        
+        <h3>Our Values</h3>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
               <i class="fas fa-shield-alt"></i>
-              <h3>Protection First</h3>
-              <p>We prioritize legally protecting your business and personal assets from day one.</p>
             </div>
-            
-            <div class="value-card">
-              <i class="fas fa-handshake"></i>
-              <h3>Transparency</h3>
-              <p>Clear communication and honest guidance through every step of your business journey.</p>
-            </div>
-            
-            <div class="value-card">
-              <i class="fas fa-lightbulb"></i>
-              <h3>Innovation</h3>
-              <p>Creative solutions tailored to your unique business vision and goals.</p>
-            </div>
+            <h4>Integrity</h4>
+            <p>We believe in doing what's right, even when it's not easy. Our recommendations are always based on what's best for your business, not what's most profitable for us.</p>
           </div>
           
-          <div class="cta-box">
-            <h2>Ready to Build Your Business Right?</h2>
-            <p>Schedule a consultation today and let's discuss how we can help you establish a strong foundation for your business.</p>
-            <a href="book.html" class="btn btn--primary">Book a Consultation</a>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Innovation</h4>
+            <p>We stay at the forefront of industry trends and best practices to provide you with cutting-edge solutions that give your business a competitive edge.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Partnership</h4>
+            <p>We see ourselves as partners in your success. Your goals become our goals, and we're committed to helping you achieve them.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h4>Privacy</h4>
+            <p>We believe in building privacy-first businesses that respect user data and comply with regulations, creating trust with your customers from day one.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Build Your Business?</h2>
+        <p>Schedule a free consultation to discuss your vision and how we can help you bring it to life.</p>
+        <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Book a Call</a>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
@@ -498,133 +436,106 @@
           <h4>Company</h4>
           <ul>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="https://calendly.com/founder-hlpfl/30min">Let's Talk</a></li>
+            <li><a href="https://calendly.com/founder-hlpfl/30min" target="_blank">Let's Talk</a></li>
             <li><a href="index.html">Home</a></li>
           </ul>
         </div>
       </nav>
       
       <div class="footer-bottom">
-        <p>© <span id="year">2023</span> HLPFL Consulting. All rights reserved.</p>
+        <p>© <span id="year">2025</span> HLPFL Consulting. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Custom cursor -->
-  <div class="custom-cursor" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-
-  <!-- JS libraries -->
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/dist/umd/index.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.min.js" crossorigin="anonymous"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 
   <script>
-    // Mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const navToggle = document.querySelector('.nav__toggle');
-      const navMenu = document.getElementById('main-menu');
-      
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          const expanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !expanded);
-          this.classList.toggle('active');
-          navMenu.classList.toggle('show');
-          navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-          if (!navMenu.contains(event.target) && !navToggle.contains(event.target) && 
-              (navMenu.classList.contains('show') || navMenu.classList.contains('active'))) {
-            navMenu.classList.remove('show');
-            navMenu.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-            navToggle.classList.remove('active');
-          }
-        });
-      }
-      
-      // Update copyright year
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
-    
     // Loading screen
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('loading-screen').classList.add('hidden');
-      }, 500);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.loading-screen').classList.add('hidden');
+      }, 1000);
+    });
+
+    // Current year for footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav__toggle');
+    const navList = document.querySelector('.nav__list');
+    
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navList.classList.toggle('active');
+    });
+
+    // Smooth scrolling with Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      smartphone: { smooth: false },
+      tablet: { smooth: false }
+    });
+
+    // Header shrinking on scroll
+    const header = document.querySelector('.header');
+    
+    gsap.registerPlugin(ScrollTrigger);
+    
+    ScrollTrigger.create({
+      trigger: '.page-header',
+      start: 'bottom top+=60',
+      onEnter: () => header.classList.add('scrolled'),
+      onLeaveBack: () => header.classList.remove('scrolled')
+    });
+
+    /* Custom cursor */
+    const cursor = document.querySelector('.custom-cursor');
+    const dot = document.querySelector('.cursor-dot');
+    let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+    const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+    
+    document.addEventListener('mousemove', e => { 
+      mouseX = e.clientX; 
+      mouseY = e.clientY; 
+      dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
     });
     
-    window.addEventListener('DOMContentLoaded', () => {
-      /* Guard: verify libs loaded */
-      if (!(window.gsap && window.ScrollTrigger && window.LocomotiveScroll && window.SplitType && window.THREE)) {
-        console.error('One or more required libraries failed to load.');
-        return;
-      }
-
-      /* Locomotive Scroll */
-      const scrollContainer = document.querySelector('[data-scroll-container]');
-      const loco = new LocomotiveScroll({
-        el: scrollContainer,
-        smooth: true,
-        lerp: 0.08,
-        smartphone: { smooth: true },
-        tablet: { smooth: true }
-      });
-
-      gsap.registerPlugin(ScrollTrigger);
-      ScrollTrigger.scrollerProxy(scrollContainer, {
-        scrollTop(value) {
-          return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
-        },
-        getBoundingClientRect() {
-          return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        pinType: scrollContainer.style.transform ? 'transform' : 'fixed'
-      });
-      loco.on('scroll', ScrollTrigger.update);
-      ScrollTrigger.addEventListener('refresh', () => loco.update());
-      ScrollTrigger.defaults({ scroller: scrollContainer });
-
-      /* Header shrink */
-      const header = document.querySelector('.header');
-      ScrollTrigger.create({
-        trigger: '.hero',
-        start: 'bottom top+=60',
-        onEnter: () => header.classList.add('scrolled'),
-        onLeaveBack: () => header.classList.remove('scrolled')
-      });
-
-      /* Custom cursor */
-      const cursor = document.querySelector('.custom-cursor');
-      const dot = document.querySelector('.cursor-dot');
-      let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-      const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-      
-      document.addEventListener('mousemove', e => { 
-        mouseX = e.clientX; 
-        mouseY = e.clientY; 
-        dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
+    gsap.ticker.add(() => { 
+      curX = lerp(curX, mouseX, 0.2); 
+      curY = lerp(curY, mouseY, 0.2); 
+      cursor.style.transform = `translate(${curX}px,${curY}px)`; 
+    });
+    
+    // Hover effect for links and buttons
+    const hoverables = document.querySelectorAll('a, button');
+    
+    hoverables.forEach(hoverable => {
+      hoverable.addEventListener('mouseenter', () => {
+        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1.5)`;
+        cursor.style.borderColor = 'white';
       });
       
-      gsap.ticker.add(() => { 
-        curX = lerp(curX, mouseX, 0.2); 
-        curY = lerp(curY, mouseY, 0.2); 
-        cursor.style.transform = `translate(${curX}px,${curY}px)`; 
+      hoverable.addEventListener('mouseleave', () => {
+        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1)`;
+        cursor.style.borderColor = 'var(--c-gold)';
       });
-      
-      document.querySelectorAll('a, button, .interactive').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
-      });
+    });
 
-      /* Finally: refresh ScrollTrigger */
-      ScrollTrigger.refresh();
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+      dot.style.opacity = '0';
+    });
+    
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+      dot.style.opacity = '1';
     });
   </script>
 </body>
