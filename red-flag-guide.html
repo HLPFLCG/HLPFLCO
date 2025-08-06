@@ -584,121 +584,94 @@
     </div>
   </footer>
 
-  <!-- Custom cursor -->
-  <div class="custom-cursor" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-
-  <!-- JS libraries -->
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/dist/umd/index.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.min.js" crossorigin="anonymous"></script>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 
   <script>
-    // Mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const navToggle = document.querySelector('.nav__toggle');
-      const navMenu = document.getElementById('main-menu');
-      
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          const expanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !expanded);
-          this.classList.toggle('active');
-          navMenu.classList.toggle('show');
-          navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-          if (!navMenu.contains(event.target) && !navToggle.contains(event.target) && 
-              (navMenu.classList.contains('show') || navMenu.classList.contains('active'))) {
-            navMenu.classList.remove('show');
-            navMenu.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-            navToggle.classList.remove('active');
-          }
-        });
-      }
-      
-      // Update copyright year
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
-    
     // Loading screen
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('loading-screen').classList.add('hidden');
-      }, 500);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.loading-screen').classList.add('hidden');
+      }, 1000);
+    });
+
+    // Current year for footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav__toggle');
+    const navList = document.querySelector('.nav__list');
+    
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navList.classList.toggle('active');
+    });
+
+    // Smooth scrolling with Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      smartphone: { smooth: false },
+      tablet: { smooth: false }
+    });
+
+    // Header shrinking on scroll
+    const header = document.querySelector('.header');
+    
+    gsap.registerPlugin(ScrollTrigger);
+    
+    ScrollTrigger.create({
+      trigger: '.hero',
+      start: 'bottom top+=60',
+      onEnter: () => header.classList.add('scrolled'),
+      onLeaveBack: () => header.classList.remove('scrolled')
+    });
+
+    /* Custom cursor */
+    const cursor = document.querySelector('.custom-cursor');
+    const dot = document.querySelector('.cursor-dot');
+    let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+    const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+    
+    document.addEventListener('mousemove', e => { 
+      mouseX = e.clientX; 
+      mouseY = e.clientY; 
+      dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
     });
     
-    window.addEventListener('DOMContentLoaded', () => {
-      /* Guard: verify libs loaded */
-      if (!(window.gsap && window.ScrollTrigger && window.LocomotiveScroll && window.SplitType && window.THREE)) {
-        console.error('One or more required libraries failed to load.');
-        return;
-      }
-
-      /* Locomotive Scroll */
-      const scrollContainer = document.querySelector('[data-scroll-container]');
-      const loco = new LocomotiveScroll({
-        el: scrollContainer,
-        smooth: true,
-        lerp: 0.08,
-        smartphone: { smooth: true },
-        tablet: { smooth: true }
-      });
-
-      gsap.registerPlugin(ScrollTrigger);
-      ScrollTrigger.scrollerProxy(scrollContainer, {
-        scrollTop(value) {
-          return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
-        },
-        getBoundingClientRect() {
-          return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        pinType: scrollContainer.style.transform ? 'transform' : 'fixed'
-      });
-      loco.on('scroll', ScrollTrigger.update);
-      ScrollTrigger.addEventListener('refresh', () => loco.update());
-      ScrollTrigger.defaults({ scroller: scrollContainer });
-
-      /* Header shrink */
-      const header = document.querySelector('.header');
-      ScrollTrigger.create({
-        trigger: '.hero',
-        start: 'bottom top+=60',
-        onEnter: () => header.classList.add('scrolled'),
-        onLeaveBack: () => header.classList.remove('scrolled')
-      });
-
-      /* Custom cursor */
-      const cursor = document.querySelector('.custom-cursor');
-      const dot = document.querySelector('.cursor-dot');
-      let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-      const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-      
-      document.addEventListener('mousemove', e => { 
-        mouseX = e.clientX; 
-        mouseY = e.clientY; 
-        dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
+    gsap.ticker.add(() => { 
+      curX = lerp(curX, mouseX, 0.2); 
+      curY = lerp(curY, mouseY, 0.2); 
+      cursor.style.transform = `translate(${curX}px,${curY}px)`; 
+    });
+    
+    // Hover effect for links and buttons
+    const hoverables = document.querySelectorAll('a, button, .service-card');
+    
+    hoverables.forEach(hoverable => {
+      hoverable.addEventListener('mouseenter', () => {
+        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1.5)`;
+        cursor.style.borderColor = 'white';
       });
       
-      gsap.ticker.add(() => { 
-        curX = lerp(curX, mouseX, 0.2); 
-        curY = lerp(curY, mouseY, 0.2); 
-        cursor.style.transform = `translate(${curX}px,${curY}px)`; 
+      hoverable.addEventListener('mouseleave', () => {
+        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1)`;
+        cursor.style.borderColor = 'var(--c-gold)';
       });
-      
-      document.querySelectorAll('a, button, .interactive').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
-      });
+    });
 
-      /* Finally: refresh ScrollTrigger */
-      ScrollTrigger.refresh();
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+      dot.style.opacity = '0';
+    });
+    
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+      dot.style.opacity = '1';
     });
   </script>
 </body>
