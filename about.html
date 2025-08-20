@@ -42,7 +42,7 @@
       --c-gold: #646464;
       --c-text-on-gold: #fff;
       --c-border: #333;
-      --c-accent: #ff6b35;
+      --c-accent: #144d63;
 
       --shadow-sm: 0 5px 15px rgba(255,255,255,.05);
       --shadow-md: 0 15px 30px rgba(255,255,255,.1);
@@ -1054,15 +1054,35 @@
     
     ScrollTrigger.create({
       trigger: '.hero',
-      start: 'bottom top+=60',
+      start: 'bottom top+=80',
       onEnter: () => header.classList.add('scrolled'),
       onLeaveBack: () => header.classList.remove('scrolled')
     });
 
-    /* Custom cursor */
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animation elements
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Custom cursor functionality
     const cursor = document.querySelector('.custom-cursor');
     const dot = document.querySelector('.cursor-dot');
     let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+    
     const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
     
     document.addEventListener('mousemove', e => { 
@@ -1077,13 +1097,13 @@
       cursor.style.transform = `translate(${curX}px,${curY}px)`; 
     });
     
-    // Hover effect for links and buttons
-    const hoverables = document.querySelectorAll('a, button, .service-card');
+    // Hover effects for interactive elements
+    const hoverables = document.querySelectorAll('a, button, .service-card, .content-box');
     
     hoverables.forEach(hoverable => {
       hoverable.addEventListener('mouseenter', () => {
         cursor.style.transform = `translate(${curX}px,${curY}px) scale(1.5)`;
-        cursor.style.borderColor = 'white';
+        cursor.style.borderColor = 'var(--c-accent)';
       });
       
       hoverable.addEventListener('mouseleave', () => {
@@ -1103,7 +1123,7 @@
       dot.style.opacity = '1';
     });
 
-          
+
   </script>
 </body>
 </html>
