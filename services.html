@@ -764,8 +764,9 @@
   </style>
 </head>
 
-<body>
-  <!-- Loading Screen -->
+<body data-scroll-container>
+  <a href="#main" class="skip-link">Skip to content</a>
+  
   <div class="loading-screen">
     <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL Consulting logo" class="loading-logo">
   </div>
@@ -775,327 +776,214 @@
   <div class="cursor-dot"></div>
 
   <!-- Header -->
-  <header class="header" data-scroll data-scroll-sticky>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
-      </a>
-      <nav aria-label="Main navigation">
-        <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav__list" id="main-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
-          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main data-scroll-container>
-    <!-- Page Header -->
-    <section class="page-header fade-in-up">
+    <header class="header" data-scroll data-scroll-sticky>
       <div class="container">
-        <h1>Our Services</h1>
-        <p>Comprehensive solutions to build, protect, and grow your business from the ground up.</p>
+        <a href="index.html" class="logo">
+          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+        </a>
+        <nav aria-label="Main navigation">
+          <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav__list" id="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
+            <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <!-- Main content -->
+  <main id="main">
+    <section class="hero services-hero" data-scroll-section>
+      <div class="hero-background">
+        <div class="hero-animated-bg"></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero__content">
+        <h1 class="hero__title animate-text">Our Services</h1>
+        <p class="hero__subtitle animate-text">Building a Strong Foundation for Your Business</p>
       </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Business Foundation Services -->
-    <section class="content-section">
+    <section class="services-content" data-scroll-section>
       <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <div class="service-category">
-              <h2>Business Foundation Services</h2>
-              <p>Start your business on solid legal ground with our comprehensive foundation services. We handle all the paperwork and legal requirements so you can focus on building your vision.</p>
-              
-              <div class="services-grid">
-                <div class="service-item fade-in-up">
-                  <h3>LLC Formation</h3>
-                  <p>Establish your business with proper legal protection. We handle all filing requirements and documentation to ensure your LLC is set up correctly from day one.</p>
-                  <ul class="service-features">
-                    <li>State filing preparation and submission</li>
-                    <li>EIN application assistance</li>
-                    <li>Articles of organization drafting</li>
-                    <li>Registered agent service options</li>
-                  </ul>
-                  <p class="price">Starting at $199 + Filing Fees</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Business Banking Setup</h3>
-                  <p>Separate your personal and business finances to maintain liability protection and simplify accounting. We guide you through the entire process.</p>
-                  <ul class="service-features">
-                    <li>Bank account recommendations</li>
-                    <li>Documentation preparation</li>
-                    <li>Financial systems setup guidance</li>
-                    <li>Credit card application assistance</li>
-                  </ul>
-                  <p class="price">Starting at $149</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Business Credit Building</h3>
-                  <p>Establish business credit separate from your personal credit to increase funding opportunities and financial flexibility for growth.</p>
-                  <ul class="service-features">
-                    <li>D-U-N-S number registration</li>
-                    <li>Credit building strategy development</li>
-                    <li>Vendor credit line setup</li>
-                    <li>Credit monitoring recommendations</li>
-                  </ul>
-                  <p class="price">Starting at $299</p>
-                </div>
-              </div>
+        <div class="service-category">
+          <h2>Business Foundation Services</h2>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3>LLC Formation</h3>
+              <p>Establish your business with proper legal protection. We handle all filing requirements and documentation to ensure your LLC is set up correctly.</p>
+              <ul class="service-features">
+                <li>State filing preparation and submission</li>
+                <li>EIN application assistance</li>
+                <li>Articles of organization</li>
+              </ul>
+              <p class="price">Starting at $199 + Filing Fees</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Business Banking Setup</h3>
+              <p>Separate your personal and business finances to maintain liability protection and simplify accounting.</p>
+              <ul class="service-features">
+                <li>Bank account recommendations</li>
+                <li>Documentation preparation</li>
+                <li>Financial systems setup</li>
+              </ul>
+              <p class="price">Starting at $149</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Business Credit Building</h3>
+              <p>Establish business credit separate from your personal credit to increase funding opportunities and financial flexibility.</p>
+              <ul class="service-features">
+                <li>D-U-N-S number registration</li>
+                <li>Credit building strategy</li>
+                <li>Vendor credit line setup</li>
+              </ul>
+              <p class="price">Starting at $299</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Legal Protection Services -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="content-box">
-            <div class="service-category">
-              <h2>Legal Protection Services</h2>
-              <p>Protect your business with professionally drafted legal documents tailored to your specific needs and industry requirements.</p>
-              
-              <div class="services-grid">
-                <div class="service-item fade-in-up">
-                  <h3>Contract Creation</h3>
-                  <p>Protect your business relationships with professionally drafted contracts that clearly define expectations and protect your interests.</p>
-                  <ul class="service-features">
-                    <li>Client/customer service agreements</li>
-                    <li>Vendor and supplier contracts</li>
-                    <li>Terms and conditions drafting</li>
-                    <li>Contract review and revision</li>
-                  </ul>
-                  <p class="price">Starting at $399</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Operating Agreement</h3>
-                  <p>Define how your LLC will operate with a comprehensive agreement that protects all members and establishes clear operational guidelines.</p>
-                  <ul class="service-features">
-                    <li>Ownership structure documentation</li>
-                    <li>Management and voting provisions</li>
-                    <li>Capital contribution terms</li>
-                    <li>Profit and loss distribution rules</li>
-                  </ul>
-                  <p class="price">Starting at $349</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Partnership Documentation</h3>
-                  <p>Formalize business partnerships with clear agreements that prevent future disputes and protect all parties involved in the venture.</p>
-                  <ul class="service-features">
-                    <li>Roles and responsibilities definition</li>
-                    <li>Profit sharing structure</li>
-                    <li>Decision-making processes</li>
-                    <li>Exit strategy provisions</li>
-                  </ul>
-                  <p class="price">Starting at $499</p>
-                </div>
-              </div>
+        <div class="service-category">
+          <h2>Legal Protection Services</h2>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3>Contract Creation</h3>
+              <p>Protect your business with professionally drafted contracts tailored to your specific needs and industry.</p>
+              <ul class="service-features">
+                <li>Client/customer agreements</li>
+                <li>Service contracts</li>
+                <li>Terms and conditions</li>
+              </ul>
+              <p class="price">Starting at $399</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Operating Agreement</h3>
+              <p>Define how your LLC will operate with a comprehensive agreement that protects all members and the business itself.</p>
+              <ul class="service-features">
+                <li>Ownership structure documentation</li>
+                <li>Management provisions</li>
+                <li>Capital contribution terms</li>
+              </ul>
+              <p class="price">Starting at $349</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Partnership Documentation</h3>
+              <p>Formalize business partnerships with clear agreements that prevent future disputes and protect all parties involved.</p>
+              <ul class="service-features">
+                <li>Roles and responsibilities</li>
+                <li>Profit sharing structure</li>
+                <li>Exit strategy provisions</li>
+              </ul>
+              <p class="price">Starting at $499</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Brand & Digital Services -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-right">
-          <div class="content-box">
-            <div class="service-category">
-              <h2>Brand & Digital Services</h2>
-              <p>Build a professional brand presence that resonates with your target audience and drives business growth across all digital channels.</p>
-              
-              <div class="services-grid">
-                <div class="service-item fade-in-up">
-                  <h3>Logo Design</h3>
-                  <p>Create a professional visual identity that represents your brand values and makes a lasting impression on your target audience.</p>
-                  <ul class="service-features">
-                    <li>Multiple concept options</li>
-                    <li>Unlimited revision rounds</li>
-                    <li>Final files in all formats</li>
-                    <li>Brand guidelines document</li>
-                  </ul>
-                  <p class="price">Starting at $99</p>
-                </div>                
-                
-                <div class="service-item fade-in-up">
-                  <h3>Website Development</h3>
-                  <p>Professional, mobile-responsive websites that convert visitors into customers and establish credibility for your business.</p>
-                  <ul class="service-features">
-                    <li>Custom responsive design</li>
-                    <li>SEO optimization</li>
-                    <li>Content management system</li>
-                    <li>Analytics and tracking setup</li>
-                  </ul>
-                  <p class="price">Starting at $899</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Brand Strategy</h3>
-                  <p>Develop a comprehensive brand strategy that differentiates your business and creates emotional connections with your customers.</p>
-                  <ul class="service-features">
-                    <li>Brand positioning analysis</li>
-                    <li>Target audience research</li>
-                    <li>Messaging framework development</li>
-                    <li>Brand voice and tone guidelines</li>
-                  </ul>
-                  <p class="price">Starting at $599</p>
-                </div>
-              </div>
+        <div class="service-category">
+          <h2>Brand & Digital Services</h2>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3>Logo Design</h3>
+              <p>Create a professional visual identity that represents your brand values and resonates with your target audience.</p>
+              <ul class="service-features">
+                <li>Multiple concept options</li>
+                <li>Revision rounds</li>
+                <li>Final files in all formats</li>
+              </ul>
+              <p class="price">Starting at $99</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Website Development</h3>
+              <p>Establish your online presence with a custom-designed website that converts visitors into customers.</p>
+              <ul class="service-features">
+                <li>Custom design and development</li>
+                <li>Mobile-responsive layouts</li>
+                <li>Basic SEO implementation</li>
+              </ul>
+              <p class="price">Starting at $49</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Social Media Setup</h3>
+              <p>Build your brand presence across relevant social platforms with professionally designed profiles.</p>
+              <ul class="service-features">
+                <li>Profile creation and optimization</li>
+                <li>Brand consistency across platforms</li>
+                <li>Content strategy recommendations</li>
+              </ul>
+              <p class="price">Custom Quotes Available</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Privacy & Compliance Services -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <div class="service-category">
-              <h2>Privacy & Compliance Services</h2>
-              <p>Ensure your business meets all legal requirements and protects customer data with comprehensive privacy and compliance solutions.</p>
-              
-              <div class="services-grid">
-                <div class="service-item fade-in-up">
-                  <h3>Privacy Policy Creation</h3>
-                  <p>Protect your business and comply with privacy laws with professionally drafted privacy policies tailored to your specific operations.</p>
-                  <ul class="service-features">
-                    <li>GDPR and CCPA compliance</li>
-                    <li>Industry-specific requirements</li>
-                    <li>Data collection documentation</li>
-                    <li>Regular updates and maintenance</li>
-                  </ul>
-                  <p class="price">Starting at $199</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Terms of Service</h3>
-                  <p>Establish clear rules for using your products or services while protecting your business from potential legal issues.</p>
-                  <ul class="service-features">
-                    <li>User rights and responsibilities</li>
-                    <li>Limitation of liability clauses</li>
-                    <li>Dispute resolution procedures</li>
-                    <li>Intellectual property protection</li>
-                  </ul>
-                  <p class="price">Starting at $249</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Compliance Audit</h3>
-                  <p>Comprehensive review of your business practices to identify potential compliance issues and provide actionable recommendations.</p>
-                  <ul class="service-features">
-                    <li>Legal requirement assessment</li>
-                    <li>Risk identification and mitigation</li>
-                    <li>Documentation review</li>
-                    <li>Compliance roadmap creation</li>
-                  </ul>
-                  <p class="price">Starting at $499</p>
-                </div>
-              </div>
+        <div class="service-category">
+          <h2>Privacy Protection Services</h2>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3>Personal Information Protection</h3>
+              <p>Shield your personal information from being connected to your business to maintain privacy and security.</p>
+              <ul class="service-features">
+                <li>Address privacy solutions</li>
+                <li>Public record protection</li>
+                <li>Identity separation strategies</li>
+              </ul>
+              <p class="price">Starting at $299</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Digital Privacy Implementation</h3>
+              <p>Secure your online presence and protect sensitive business information from digital threats.</p>
+              <ul class="service-features">
+                <li>Digital footprint assessment</li>
+                <li>Security protocol implementation</li>
+                <li>Data protection strategies</li>
+              </ul>
+              <p class="price">Starting at $349</p>
+            </div>
+            
+            <div class="service-item">
+              <h3>Privacy Policy Creation</h3>
+              <p>Develop compliant privacy policies for your website and business operations that build trust with customers.</p>
+              <ul class="service-features">
+                <li>GDPR/CCPA compliance</li>
+                <li>Data collection disclosure</li>
+                <li>Cookie policy implementation</li>
+              </ul>
+              <p class="price">Starting at $249</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Consultation Services -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="content-box">
-            <div class="service-category">
-              <h2>Consultation Services</h2>
-              <p>Get expert guidance tailored to your specific business needs with our comprehensive consultation services designed for first-time founders.</p>
-              
-              <div class="services-grid">
-                <div class="service-item fade-in-up">
-                  <h3>Business Strategy Session</h3>
-                  <p>One-on-one consultation to develop your business strategy, identify opportunities, and create actionable plans for growth.</p>
-                  <ul class="service-features">
-                    <li>90-minute strategy session</li>
-                    <li>Business model analysis</li>
-                    <li>Market opportunity assessment</li>
-                    <li>Action plan development</li>
-                  </ul>
-                  <p class="price">$299 per session</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Legal Consultation</h3>
-                  <p>Expert legal guidance to help you navigate business law, understand your obligations, and make informed decisions.</p>
-                  <ul class="service-features">
-                    <li>60-minute consultation</li>
-                    <li>Legal structure recommendations</li>
-                    <li>Risk assessment and mitigation</li>
-                    <li>Compliance guidance</li>
-                  </ul>
-                  <p class="price">$199 per hour</p>
-                </div>
-                
-                <div class="service-item fade-in-up">
-                  <h3>Ongoing Advisory</h3>
-                  <p>Monthly advisory services to provide continuous support as your business grows and evolves in the marketplace.</p>
-                  <ul class="service-features">
-                    <li>Monthly strategy calls</li>
-                    <li>Priority email support</li>
-                    <li>Document review services</li>
-                    <li>Growth planning assistance</li>
-                  </ul>
-                  <p class="price">$499 per month</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+        <div class="cta-section">
+          <h3>Ready to Build Your Business Right?</h3>
+          <p>Schedule a consultation to discuss which services are best suited for your specific business needs and goals.</p>
+          <a href="book.html" class="btn btn--primary">Schedule a Consultation</a>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section fade-in-up">
-      <div class="container">
-        <h2>Ready to Build Your Business?</h2>
-        <p>Let's discuss which services are right for your specific needs and create a customized plan for your success.</p>
-        <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Schedule Your Free Consultation</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+   <footer class="footer">
     <div class="container">
       <div class="footer-main">
         <div class="footer-logo">
-          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+          <img src="images/logo/logo-white.png" alt="HLPFL Consulting logo" />
         </div>
+        
         <div class="footer-contact">
-          <h4>Get in Touch</h4>
-          <p><a href="mailto:founder@hlpfl.org">founder@hlpfl.org</a></p>
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@hlpfl.org">info@hlpfl.org</a></p>
           <p><a href="tel:+1234567890">(123) 456-7890</a></p>
         </div>
       </div>
@@ -1104,214 +992,125 @@
         <div class="footer-nav-column">
           <h4>Services</h4>
           <ul>
-            <li><a href="#business-foundation">Business Foundation</a></li>
-            <li><a href="#legal-protection">Legal Protection</a></li>
-            <li><a href="#brand-digital">Brand & Digital</a></li>
-            <li><a href="#privacy-compliance">Privacy & Compliance</a></li>
+            <li><a href="services.html">Practice Assessment</a></li>
+            <li><a href="services.html">Workflow Optimization</a></li>
+            <li><a href="services.html">Compliance Solutions</a></li>
           </ul>
         </div>
+        
         <div class="footer-nav-column">
           <h4>Resources</h4>
           <ul>
             <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
             <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP Community</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
           </ul>
         </div>
+        
         <div class="footer-nav-column">
-          <h4>Legal</h4>
+          <h4>Company</h4>
           <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="https://calendly.com/founder-hlpfl/30min">Let's Talk</a></li>
+            <li><a href="index.html">Home</a></li>
           </ul>
         </div>
       </nav>
       
       <div class="footer-bottom">
-        <p>© 2024 HLPFL Consulting. All rights reserved.</p>
+        <p>© <span id="year">2023</span> HLPFL Co. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+ <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+
   <script>
-    // Loading Screen
+    // Loading screen
     window.addEventListener('load', () => {
-      const loadingScreen = document.querySelector('.loading-screen');
       setTimeout(() => {
-        loadingScreen.classList.add('hidden');
+        document.querySelector('.loading-screen').classList.add('hidden');
       }, 1000);
     });
 
-    // Custom Cursor
-    const cursor = document.querySelector('.custom-cursor');
-    const cursorDot = document.querySelector('.cursor-dot');
+    // Current year for footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      cursorDot.style.left = e.clientX + 'px';
-      cursorDot.style.top = e.clientY + 'px';
-    });
-
-    // Enhanced Navigation
+    // Mobile navigation toggle
     const navToggle = document.querySelector('.nav__toggle');
     const navList = document.querySelector('.nav__list');
-
+    
     navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
       navList.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav__list a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('active');
-      });
+    // Smooth scrolling with Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      smartphone: { smooth: false },
+      tablet: { smooth: false }
     });
 
-    // Header scroll effect
+    // Header shrinking on scroll
     const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      lastScrollY = window.scrollY;
+    
+    gsap.registerPlugin(ScrollTrigger);
+    
+    ScrollTrigger.create({
+      trigger: '.hero',
+      start: 'bottom top+=60',
+      onEnter: () => header.classList.add('scrolled'),
+      onLeaveBack: () => header.classList.remove('scrolled')
     });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
+    /* Custom cursor */
+    const cursor = document.querySelector('.custom-cursor');
+    const dot = document.querySelector('.cursor-dot');
+    let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+    const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+    
+    document.addEventListener('mousemove', e => { 
+      mouseX = e.clientX; 
+      mouseY = e.clientY; 
+      dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
     });
-
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all animation elements
-    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
-      observer.observe(el);
+    
+    gsap.ticker.add(() => { 
+      curX = lerp(curX, mouseX, 0.2); 
+      curY = lerp(curY, mouseY, 0.2); 
+      cursor.style.transform = `translate(${curX}px,${curY}px)`; 
     });
-
-    // Enhanced button hover effects
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px) scale(1.02)';
+    
+    // Hover effect for links and buttons
+    const hoverables = document.querySelectorAll('a, button, .service-card');
+    
+    hoverables.forEach(hoverable => {
+      hoverable.addEventListener('mouseenter', () => {
+        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1.5)`;
+        cursor.style.borderColor = 'white';
       });
       
-      btn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
+      hoverable.addEventListener('mouseleave', () => {
+        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1)`;
+        cursor.style.borderColor = 'var(--c-gold)';
       });
     });
 
-    // Service item hover effects
-    document.querySelectorAll('.service-item').forEach(item => {
-      item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      
-      item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+      dot.style.opacity = '0';
     });
-
-    // Locomotive Scroll initialization
-    if (window.innerWidth > 768) {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        multiplier: 0.8,
-        class: 'is-reveal'
-      });
-
-      // Update scroll on window resize
-      window.addEventListener('resize', () => {
-        scroll.update();
-      });
-    }
-
-    // Performance optimization: Debounce scroll events
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    }
-
-    // Optimized scroll handler
-    const optimizedScrollHandler = debounce(() => {
-      // Any additional scroll-based functionality
-    }, 10);
-
-    window.addEventListener('scroll', optimizedScrollHandler);
-
-    // Preload critical images
-    const criticalImages = [
-      'images/header/websiteheader.webp',
-      'images/updatedimages/landinglogosmall.svg'
-    ];
-
-    criticalImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-
-    // Error handling for missing images
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function() {
-        this.style.display = 'none';
-        console.warn('Failed to load image:', this.src);
-      });
-    });
-
-    // Accessibility improvements
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('active');
-      }
-    });
-
-    // Focus management for mobile menu
-    navToggle.addEventListener('click', () => {
-      setTimeout(() => {
-        if (navList.classList.contains('active')) {
-          navList.querySelector('a').focus();
-        }
-      }, 300);
+    
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+      dot.style.opacity = '1';
     });
   </script>
 </body>
