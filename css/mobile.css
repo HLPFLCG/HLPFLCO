@@ -20,6 +20,7 @@
     font-size: 1rem;
     width: auto;
     max-width: none;
+    font-family: var(--ff-body);
   }
 
   /* Better mobile navigation */
@@ -33,6 +34,7 @@
     font-size: 1.1rem;
     font-family: var(--ff-body);
     border-bottom: 1px solid var(--c-border);
+    letter-spacing: 0.02em;
   }
 
   /* Mobile-optimized hero */
@@ -351,6 +353,7 @@
     display: block;
     padding: 16px 20px;
     font-size: 1rem;
+    font-family: var(--ff-body);
   }
 
   /* Red flag content small screen */
