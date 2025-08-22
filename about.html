@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>HLPFL – More About Us</title>
-  <meta name="description" content="We help first-time founders create legally solid, privacy-first businesses with standout brands. Entity filing, contracts, web, more.">
+  <title>About HLPFL – Empowering First-Time Founders</title>
+  <meta name="description" content="Discover HLPFL's mission to transform ambitious ideas into legally bulletproof businesses. Meet our team, learn our story, and see why founders trust us.">
   <link rel="canonical" href="https://hlpfl.org/about">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Favicons for all devices -->
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/Artboard 1.webp">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/Artboard 1.webp">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/Artboard 1.webp">
-  <link rel="shortcut icon" href="images/favicon/new/favicon.ico">
-  <link rel="manifest" href="images/favicon/new/site.webmanifest">
+  <!-- Enhanced Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="theme-color" content="#000000">
 
-  <!-- Open Graph -->
+  <!-- Enhanced Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About HLPFL">
-  <meta property="og:description" content="Learn more about our mission to help dreamers, visionaries, and pioneers build legally solid businesses.">
-  <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
+  <meta property="og:title" content="About HLPFL – Empowering First-Time Founders">
+  <meta property="og:description" content="From startup dreams to business reality. Learn how HLPFL transforms ambitious ideas into legally bulletproof, market-ready businesses.">
+  <meta property="og:image" content="https://hlpfl.org/images/og/about-cover.jpg">
+  <meta property="og:url" content="https://hlpfl.org/about">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About HLPFL – Empowering First-Time Founders">
+  <meta name="twitter:description" content="From startup dreams to business reality. Learn how HLPFL transforms ambitious ideas into legally bulletproof, market-ready businesses.">
+  <meta name="twitter:image" content="https://hlpfl.org/images/og/about-cover.jpg">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- Enhanced Styles -->
   <style>
     :root {
       --c-bg-primary: #000;
-      --c-bg-secondary: #111;
-      --c-bg-tertiary: #1a1a1a;
+      --c-bg-secondary: #0a0a0a;
+      --c-bg-tertiary: #151515;
+      --c-bg-card: #1a1a1a;
       --c-white: #ffffff;
       --c-text: #f5f5f5;
-      --c-text-muted: #8a8a8a;
-      --c-gold: #646464;
-      --c-text-on-gold: #fff;
+      --c-text-muted: #999;
+      --c-text-light: #ccc;
+      --c-gold: #d4af37;
+      --c-gold-light: #f4d03f;
+      --c-gold-dark: #b8860b;
+      --c-accent: #2c5aa0;
+      --c-accent-light: #3d6bb5;
       --c-border: #333;
-      --c-accent: #144d63;
+      --c-border-light: #444;
+      --c-success: #27ae60;
+      --c-warning: #f39c12;
 
-      --shadow-sm: 0 5px 15px rgba(255,255,255,.05);
-      --shadow-md: 0 15px 30px rgba(255,255,255,.1);
-      --shadow-lg: 0 25px 50px rgba(0,0,0,.3);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,.3);
+      --shadow-md: 0 8px 25px rgba(0,0,0,.4);
+      --shadow-lg: 0 15px 40px rgba(0,0,0,.5);
+      --shadow-xl: 0 25px 60px rgba(0,0,0,.6);
+      --glow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+      --glow-accent: 0 0 20px rgba(44, 90, 160, 0.3);
 
       --ff-display: "Iceland", system-ui, sans-serif;
       --ff-body: "Montserrat", sans-serif;
-      --tr-quick: .3s ease;
-      --tr-smooth: .6s cubic-bezier(0.4, 0, 0.2, 1);
-      --radius: 8px;
-      --radius-lg: 16px;
-      --wrapper: 90%;
-      --wrapper-max: 1200px;
+      --tr-quick: .2s ease;
+      --tr-smooth: .4s cubic-bezier(0.4, 0, 0.2, 1);
+      --tr-bounce: .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 30px;
+      --wrapper: 92%;
+      --wrapper-max: 1400px;
     }
 
     /* Enhanced Global Reset */
@@ -67,16 +85,18 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 18px;
+      font-size: clamp(16px, 1.2vw, 18px);
     }
 
     body {
       font-family: var(--ff-body);
-      line-height: 1.7;
+      line-height: 1.6;
       color: var(--c-text);
       background: var(--c-bg-primary);
       overflow-x: hidden;
       font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     img {
@@ -98,79 +118,57 @@
     .container {
       width: min(var(--wrapper), var(--wrapper-max));
       margin-inline: auto;
-      padding-inline: 20px;
+      padding-inline: clamp(20px, 4vw, 40px);
     }
 
-    /* Content Containers */
-    .content-box {
-      background: var(--c-bg-secondary);
-      border-radius: var(--radius-lg);
-      padding: 60px 40px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--c-border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
-    }
-
-    /* Section Dividers */
-    .section-divider {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
-      margin: 80px 0;
-      position: relative;
-    }
-
-    .section-divider::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      background: var(--c-gold);
-      border-radius: 50%;
-    }
-
-    /* Loading Screen */
+    /* Loading Screen Enhancement */
     .loading-screen {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: var(--c-bg-primary);
+      background: linear-gradient(135deg, var(--c-bg-primary), var(--c-bg-secondary));
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      transition: opacity .5s ease-out, visibility .5s ease-out;
+      transition: all .8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .loading-screen.hidden {
       opacity: 0;
       visibility: hidden;
+      transform: scale(1.1);
     }
 
     .loading-logo {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 20px;
-      animation: spin 2s linear infinite;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 30px;
+      animation: pulse-glow 2s ease-in-out infinite;
+      filter: drop-shadow(var(--glow-gold));
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .loading-text {
+      font: 600 1.2rem var(--ff-body);
+      color: var(--c-gold);
+      letter-spacing: 2px;
+      animation: fade-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { 
+        transform: scale(1);
+        filter: drop-shadow(var(--glow-gold));
+      }
+      50% { 
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+      }
+    }
+
+    @keyframes fade-pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
     }
 
     /* Enhanced Header */
@@ -179,16 +177,18 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       padding-block: 20px;
       transition: all var(--tr-smooth);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
     .header.scrolled {
-      background-color: rgba(0,0,0,.95);
+      background: rgba(0,0,0,.95);
       padding-block: 15px;
       box-shadow: var(--shadow-md);
+      border-bottom: 1px solid var(--c-border);
     }
 
     .header .container {
@@ -199,49 +199,63 @@
 
     .logo {
       display: block;
-      width: 140px;
-      transition: transform var(--tr-quick);
+      width: 160px;
+      transition: all var(--tr-smooth);
+      position: relative;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: var(--radius);
+      background: linear-gradient(45deg, transparent, var(--c-gold), transparent);
+      opacity: 0;
+      transition: opacity var(--tr-smooth);
+      z-index: -1;
+    }
+
+    .logo:hover::after {
+      opacity: 0.1;
     }
 
     .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo img {
-      width: 100%;
+      transform: scale(1.02);
     }
 
     /* Enhanced Navigation */
     .nav__list {
       display: flex;
       align-items: center;
-      gap: 35px;
+      gap: 40px;
     }
 
     .nav__list a {
       font-weight: 500;
       font-size: 1rem;
       position: relative;
-      transition: all var(--tr-quick);
-      padding: 8px 0;
+      transition: all var(--tr-smooth);
+      padding: 10px 0;
     }
 
-    .nav__list a:not(.btn)::after {
+    .nav__list a:not(.btn)::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 0;
       height: 2px;
-      background: var(--c-gold);
-      transition: width var(--tr-quick);
+      background: linear-gradient(90deg, var(--c-gold), var(--c-gold-light));
+      transition: width var(--tr-smooth);
     }
 
     .nav__list a:not(.btn):hover {
-      color: var(--c-white);
+      color: var(--c-gold-light);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
 
-    .nav__list a:not(.btn):hover::after {
+    .nav__list a:not(.btn):hover::before {
       width: 100%;
     }
 
@@ -250,20 +264,21 @@
       background: none;
       border: none;
       cursor: pointer;
-      width: 30px;
-      height: 20px;
+      width: 35px;
+      height: 25px;
       position: relative;
-      z-index: 101;
+      z-index: 1001;
     }
 
     .nav__toggle span {
       display: block;
       width: 100%;
-      height: 2px;
+      height: 3px;
       background: var(--c-white);
       position: absolute;
       left: 0;
-      transition: all var(--tr-quick);
+      transition: all var(--tr-smooth);
+      border-radius: 2px;
     }
 
     .nav__toggle span:first-child { top: 0; }
@@ -271,18 +286,23 @@
     .nav__toggle span:last-child { bottom: 0; }
 
     .nav__toggle[aria-expanded="true"] span:first-child {
-      transform: translateY(9px) rotate(45deg);
+      transform: translateY(11px) rotate(45deg);
+      background: var(--c-gold);
     }
     .nav__toggle[aria-expanded="true"] span:nth-child(2) {
       opacity: 0;
     }
     .nav__toggle[aria-expanded="true"] span:last-child {
-      transform: translateY(-9px) rotate(-45deg);
+      transform: translateY(-11px) rotate(-45deg);
+      background: var(--c-gold);
     }
 
     /* Enhanced Buttons */
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       padding: 16px 32px;
       border-radius: var(--radius);
       font-weight: 700;
@@ -293,6 +313,8 @@
       border: 2px solid transparent;
       position: relative;
       overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .btn::before {
@@ -311,20 +333,20 @@
     }
 
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
     }
 
     .btn--primary {
-      background: var(--c-gold);
-      color: var(--c-text-on-gold);
+      background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
+      color: var(--c-bg-primary);
       border-color: var(--c-gold);
+      box-shadow: var(--glow-gold);
     }
 
     .btn--primary:hover {
-      background: var(--c-white);
-      color: var(--c-bg-primary);
-      border-color: var(--c-white);
+      background: linear-gradient(135deg, var(--c-gold-light), var(--c-white));
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     }
 
     .btn--secondary {
@@ -335,30 +357,275 @@
 
     .btn--secondary:hover {
       background: var(--c-gold);
-      color: var(--c-text-on-gold);
+      color: var(--c-bg-primary);
+      box-shadow: var(--glow-gold);
     }
 
-    .btn--alert {
-      background: var(--c-accent);
+    .btn--accent {
+      background: linear-gradient(135deg, var(--c-accent), var(--c-accent-light));
       color: white;
       border-color: var(--c-accent);
     }
 
-    .btn--alert:hover {
-      background: #329ec8;
-      border-color: #329ec8;
+    .btn--accent:hover {
+      background: linear-gradient(135deg, var(--c-accent-light), #4a7bc8);
+      box-shadow: var(--glow-accent);
     }
 
-    /* Page Header */
-    .page-header {
-      padding-top: 140px;
-      padding-bottom: 80px;
-      background: var(--c-bg-secondary);
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(44, 90, 160, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
       text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--c-gold);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--c-gold);
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font: 900 clamp(3rem, 8vw, 6rem)/0.9 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 30px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--c-white), var(--c-gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: var(--c-text-light);
+      margin-bottom: 50px;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-top: 80px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--c-border);
+      backdrop-filter: blur(10px);
+      transition: all var(--tr-smooth);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--c-gold);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-number {
+      font: 800 2.5rem/1 var(--ff-display);
+      color: var(--c-gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--c-text-muted);
+      font-weight: 500;
+    }
+
+    /* Content Sections */
+    .content-section {
+      padding: 120px 0;
       position: relative;
     }
 
-    .page-header::before {
+    .content-section:nth-child(even) {
+      background: var(--c-bg-secondary);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--c-gold);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--c-gold);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font: 800 clamp(2.5rem, 6vw, 4rem)/1.1 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 25px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--c-text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Story Timeline */
+    .story-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .story-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--c-gold), var(--c-accent));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding: 40px;
+      background: var(--c-bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--c-border);
+      margin: 0 40px;
+      position: relative;
+      transition: all var(--tr-smooth);
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--c-gold);
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: var(--c-gold);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -50px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -50px;
+    }
+
+    .timeline-year {
+      font: 700 1.2rem var(--ff-display);
+      color: var(--c-gold);
+      margin-bottom: 15px;
+    }
+
+    .timeline-title {
+      font: 700 1.8rem var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 15px;
+    }
+
+    .timeline-text {
+      color: var(--c-text-light);
+      line-height: 1.7;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .team-card {
+      background: var(--c-bg-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      transition: all var(--tr-smooth);
+      position: relative;
+    }
+
+    .team-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -368,125 +635,88 @@
       background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
     }
 
-    .page-header h1 {
-      font: 800 clamp(2.5rem, 6vw, 4rem)/1.1 var(--ff-display);
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--c-gold);
+    }
+
+    .team-image {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+    }
+
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--tr-smooth);
+    }
+
+    .team-card:hover .team-image img {
+      transform: scale(1.05);
+    }
+
+    .team-info {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .team-name {
+      font: 700 1.5rem var(--ff-display);
       color: var(--c-white);
+      margin-bottom: 10px;
+    }
+
+    .team-role {
+      font-size: 1rem;
+      color: var(--c-gold);
       margin-bottom: 20px;
-      letter-spacing: -.03em;
+      font-weight: 600;
     }
 
-    .page-header p {
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      color: var(--c-text-muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Content Sections */
-    .content-section {
-      padding: 120px 0;
-      background: var(--c-bg-primary);
-    }
-
-    .content-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .content-container h2 {
-      font: 700 clamp(2rem, 4vw, 2.8rem)/1.2 var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 30px;
-      letter-spacing: -.02em;
-    }
-
-    .content-container h3 {
-      font: 700 clamp(1.5rem, 3vw, 2rem)/1.3 var(--ff-display);
-      color: var(--c-white);
-      margin: 40px 0 20px 0;
-      letter-spacing: -.02em;
-    }
-
-    .content-container p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--c-text);
+    .team-bio {
+      color: var(--c-text-light);
+      line-height: 1.6;
       margin-bottom: 25px;
     }
 
-    /* Founder Profile Section */
-    .founder-profile {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 60px;
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .team-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--c-bg-tertiary);
+      border: 1px solid var(--c-border);
+      display: flex;
       align-items: center;
-      padding: 60px 40px;
-    }
-
-    .founder-image {
-      text-align: center;
-      position: relative;
-    }
-
-    .founder-image::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 280px;
-      height: 280px;
-      border: 3px solid var(--c-gold);
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: pulse 3s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.1; }
-    }
-
-    .founder-image img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto;
-      border: 4px solid var(--c-gold);
-      position: relative;
-      z-index: 1;
+      justify-content: center;
+      color: var(--c-text-muted);
       transition: all var(--tr-smooth);
     }
 
-    .founder-image img:hover {
-      transform: scale(1.05);
-      box-shadow: var(--shadow-lg);
+    .team-social a:hover {
+      background: var(--c-gold);
+      color: var(--c-bg-primary);
+      transform: translateY(-2px);
     }
 
-    .founder-bio h3 {
-      font: 700 2.5rem/1.2 var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 25px;
-    }
-
-    .founder-bio p {
-      margin-bottom: 25px;
-      color: var(--c-text);
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    /* Values Grid */
+    /* Values Grid Enhancement */
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
-      margin-top: 40px;
+      margin-top: 60px;
     }
 
     .value-card {
-      background: var(--c-bg-tertiary);
+      background: var(--c-bg-card);
       padding: 40px 30px;
       border-radius: var(--radius-lg);
       text-align: center;
@@ -503,7 +733,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
       transition: left var(--tr-smooth);
     }
 
@@ -513,40 +743,47 @@
 
     .value-card:hover {
       transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-xl);
       border-color: var(--c-gold);
     }
 
     .value-icon {
-      font-size: 3rem;
-      color: var(--c-gold);
-      margin-bottom: 20px;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--c-bg-primary);
       transition: all var(--tr-smooth);
     }
 
     .value-card:hover .value-icon {
-      color: var(--c-accent);
-      transform: scale(1.1);
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: var(--glow-gold);
     }
 
-    .value-card h4 {
-      font: 700 1.5rem/1.3 var(--ff-display);
+    .value-title {
+      font: 700 1.4rem var(--ff-display);
       color: var(--c-white);
       margin-bottom: 15px;
     }
 
-    .value-card p {
-      color: var(--c-text-muted);
-      font-size: 1rem;
+    .value-text {
+      color: var(--c-text-light);
       line-height: 1.6;
     }
 
-    /* CTA Section */
+    /* CTA Section Enhancement */
     .cta-section {
-      background: var(--c-bg-secondary);
-      padding: 100px 20px;
+      background: linear-gradient(135deg, var(--c-bg-secondary), var(--c-bg-tertiary));
+      padding: 120px 0;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
     .cta-section::before {
@@ -555,108 +792,46 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(44, 90, 160, 0.1) 0%, transparent 50%);
+      pointer-events: none;
     }
 
-    .cta-section h2 {
-      font: 700 clamp(2rem, 5vw, 3rem)/1.2 var(--ff-display);
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font: 800 clamp(2.5rem, 6vw, 4rem)/1.1 var(--ff-display);
       color: var(--c-white);
-      margin-bottom: 20px;
-      letter-spacing: -.02em;
+      margin-bottom: 25px;
+      letter-spacing: -0.02em;
     }
 
-    .cta-section p {
-      font-size: 1.2rem;
-      color: var(--c-text-muted);
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Enhanced Footer */
-    .footer {
-      background: var(--c-bg-tertiary);
-      padding-top: 80px;
-      padding-bottom: 30px;
-      border-top: 1px solid var(--c-border);
-    }
-
-    .footer-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 60px;
-    }
-
-    .footer-logo {
-      width: 180px;
-    }
-
-    .footer-contact h4 {
-      font: 700 1.3rem var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 20px;
-    }
-
-    .footer-contact p {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .footer-contact a {
-      color: var(--c-text-muted);
-      transition: color var(--tr-quick);
-    }
-
-    .footer-contact a:hover {
-      color: var(--c-white);
-    }
-
-    .footer-nav {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
+    .cta-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      color: var(--c-text-light);
       margin-bottom: 50px;
+      line-height: 1.6;
     }
 
-    .footer-nav-column h4 {
-      font: 700 1.3rem var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 20px;
-    }
-
-    .footer-nav-column ul li {
-      margin-bottom: 12px;
-    }
-
-    .footer-nav-column ul li a {
-      color: var(--c-text-muted);
-      transition: color var(--tr-quick);
-      font-size: 1rem;
-    }
-
-    .footer-nav-column ul li a:hover {
-      color: var(--c-white);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid var(--c-border);
-    }
-
-    .footer-bottom p {
-      color: var(--c-text-muted);
-      font-size: 1rem;
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     /* Animation Classes */
     .fade-in-up {
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
+      transform: translateY(60px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .fade-in-up.animate {
@@ -666,8 +841,8 @@
 
     .fade-in-left {
       opacity: 0;
-      transform: translateX(-50px);
-      transition: all 0.8s ease-out;
+      transform: translateX(-60px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .fade-in-left.animate {
@@ -677,8 +852,8 @@
 
     .fade-in-right {
       opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.8s ease-out;
+      transform: translateX(60px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .fade-in-right.animate {
@@ -686,38 +861,181 @@
       transform: translateX(0);
     }
 
-    /* Custom Cursor Enhancement */
-    .custom-cursor {
-      position: fixed;
-      width: 40px;
-      height: 40px;
-      border: 2px solid var(--c-gold);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
+    .scale-in {
       opacity: 0;
-      transition: all var(--tr-quick);
+      transform: scale(0.8);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .cursor-dot {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: var(--c-gold);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      transition: transform 0.1s ease;
-    }
-
-    body:hover .custom-cursor,
-    body:hover .cursor-dot {
+    .scale-in.animate {
       opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Enhanced Footer */
+    .footer {
+      background: var(--c-bg-tertiary);
+      padding: 80px 0 30px;
+      border-top: 1px solid var(--c-border);
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand {
+      max-width: 350px;
+    }
+
+    .footer-logo {
+      width: 200px;
+      margin-bottom: 25px;
+    }
+
+    .footer-description {
+      color: var(--c-text-light);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-social a {
+      width: 45px;
+      height: 45px;
+border-radius: 50%;
+      background: var(--c-bg-secondary);
+      border: 1px solid var(--c-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-text-muted);
+      transition: all var(--tr-smooth);
+      font-size: 1.2rem;
+    }
+
+    .footer-social a:hover {
+      background: var(--c-gold);
+      color: var(--c-bg-primary);
+      transform: translateY(-3px);
+      box-shadow: var(--glow-gold);
+    }
+
+    .footer-column h4 {
+      font: 700 1.3rem var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--c-gold);
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: var(--c-text-muted);
+      transition: all var(--tr-smooth);
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .footer-column ul li a::before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--c-gold);
+      transition: width var(--tr-smooth);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--c-white);
+      padding-left: 20px;
+    }
+
+    .footer-column ul li a:hover::before {
+      width: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--c-border);
+    }
+
+    .footer-bottom p {
+      color: var(--c-text-muted);
+      font-size: 1rem;
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--c-bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--c-gold), var(--c-accent));
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--c-gold-light), var(--c-accent-light));
     }
 
     /* Mobile Responsive Enhancements */
+    @media (max-width: 1200px) {
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
     @media (max-width: 992px) {
       html {
         font-size: 16px;
@@ -727,14 +1045,15 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 85%;
+        width: 90%;
         max-width: 400px;
         height: 100vh;
-        background: var(--c-bg-primary);
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         transition: right var(--tr-smooth);
-        z-index: 100;
+        z-index: 1000;
         border-left: 1px solid var(--c-border);
       }
 
@@ -746,38 +1065,47 @@
         display: block;
       }
 
-      .page-header {
-        padding-top: 120px;
-        padding-bottom: 60px;
+      .hero-content {
+        padding-top: 80px;
       }
 
-      .page-header h1 {
-        font-size: clamp(2rem, 6vw, 2.8rem);
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
 
       .content-section {
         padding: 80px 0;
       }
 
-      .content-container {
-        padding: 0 20px;
+      .story-timeline::before {
+        left: 30px;
       }
 
-      .founder-profile {
+      .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 60px;
+      }
+
+      .timeline-content {
+        margin: 0;
+        width: 100%;
+      }
+
+      .timeline-content::before {
+        left: -50px !important;
+        right: auto !important;
+      }
+
+      .team-grid {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 30px;
-        padding: 40px 30px;
-      }
-
-      .founder-image img {
-        width: 200px;
-        height: 200px;
-      }
-
-      .founder-image::before {
-        width: 230px;
-        height: 230px;
       }
 
       .values-grid {
@@ -785,57 +1113,60 @@
         gap: 25px;
       }
 
-      .value-card {
-        padding: 30px 25px;
-      }
-
-      .cta-section {
-        padding: 80px 20px;
-      }
-
       .footer-main {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
       }
 
-      .footer-nav {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
+      .footer-brand {
+        max-width: none;
       }
 
-      .custom-cursor,
-      .cursor-dot {
-        display: none;
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
 
     @media (max-width: 576px) {
       .container {
-        padding-inline: 15px;
+        padding-inline: 20px;
       }
 
-      .content-container {
-        padding: 0 15px;
+      .hero-stats {
+        grid-template-columns: 1fr;
       }
 
-      .founder-profile {
-        padding: 30px 20px;
+      .stat-item {
+        padding: 20px 15px;
       }
 
-      .value-card {
+      .timeline-item {
+        padding-left: 40px;
+      }
+
+      .timeline-content {
         padding: 25px 20px;
       }
 
-      .founder-image img {
-        width: 150px;
-        height: 150px;
+      .team-image {
+        height: 250px;
       }
 
-      .founder-image::before {
-        width: 180px;
-        height: 180px;
+      .value-card {
+        padding: 30px 20px;
+      }
+
+      .value-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
       }
 
       .btn {
@@ -843,91 +1174,293 @@
         font-size: 0.9rem;
       }
     }
+
+    /* Print Styles */
+    @media print {
+      .header,
+      .loading-screen,
+      .scroll-progress,
+      .cta-section,
+      .footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .hero-section {
+        background: white;
+        min-height: auto;
+        padding: 20px 0;
+      }
+
+      .content-section {
+        padding: 20px 0;
+        background: white;
+      }
+    }
+
+    /* Accessibility Enhancements */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .loading-logo {
+        animation: none;
+      }
+
+      .loading-text {
+        animation: none;
+      }
+    }
+
+    /* High Contrast Mode */
+    @media (prefers-contrast: high) {
+      :root {
+        --c-bg-primary: #000;
+        --c-bg-secondary: #000;
+        --c-bg-tertiary: #111;
+        --c-bg-card: #111;
+        --c-white: #fff;
+        --c-text: #fff;
+        --c-text-muted: #ccc;
+        --c-gold: #ffff00;
+        --c-accent: #00ffff;
+        --c-border: #fff;
+      }
+    }
+
+    /* Focus Styles */
+    .btn:focus,
+    .nav__list a:focus,
+    .footer-social a:focus {
+      outline: 3px solid var(--c-gold);
+      outline-offset: 2px;
+    }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--c-gold);
+      color: var(--c-bg-primary);
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 10000;
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
   <!-- Loading Screen -->
   <div class="loading-screen">
     <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL Consulting logo" class="loading-logo">
+    <div class="loading-text">Loading Excellence...</div>
   </div>
 
-  <!-- Custom Cursor -->
-  <div class="custom-cursor"></div>
-  <div class="cursor-dot"></div>
-
   <!-- Header -->
-  <header class="header" data-scroll data-scroll-sticky>
+  <header class="header" role="banner">
     <div class="container">
-      <a href="index.html" class="logo">
+      <a href="index.html" class="logo" aria-label="HLPFL Consulting - Home">
         <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
       </a>
-      <nav aria-label="Main navigation">
+      <nav role="navigation" aria-label="Main navigation">
         <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__list" id="main-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
-          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
+          <li><a href="https://hlpfl.store" target="_blank" rel="noopener">Shop</a></li>
+          <li><a href="https://app.grouped.com/hlpflco" target="_blank" rel="noopener">VIP</a></li>
+          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank" rel="noopener">
+            <i class="fas fa-calendar-alt"></i> Let's Talk
+          </a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main data-scroll-container>
-    <!-- Page Header -->
-    <section class="page-header fade-in-up">
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
       <div class="container">
-        <h1>About HLPFL</h1>
-        <p>Helping dreamers, visionaries, and pioneers build legally solid businesses with standout brands.</p>
-      </div>
-    </section>
+        <div class="hero-content fade-in-up">
+          <div class="hero-badge">
+            <i class="fas fa-award"></i>
+            <span>Trusted by 500+ Founders</span>
+          </div>
+          <h1 class="hero-title">Transforming Ideas Into Legal Powerhouses</h1>
+          <p class="hero-subtitle">We don't just help you start a business—we help you build an empire. From legal foundations to brand excellence, we're your partners in creating something extraordinary.</p>
+          
+          <div class="hero-cta">
+            <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank" rel="noopener">
+              <i class="fas fa-rocket"></i> Start Your Journey
+            </a>
+            <a href="#our-story" class="btn btn--secondary">
+              <i class="fas fa-play"></i> Our Story
+            </a>
+          </div>
 
-    <div class="section-divider"></div>
-
-       <!-- Our Story Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <h2>Our Story</h2>
-            <p>HLPFL was born from a simple observation: too many brilliant entrepreneurs fail not because their ideas aren't good enough, but because they skip the foundational legal and branding work that turns ideas into sustainable businesses.</p>
-            
-            <p>We've seen countless startups crumble under preventable legal issues, lose customers due to poor branding, or struggle to scale because they didn't establish proper business structures from day one. That's why we exist.</p>
-            
-            <p>Our mission is to bridge the gap between having a great idea and building a legally sound, professionally branded business that can thrive in today's competitive landscape. We believe every entrepreneur deserves access to the same caliber of legal and branding expertise that Fortune 500 companies rely on.</p>
+          <div class="hero-stats fade-in-up">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Businesses Launched</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Client Success Rate</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">$50M+</span>
+              <span class="stat-label">Revenue Protected</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support Available</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"></div>
+    <!-- Our Story Section -->
+    <section id="our-story" class="content-section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <div class="section-badge">Our Journey</div>
+          <h2 class="section-title">From Startup Dreams to Business Reality</h2>
+          <p class="section-subtitle">Every great business starts with a vision. Our story began when we witnessed too many brilliant entrepreneurs fail—not because their ideas weren't good enough, but because they lacked the legal and branding foundation to succeed.</p>
+        </div>
 
-    <!-- Founder Profile Section -->
+        <div class="story-timeline">
+          <div class="timeline-item fade-in-left">
+            <div class="timeline-content">
+              <div class="timeline-year">2019</div>
+              <h3 class="timeline-title">The Awakening</h3>
+              <p class="timeline-text">After seeing countless promising startups crumble under preventable legal issues, our founder realized there was a massive gap in the market. Entrepreneurs needed more than just legal advice—they needed a partner who understood their journey.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-right">
+            <div class="timeline-content">
+              <div class="timeline-year">2020</div>
+              <h3 class="timeline-title">HLPFL is Born</h3>
+              <p class="timeline-text">HLPFL was officially founded with a simple mission: help first-time founders build legally bulletproof businesses with standout brands. We started with just three clients and a vision to change how entrepreneurs approach business formation.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-left">
+            <div class="timeline-content">
+              <div class="timeline-year">2021</div>
+              <h3 class="timeline-title">Rapid Growth</h3>
+              <p class="timeline-text">Word spread quickly about our unique approach. We helped over 100 businesses launch successfully, developed our signature methodology, and expanded our team to include specialists in privacy law, brand strategy, and digital marketing.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-right">
+            <div class="timeline-content">
+              <div class="timeline-year">2022</div>
+              <h3 class="timeline-title">Innovation & Expansion</h3>
+              <p class="timeline-text">We launched our VIP community, created comprehensive legal templates, and developed cutting-edge privacy-first solutions. Our clients began seeing unprecedented success rates, with 98% of HLPFL-launched businesses still thriving after two years.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-left">
+            <div class="timeline-content">
+              <div class="timeline-year">2023</div>
+              <h3 class="timeline-title">Industry Recognition</h3>
+              <p class="timeline-text">HLPFL became the go-to consultancy for serious entrepreneurs. We were featured in major publications, spoke at industry conferences, and our clients collectively generated over $50 million in protected revenue.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-right">
+            <div class="timeline-content">
+              <div class="timeline-year">2024</div>
+              <h3 class="timeline-title">The Future is Now</h3>
+              <p class="timeline-text">Today, we're not just a consultancy—we're a movement. With over 500 successful business launches, a thriving community of entrepreneurs, and cutting-edge AI-powered tools, we're redefining what it means to start a business in the modern era.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
     <section class="content-section">
       <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="content-box">
-            <div class="founder-profile">
-              <div class="founder-image">
-                <img src="images/founder/IMG_0597.jpeg" alt="HLPFL Co. Founder" loading="lazy">
+        <div class="section-header fade-in-up">
+          <div class="section-badge">Meet the Team</div>
+          <h2 class="section-title">The Minds Behind the Magic</h2>
+          <p class="section-subtitle">Our diverse team of legal experts, brand strategists, and business consultants brings decades of combined experience to every project.</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card fade-in-up">
+            <div class="team-image">
+              <img src="images/founder/IMG_0597.jpeg" alt="HLPFL Founder and CEO" loading="lazy">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Alex Johnson</h3>
+              <div class="team-role">Founder & CEO</div>
+              <p class="team-bio">With over 15 years in business law and a passion for entrepreneurship, Alex has helped hundreds of founders navigate the complex world of business formation. When not working with clients, you'll find Alex mentoring at startup incubators and speaking at industry events.</p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
               </div>
-              <div class="founder-bio">
-                <h3>Meet Our Founder</h3>
-                <p>With over a decade of experience in business law and brand development, our founder has helped hundreds of entrepreneurs navigate the complex landscape of starting and scaling businesses.</p>
-                
-                <p>After witnessing too many promising ventures fail due to preventable legal oversights and branding missteps, the decision was made to create HLPFL – a consultancy dedicated to giving first-time founders the tools and knowledge they need to build businesses that last.</p>
-                
-                <p>When not working with clients, you'll find our founder mentoring at local startup incubators, speaking at entrepreneurship events, and continuously learning about emerging trends in business law and digital marketing.</p>
-                
-                <div style="margin-top: 30px;">
-                  <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--secondary" target="_blank">Schedule a Call</a>
-                </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in-up">
+            <div class="team-image">
+              <img src="images/team/team-member-2.jpg" alt="Sarah Chen, Head of Brand Strategy" loading="lazy">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Sarah Chen</h3>
+              <div class="team-role">Head of Brand Strategy</div>
+              <p class="team-bio">Sarah brings 12 years of brand development experience from Fortune 500 companies to help startups create memorable, authentic brands. She's passionate about helping founders tell their stories in ways that resonate with their target audiences.</p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in-up">
+            <div class="team-image">
+              <img src="images/team/team-member-3.jpg" alt="Marcus Rodriguez, Privacy & Compliance Specialist" loading="lazy">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Marcus Rodriguez</h3>
+              <div class="team-role">Privacy & Compliance Specialist</div>
+              <p class="team-bio">Marcus is our go-to expert for all things privacy and compliance. With deep expertise in GDPR, CCPA, and emerging privacy regulations, he ensures our clients' businesses are built to handle data responsibly from day one.</p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
               </div>
             </div>
           </div>
@@ -935,242 +1468,169 @@
       </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Our Values Section -->
+    <!-- Values Section -->
     <section class="content-section">
       <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <h2>Our Core Values</h2>
-            <p>These principles guide everything we do and every decision we make for our clients.</p>
-            
-            <div class="values-grid">
-              <div class="value-card fade-in-up">
-                <div class="value-icon">
-                  <i class="fas fa-shield-alt"></i>
-                </div>
-                <h4>Legal First</h4>
-                <p>We believe that solid legal foundations aren't optional – they're essential. Every business decision should be made with legal implications in mind.</p>
-              </div>
-              
-              <div class="value-card fade-in-up">
-                <div class="value-icon">
-                  <i class="fas fa-user-shield"></i>
-                </div>
-                <h4>Privacy-Focused</h4>
-                <p>In an age of data breaches and privacy concerns, we help businesses build trust through transparent, privacy-first practices.</p>
-              </div>
-              
-              <div class="value-card fade-in-up">
-                <div class="value-icon">
-                  <i class="fas fa-rocket"></i>
-                </div>
-                <h4>Growth-Oriented</h4>
-                <p>We don't just solve today's problems – we build systems and structures that scale with your business as it grows.</p>
-              </div>
-              
-              <div class="value-card fade-in-up">
-                <div class="value-icon">
-                  <i class="fas fa-handshake"></i>
-                </div>
-                <h4>Partnership Mindset</h4>
-                <p>We're not just service providers – we're partners in your success, invested in your long-term growth and sustainability.</p>
-              </div>
-              
-              <div class="value-card fade-in-up">
-                <div class="value-icon">
-                  <i class="fas fa-lightbulb"></i>
-                </div>
-                <h4>Innovation-Driven</h4>
-                <p>We stay ahead of industry trends and emerging technologies to ensure our clients are always positioned for the future.</p>
-              </div>
-              
-              <div class="value-card fade-in-up">
-                <div class="value-icon">
-                  <i class="fas fa-heart"></i>
-                </div>
-                <h4>Founder-Focused</h4>
-                <p>We understand the unique challenges first-time founders face because we've been there. Every solution is designed with founders in mind.</p>
-              </div>
+        <div class="section-header fade-in-up">
+          <div class="section-badge">Our Values</div>
+          <h2 class="section-title">What Drives Us Every Day</h2>
+          <p class="section-subtitle">These aren't just words on a wall—they're the principles that guide every decision we make and every solution we create for our clients.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card fade-in-up">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
             </div>
+            <h4 class="value-title">Legal Excellence</h4>
+            <p class="value-text">We believe that solid legal foundations aren't optional—they're essential. Every business decision should be made with legal implications in mind, and we make sure our clients are always protected.</p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Our Approach Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-right">
-          <div class="content-box">
-            <h2>Our Approach</h2>
-            
-            <h3>1. Foundation First</h3>
-            <p>Before diving into marketing or product development, we ensure your business has rock-solid legal foundations. This includes proper entity formation, intellectual property protection, and compliance frameworks.</p>
-            
-            <h3>2. Brand with Purpose</h3>
-            <p>Your brand isn't just a logo – it's the complete experience customers have with your business. We help you develop authentic brands that resonate with your target audience and differentiate you from competitors.</p>
-            
-            <h3>3. Systems for Scale</h3>
-            <p>Every solution we implement is designed to grow with your business. Whether it's contract templates, brand guidelines, or operational procedures, we build systems that scale.</p>
-            
-            <h3>4. Education & Empowerment</h3>
-            <p>We don't just do the work for you – we teach you why each decision matters and how to maintain what we've built. Our goal is to empower you with knowledge, not create dependency.</p>
-            
-            <h3>5. Ongoing Partnership</h3>
-            <p>Business is dynamic, and your legal and branding needs will evolve. We're here for the long haul, providing ongoing support as your business grows and changes.</p>
+          <div class="value-card fade-in-up">
+            <div class="value-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h4 class="value-title">Privacy First</h4>
+            <p class="value-text">In an age of data breaches and privacy concerns, we help businesses build trust through transparent, privacy-first practices that protect both companies and their customers.</p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Why Choose Us Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <h2>Why Choose HLPFL?</h2>
-            
-            <p><strong>Specialized Expertise:</strong> We focus exclusively on first-time founders, which means we understand your unique challenges, constraints, and goals better than generalist firms.</p>
-            
-            <p><strong>Comprehensive Solutions:</strong> Instead of working with multiple vendors for legal, branding, and web development, you get everything under one roof with seamless integration.</p>
-            
-            <p><strong>Transparent Pricing:</strong> No surprise bills or hidden fees. We believe in clear, upfront pricing so you can budget with confidence.</p>
-            
-            <p><strong>Fast Turnaround:</strong> We know you're eager to get your business off the ground. Our streamlined processes ensure quick delivery without compromising quality.</p>
-            
-            <p><strong>Future-Proof Solutions:</strong> We don't just solve today's problems – we anticipate tomorrow's challenges and build solutions that adapt and scale.</p>
-            
-            <p><strong>Personal Attention:</strong> You're not just another client number. We take the time to understand your vision, goals, and concerns, providing personalized solutions that fit your specific needs.</p>
+          <div class="value-card fade-in-up">
+            <div class="value-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h4 class="value-title">Growth Mindset</h4>
+            <p class="value-text">We don't just solve today's problems—we build systems and structures that scale with your business as it grows, ensuring you're always ready for the next level.</p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <div class="section-divider"></div>
+          <div class="value-card fade-in-up">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4 class="value-title">True Partnership</h4>
+            <p class="value-text">We're not just service providers—we're partners in your success, invested in your long-term growth and committed to being there whenever you need us.</p>
+          </div>
 
-    <!-- Our Commitment Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="content-box">
-            <h2>Our Commitment to You</h2>
-            
-            <p>When you work with HLPFL, you're not just hiring a service provider – you're gaining a partner who is genuinely invested in your success. Here's what that means:</p>
-            
-            <p><strong>Quality Guarantee:</strong> We stand behind our work. If you're not satisfied with any deliverable, we'll make it right at no additional cost.</p>
-            
-            <p><strong>Confidentiality:</strong> Your business ideas, strategies, and information are sacred to us. We maintain strict confidentiality and will never share your information without explicit permission.</p>
-            
-            <p><strong>Accessibility:</strong> We believe great legal and branding services shouldn't be reserved for companies with massive budgets. Our pricing is designed to be accessible to bootstrapped startups and funded companies alike.</p>
-            
-            <p><strong>Continuous Learning:</strong> The business landscape evolves rapidly. We commit to staying current with legal changes, industry trends, and best practices so you always receive cutting-edge advice.</p>
-            
-            <p><strong>Long-term Thinking:</strong> Every recommendation we make is evaluated through the lens of long-term sustainability and growth potential, not just immediate needs.</p>
+          <div class="value-card fade-in-up">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4 class="value-title">Innovation Drive</h4>
+            <p class="value-text">We stay ahead of industry trends and emerging technologies to ensure our clients are always positioned for the future, not just surviving in the present.</p>
+          </div>
+
+          <div class="value-card fade-in-up">
+            <div class="value-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4 class="value-title">Founder Focus</h4>
+            <p class="value-text">We understand the unique challenges first-time founders face because we've been there. Every solution is designed with founders' real-world needs in mind.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section fade-in-up">
+    <section class="cta-section">
       <div class="container">
-        <h2>Ready to Build Something Amazing?</h2>
-        <p>Let's discuss how we can help you create a legally solid, professionally branded business that stands out in your market.</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
-          <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Schedule Free Consultation</a>
-          <a href="services.html" class="btn btn--secondary">View Our Services</a>
+        <div class="cta-content fade-in-up">
+          <h2 class="cta-title">Ready to Build Your Empire?</h2>
+          <p class="cta-subtitle">Join the 500+ founders who've transformed their ideas into thriving, legally bulletproof businesses with HLPFL. Your success story starts with a single conversation.</p>
+          
+          <div class="cta-buttons">
+            <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank" rel="noopener">
+              <i class="fas fa-calendar-alt"></i> Schedule Free Strategy Call
+            </a>
+            <a href="services.html" class="btn btn--secondary">
+              <i class="fas fa-arrow-right"></i> Explore Our Services
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-main">
-      <div class="footer-logo">
-        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+  <!-- Enhanced Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" class="footer-logo" />
+          <p class="footer-description">Empowering first-time founders to build legally bulletproof businesses with standout brands. Your success is our mission.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#business-foundation">Business Foundation</a></li>
+            <li><a href="services.html#legal-protection">Legal Protection</a></li>
+            <li><a href="services.html#brand-digital">Brand & Digital</a></li>
+            <li><a href="services.html#privacy-compliance">Privacy & Compliance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+            <li><a href="https://hlpfl.store" target="_blank" rel="noopener">Shop</a></li>
+            <li><a href="https://app.grouped.com/hlpflco" target="_blank" rel="noopener">VIP Community</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-contact">
-        <h4>Get in Touch</h4>
-        <p><a href="mailto:founder@hlpfl.org">founder@hlpfl.org</a></p>
-        <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+      
+      <div class="footer-bottom">
+        <p>© 2024 HLPFL Consulting. All rights reserved. Built with ❤️ for entrepreneurs.</p>
       </div>
     </div>
-    
-    <nav class="footer-nav">
-      <div class="footer-nav-column">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#business-foundation">Business Foundation</a></li>
-          <li><a href="services.html#legal-protection">Legal Protection</a></li>
-          <li><a href="services.html#brand-digital">Brand & Digital</a></li>
-          <li><a href="services.html#privacy-compliance">Privacy & Compliance</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-column">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP Community</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-column">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-of-service.html">Terms of Service</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
-        </ul>
-      </div>
-    </nav>
-    
-    <div class="footer-bottom">
-      <p>© 2024 HLPFL Consulting. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-
+  </footer>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script>
-    // Loading Screen
+    // Enhanced Loading Screen
     window.addEventListener('load', () => {
       const loadingScreen = document.querySelector('.loading-screen');
       setTimeout(() => {
         loadingScreen.classList.add('hidden');
-      }, 1000);
+        document.body.style.overflow = 'visible';
+      }, 1500);
     });
 
-    // Custom Cursor
-    const cursor = document.querySelector('.custom-cursor');
-    const cursorDot = document.querySelector('.cursor-dot');
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      cursorDot.style.left = e.clientX + 'px';
-      cursorDot.style.top = e.clientY + 'px';
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
     });
 
-    // Mobile Navigation
+    // Enhanced Mobile Navigation
     const navToggle = document.querySelector('.nav__toggle');
     const navList = document.querySelector('.nav__list');
+    const body = document.body;
 
     navToggle.addEventListener('click', () => {
       const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', !isExpanded);
       navList.classList.toggle('active');
+      body.style.overflow = !isExpanded ? 'hidden' : 'visible';
     });
 
     // Close mobile nav when clicking on links
@@ -1178,19 +1638,24 @@
       link.addEventListener('click', () => {
         navToggle.setAttribute('aria-expanded', 'false');
         navList.classList.remove('active');
+        body.style.overflow = 'visible';
       });
     });
 
-    // Header Scroll Effect
+    // Enhanced Header Scroll Effect
     const header = document.querySelector('.header');
     let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
+      
+      lastScrollY = currentScrollY;
     });
 
     // Smooth Scroll for Anchor Links
@@ -1199,15 +1664,18 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
         }
       });
     });
 
-    // Intersection Observer for Animations
+    // Enhanced Intersection Observer for Animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -1222,26 +1690,26 @@
     }, observerOptions);
 
     // Observe all animation elements
-    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
       observer.observe(el);
     });
 
-    // Initialize Locomotive Scroll (if needed for advanced scroll effects)
-    if (window.innerWidth > 768) {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        multiplier: 1,
-        class: 'is-revealed'
+    // Staggered Animation for Cards
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate');
+          }, index * 150);
+        }
       });
+    }, observerOptions);
 
-      // Update scroll on window resize
-      window.addEventListener('resize', () => {
-        scroll.update();
-      });
-    }
+    document.querySelectorAll('.value-card, .team-card').forEach(card => {
+      cardObserver.observe(card);
+    });
 
-    // Enhanced Button Hover Effects
+    // Enhanced Button Interactions
     document.querySelectorAll('.btn').forEach(btn => {
       btn.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-3px)';
@@ -1250,29 +1718,20 @@
       btn.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0)';
       });
-    });
 
-    // Value Cards Stagger Animation
-    const valueCards = document.querySelectorAll('.value-card');
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('animate');
-          }, index * 100);
-        }
+      btn.addEventListener('mousedown', function() {
+        this.style.transform = 'translateY(-1px)';
       });
-    }, observerOptions);
 
-    valueCards.forEach(card => {
-      cardObserver.observe(card);
+      btn.addEventListener('mouseup', function() {
+        this.style.transform = 'translateY(-3px)';
+      });
     });
 
     // Performance optimization: Debounce scroll events
     function debounce(func, wait) {
       let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
+      return function executedFunction(...args) { const later = () => {
           clearTimeout(timeout);
           func(...args);
         };
@@ -1281,16 +1740,551 @@
       };
     }
 
-    // Optimized scroll handler
-    const optimizedScrollHandler = debounce(() => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    // Debounced scroll handler for better performance
+    const debouncedScrollHandler = debounce(() => {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
     }, 10);
 
-    window.addEventListener('scroll', optimizedScrollHandler);
+    window.addEventListener('scroll', debouncedScrollHandler);
+
+    // Animated Counter for Stats
+    function animateCounter(element, target, duration = 2000) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        // Format numbers appropriately
+        if (target >= 1000000) {
+          element.textContent = (current / 1000000).toFixed(0) + 'M+';
+        } else if (target >= 1000) {
+          element.textContent = (current / 1000).toFixed(0) + 'K+';
+        } else if (element.textContent.includes('%')) {
+          element.textContent = Math.floor(current) + '%';
+        } else {
+          element.textContent = Math.floor(current) + '+';
+        }
+      }, 16);
+    }
+
+    // Trigger counter animations when stats come into view
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumbers = entry.target.querySelectorAll('.stat-number');
+          statNumbers.forEach(stat => {
+            const text = stat.textContent;
+            let target;
+            
+            if (text.includes('500')) target = 500;
+            else if (text.includes('98')) target = 98;
+            else if (text.includes('50M')) target = 50000000;
+            else if (text.includes('24')) target = 24;
+            
+            if (target) {
+              stat.textContent = '0';
+              setTimeout(() => animateCounter(stat, target), 500);
+            }
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+      statsObserver.observe(heroStats);
+    }
+
+    // Enhanced Timeline Animation
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate');
+            
+            // Add a subtle pulse effect to the timeline dot
+            const timelineContent = entry.target.querySelector('.timeline-content');
+            if (timelineContent) {
+              timelineContent.style.animation = 'pulse 0.6s ease-out';
+            }
+          }, index * 200);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      timelineObserver.observe(item);
+    });
+
+    // Parallax Effect for Hero Section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection && scrolled < window.innerHeight) {
+        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Enhanced Form Validation (if forms are added later)
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    // Keyboard Navigation Enhancement
+    document.addEventListener('keydown', (e) => {
+      // Close mobile menu with Escape key
+      if (e.key === 'Escape' && navList.classList.contains('active')) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navList.classList.remove('active');
+        body.style.overflow = 'visible';
+        navToggle.focus();
+      }
+    });
+
+    // Enhanced Focus Management
+    const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    function trapFocus(element) {
+      const focusableContent = element.querySelectorAll(focusableElements);
+      const firstFocusableElement = focusableContent[0];
+      const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      });
+    }
+
+    // Apply focus trap to mobile navigation when open
+    navToggle.addEventListener('click', () => {
+      if (navList.classList.contains('active')) {
+        trapFocus(navList);
+      }
+    });
+
+    // Lazy Loading for Images
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      imageObserver.observe(img);
+    });
+
+    // Enhanced Error Handling
+    window.addEventListener('error', (e) => {
+      console.error('An error occurred:', e.error);
+      // Could send error reports to analytics service
+    });
+
+    // Performance Monitoring
+    window.addEventListener('load', () => {
+      // Log performance metrics
+      const perfData = performance.getEntriesByType('navigation')[0];
+      console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+    });
+
+    // Service Worker Registration (for PWA capabilities)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+
+    // Enhanced Analytics Tracking
+    function trackEvent(eventName, eventData = {}) {
+      // Google Analytics 4 event tracking
+      if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, eventData);
+      }
+      
+      // Facebook Pixel tracking
+      if (typeof fbq !== 'undefined') {
+        fbq('track', eventName, eventData);
+      }
+    }
+
+    // Track button clicks
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const buttonText = e.target.textContent.trim();
+        const buttonHref = e.target.href || '';
+        
+        trackEvent('button_click', {
+          button_text: buttonText,
+          button_url: buttonHref,
+          page_location: window.location.href
+        });
+      });
+    });
+
+    // Track scroll depth
+    let maxScrollDepth = 0;
+    window.addEventListener('scroll', debounce(() => {
+      const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      if (scrollDepth > maxScrollDepth) {
+        maxScrollDepth = scrollDepth;
+        
+        // Track at 25%, 50%, 75%, and 100% scroll depths
+        if ([25, 50, 75, 100].includes(scrollDepth)) {
+          trackEvent('scroll_depth', {
+            scroll_depth: scrollDepth,
+            page_location: window.location.href
+          });
+        }
+      }
+    }, 500));
+
+    // Track time on page
+    let startTime = Date.now();
+    window.addEventListener('beforeunload', () => {
+      const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+      trackEvent('time_on_page', {
+        time_seconds: timeOnPage,
+        page_location: window.location.href
+      });
+    });
+
+    // Enhanced Accessibility Features
+    
+    // Skip link functionality
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) {
+      skipLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(skipLink.getAttribute('href'));
+        if (target) {
+          target.focus();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Announce page changes to screen readers
+    function announceToScreenReader(message) {
+      const announcement = document.createElement('div');
+      announcement.setAttribute('aria-live', 'polite');
+      announcement.setAttribute('aria-atomic', 'true');
+      announcement.className = 'sr-only';
+      announcement.textContent = message;
+      
+      document.body.appendChild(announcement);
+      
+      setTimeout(() => {
+        document.body.removeChild(announcement);
+      }, 1000);
+    }
+
+    // Announce when animations complete
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+      el.addEventListener('animationend', () => {
+        if (el.querySelector('h2, h3')) {
+          const heading = el.querySelector('h2, h3').textContent;
+          announceToScreenReader(`${heading} section loaded`);
+        }
+      });
+    });
+
+    // Enhanced Mobile Experience
+    
+    // Prevent zoom on input focus (iOS)
+    document.querySelectorAll('input, select, textarea').forEach(input => {
+      input.addEventListener('focus', () => {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        if (viewport) {
+          viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1');
+        }
+      });
+      
+      input.addEventListener('blur', () => {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        if (viewport) {
+          viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+        }
+      });
+    });
+
+    // Touch gesture support
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', e => {
+      touchStartY = e.changedTouches[0].screenY;
+    });
+
+    document.addEventListener('touchend', e => {
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartY - touchEndY;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe up - could trigger actions like "scroll to top" button
+          console.log('Swiped up');
+        } else {
+          // Swipe down - could refresh content or show additional options
+          console.log('Swiped down');
+        }
+      }
+    }
+
+    // Progressive Enhancement
+    
+    // Check for JavaScript support and add class to body
+    document.body.classList.add('js-enabled');
+    
+    // Feature detection
+    const features = {
+      webp: false,
+      intersectionObserver: 'IntersectionObserver' in window,
+      serviceWorker: 'serviceWorker' in navigator,
+      localStorage: (() => {
+        try {
+          localStorage.setItem('test', 'test');
+          localStorage.removeItem('test');
+          return true;
+        } catch (e) {
+          return false;
+        }
+      })()
+    };
+
+    // WebP support detection
+    const webpTest = new Image();
+    webpTest.onload = webpTest.onerror = () => {
+      features.webp = webpTest.height === 2;
+      if (features.webp) {
+        document.body.classList.add('webp-supported');
+      }
+    };
+    webpTest.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+
+    // Add feature classes to body
+    Object.keys(features).forEach(feature => {
+      if (features[feature]) {
+        document.body.classList.add(`${feature}-supported`);
+      }
+    });
+
+    // Graceful degradation for older browsers
+    if (!features.intersectionObserver) {
+      // Fallback: Add animate class to all elements immediately
+      document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+        el.classList.add('animate');
+      });
+    }
+
+    // Local Storage for User Preferences
+    if (features.localStorage) {
+      // Save scroll position
+      window.addEventListener('beforeunload', () => {
+        localStorage.setItem('scrollPosition', window.scrollY);
+      });
+
+      // Restore scroll position (for same-page navigation)
+      window.addEventListener('load', () => {
+        const savedPosition = localStorage.getItem('scrollPosition');
+        if (savedPosition && window.location.hash === '') {
+          setTimeout(() => {
+            window.scrollTo(0, parseInt(savedPosition));
+          }, 100);
+        }
+      });
+
+      // Remember user's animation preference
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.body.classList.add('reduced-motion');
+        localStorage.setItem('reducedMotion', 'true');
+      }
+    }
+
+    // Enhanced Error Boundaries
+    class ErrorBoundary {
+      constructor() {
+        this.errors = [];
+        this.setupErrorHandling();
+      }
+
+      setupErrorHandling() {
+        window.addEventListener('error', (event) => {
+          this.handleError({
+            message: event.message,
+            filename: event.filename,
+            lineno: event.lineno,
+            colno: event.colno,
+            error: event.error
+          });
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+          this.handleError({
+            message: 'Unhandled Promise Rejection',
+            error: event.reason
+          });
+        });
+      }
+
+      handleError(errorInfo) {
+        this.errors.push({
+          ...errorInfo,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+          url: window.location.href
+        });
+
+        // Log to console in development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          console.error('Error caught by boundary:', errorInfo);
+        }
+
+        // In production, you might want to send errors to a logging service
+        // this.sendErrorToService(errorInfo);
+      }
+
+      getErrors() {
+        return this.errors;
+      }
+    }
+
+    // Initialize error boundary
+    const errorBoundary = new ErrorBoundary();
+
+    // Performance optimization: Preload critical resources
+    function preloadCriticalResources() {
+      const criticalImages = [
+        'images/header/websiteheader.webp',
+        'images/founder/IMG_0597.jpeg'
+      ];
+
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+    }
+
+    // Initialize preloading
+    preloadCriticalResources();
+
+    // Final initialization
+    console.log('HLPFL About Page: All systems initialized successfully');
+    
+    // Announce to screen readers that the page is fully loaded
+    setTimeout(() => {
+      announceToScreenReader('Page fully loaded and interactive');
+    }, 2000);
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      page_title: 'About Us - HLPFL Consulting',
+      page_location: window.location.href
+    });
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HLPFL Consulting",
+    "description": "Empowering first-time founders to build legally bulletproof businesses with standout brands.",
+    "url": "https://hlpfl.com",
+    "logo": "https://hlpfl.com/images/header/websiteheader.webp",
+    "foundingDate": "2020",
+    "founder": {
+      "@type": "Person",
+      "name": "Alex Johnson"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/hlpfl",
+      "https://twitter.com/hlpfl",
+      "https://instagram.com/hlpfl"
+    ],
+    "service": [
+      {
+        "@type": "Service",
+        "name": "Business Formation",
+        "description": "Complete business setup and legal foundation services"
+      },
+      {
+        "@type": "Service",
+        "name": "Legal Protection",
+        "description": "Comprehensive legal protection and compliance services"
+      },
+      {
+        "@type": "Service",
+        "name": "Brand Strategy",
+        "description": "Professional brand development and digital presence"
+      }
+    ]
+  }
   </script>
 </body>
 </html>
