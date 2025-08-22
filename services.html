@@ -101,48 +101,6 @@
       padding-inline: 20px;
     }
 
-    /* Content Containers */
-    .content-box {
-      background: var(--c-bg-secondary);
-      border-radius: var(--radius-lg);
-      padding: 60px 40px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--c-border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
-    }
-
-    /* Section Dividers */
-    .section-divider {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
-      margin: 80px 0;
-      position: relative;
-    }
-
-    .section-divider::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      background: var(--c-gold);
-      border-radius: 50%;
-    }
-
     /* Loading Screen */
     .loading-screen {
       position: fixed;
@@ -338,87 +296,124 @@
       color: var(--c-text-on-gold);
     }
 
-    /* Page Header */
-    .page-header {
-      padding-top: 140px;
-      padding-bottom: 80px;
-      background: var(--c-bg-secondary);
-      text-align: center;
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
+      overflow: hidden;
     }
 
-    .page-header::before {
-      content: '';
+    .hero-background {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+      inset: 0;
+      z-index: 1;
     }
 
-    .page-header h1 {
-      font: 800 clamp(2.5rem, 6vw, 4rem)/1.1 var(--ff-display);
+    .hero-animated-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(100, 100, 100, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(20, 77, 99, 0.1) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(1deg); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero__title {
+      font: 800 clamp(3rem, 8vw, 5rem)/1.1 var(--ff-display);
       color: var(--c-white);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       letter-spacing: -.03em;
     }
 
-    .page-header p {
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    .hero__subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       color: var(--c-text-muted);
-      max-width: 600px;
-      margin: 0 auto;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
 
-    /* Content Sections */
-    .content-section {
+    .animate-text {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .animate-text:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Services Content */
+    .services-content {
       padding: 120px 0;
       background: var(--c-bg-primary);
     }
 
-    .content-container {
-      max-width: 900px;
-      margin: 0 auto;
+    .service-category {
+      margin-bottom: 100px;
     }
 
-    .content-container h2 {
-      font: 700 clamp(2rem, 4vw, 2.8rem)/1.2 var(--ff-display);
+    .service-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-category h2 {
+      font: 700 clamp(2.5rem, 5vw, 3.5rem)/1.2 var(--ff-display);
       color: var(--c-white);
-      margin-bottom: 30px;
+      margin-bottom: 60px;
+      text-align: center;
       letter-spacing: -.02em;
     }
 
-    .content-container h3 {
-      font: 700 clamp(1.5rem, 3vw, 2rem)/1.3 var(--ff-display);
-      color: var(--c-white);
-      margin: 40px 0 20px 0;
-      letter-spacing: -.02em;
-    }
-
-    .content-container p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--c-text);
-      margin-bottom: 25px;
-    }
-
-    /* Services Grid */
+    /* Shopify-style Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
     }
 
     .service-item {
       background: var(--c-bg-tertiary);
-      padding: 40px 30px;
       border-radius: var(--radius-lg);
+      overflow: hidden;
       transition: all var(--tr-smooth);
       border: 1px solid var(--c-border);
       position: relative;
-      overflow: hidden;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
 
     .service-item::before {
@@ -437,35 +432,65 @@
     }
 
     .service-item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
       box-shadow: var(--shadow-lg);
       border-color: var(--c-gold);
     }
 
+    .service-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--c-gold), var(--c-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .service-image i {
+      font-size: 4rem;
+      color: var(--c-white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-content {
+      padding: 40px 30px;
+    }
+
     .service-item h3 {
-      font: 700 1.5rem/1.3 var(--ff-display);
+      font: 700 1.8rem/1.3 var(--ff-display);
       color: var(--c-white);
       margin-bottom: 15px;
+      letter-spacing: -.01em;
     }
 
     .service-item p {
       color: var(--c-text);
-      margin-bottom: 20px;
-      font-size: 1rem;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
       line-height: 1.6;
     }
 
     .service-features {
       list-style: none;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .service-features li {
       color: var(--c-text-muted);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       position: relative;
-      padding-left: 20px;
-      font-size: 0.95rem;
+      padding-left: 25px;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     .service-features li::before {
@@ -474,28 +499,49 @@
       left: 0;
       color: var(--c-gold);
       font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .service-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--c-border);
     }
 
     .price {
-      font: 700 1.2rem var(--ff-display);
+      font: 700 1.4rem var(--ff-display);
       color: var(--c-gold);
-      margin-top: auto;
     }
 
-    .service-category {
-      margin-bottom: 80px;
+    .service-cta {
+      background: var(--c-gold);
+      color: var(--c-text-on-gold);
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all var(--tr-quick);
+      border: none;
+      cursor: pointer;
     }
 
-    .service-category:last-child {
-      margin-bottom: 0;
+    .service-cta:hover {
+      background: var(--c-white);
+      color: var(--c-bg-primary);
+      transform: translateY(-2px);
     }
 
     /* CTA Section */
     .cta-section {
       background: var(--c-bg-secondary);
-      padding: 100px 20px;
+      padding: 100px 40px;
       text-align: center;
       position: relative;
+      border-radius: var(--radius-lg);
+      margin-top: 80px;
+      border: 1px solid var(--c-border);
     }
 
     .cta-section::before {
@@ -506,9 +552,10 @@
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
 
-    .cta-section h2 {
+    .cta-section h3 {
       font: 700 clamp(2rem, 5vw, 3rem)/1.2 var(--ff-display);
       color: var(--c-white);
       margin-bottom: 20px;
@@ -601,40 +648,6 @@
       font-size: 1rem;
     }
 
-    /* Animation Classes */
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in-up.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-in-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in-left.animate {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .fade-in-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in-right.animate {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
     /* Custom Cursor Enhancement */
     .custom-cursor {
       position: fixed;
@@ -695,34 +708,26 @@
         display: block;
       }
 
-      .page-header {
-        padding-top: 120px;
-        padding-bottom: 60px;
-      }
-
-      .page-header h1 {
-        font-size: clamp(2rem, 6vw, 2.8rem);
-      }
-
-      .content-section {
+      .services-content {
         padding: 80px 0;
-      }
-
-      .content-container {
-        padding: 0 20px;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 30px;
       }
 
       .service-item {
+        margin-bottom: 0;
+      }
+
+      .service-content {
         padding: 30px 25px;
       }
 
       .cta-section {
-        padding: 80px 20px;
+        padding: 80px 30px;
+        margin-top: 60px;
       }
 
       .footer-main {
@@ -748,17 +753,29 @@
         padding-inline: 15px;
       }
 
-      .content-container {
-        padding: 0 15px;
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
 
-      .service-item {
+      .service-content {
         padding: 25px 20px;
       }
 
       .btn {
         padding: 14px 28px;
         font-size: 0.9rem;
+      }
+
+      .service-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+      }
+
+      .service-cta {
+        width: 100%;
+        padding: 15px;
       }
     }
   </style>
@@ -776,27 +793,27 @@
   <div class="cursor-dot"></div>
 
   <!-- Header -->
-    <header class="header" data-scroll data-scroll-sticky>
-      <div class="container">
-        <a href="index.html" class="logo">
-          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
-        </a>
-        <nav aria-label="Main navigation">
-          <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav__list" id="main-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
-            <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <header class="header" data-scroll data-scroll-sticky>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__list" id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
+          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Main content -->
   <main id="main">
@@ -816,301 +833,541 @@
         <div class="service-category">
           <h2>Business Foundation Services</h2>
           <div class="services-grid">
-            <div class="service-item">
-              <h3>LLC Formation</h3>
-              <p>Establish your business with proper legal protection. We handle all filing requirements and documentation to ensure your LLC is set up correctly.</p>
-              <ul class="service-features">
-                <li>State filing preparation and submission</li>
-                <li>EIN application assistance</li>
-                <li>Articles of organization</li>
-              </ul>
-              <p class="price">Starting at $199 + Filing Fees</p>
-            </div>
+            <a href="https://hlpfl.store/products/llc-formation" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="service-content">
+                <h3>LLC Formation</h3>
+                <p>Establish your business with proper legal protection. We handle all filing requirements and documentation to ensure your LLC is set up correctly.</p>
+                <ul class="service-features">
+                  <li>State filing preparation and submission</li>
+                  <li>EIN application assistance</li>
+                  <li>Articles of organization</li>
+                  <li>Registered agent service</li>
+                  <li>Operating agreement template</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $199</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Business Banking Setup</h3>
-              <p>Separate your personal and business finances to maintain liability protection and simplify accounting.</p>
-              <ul class="service-features">
-                <li>Bank account recommendations</li>
-                <li>Documentation preparation</li>
-                <li>Financial systems setup</li>
-              </ul>
-              <p class="price">Starting at $149</p>
-            </div>
+            <a href="https://hlpfl.store/products/business-banking-setup" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-university"></i>
+              </div>
+              <div class="service-content">
+                <h3>Business Banking Setup</h3>
+                <p>Separate your personal and business finances to maintain liability protection and simplify accounting.</p>
+                <ul class="service-features">
+                  <li>Bank account recommendations</li>
+                  <li>Documentation preparation</li>
+                  <li>Financial systems setup</li>
+                  <li>Account opening assistance</li>
+                  <li>Banking relationship guidance</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $149</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Business Credit Building</h3>
-              <p>Establish business credit separate from your personal credit to increase funding opportunities and financial flexibility.</p>
-              <ul class="service-features">
-                <li>D-U-N-S number registration</li>
-                <li>Credit building strategy</li>
-                <li>Vendor credit line setup</li>
-              </ul>
-              <p class="price">Starting at $299</p>
-            </div>
+            <a href="https://hlpfl.store/products/business-credit-building" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="service-content">
+                <h3>Business Credit Building</h3>
+                <p>Establish business credit separate from your personal credit to increase funding opportunities and financial flexibility.</p>
+                <ul class="service-features">
+                  <li>D-U-N-S number registration</li>
+                  <li>Credit building strategy</li>
+                  <li>Vendor credit line setup</li>
+                  <li>Credit monitoring setup</li>
+                  <li>Funding preparation guidance</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $299</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
 
         <div class="service-category">
           <h2>Legal Protection Services</h2>
           <div class="services-grid">
-            <div class="service-item">
-              <h3>Contract Creation</h3>
-              <p>Protect your business with professionally drafted contracts tailored to your specific needs and industry.</p>
-              <ul class="service-features">
-                <li>Client/customer agreements</li>
-                <li>Service contracts</li>
-                <li>Terms and conditions</li>
-              </ul>
-              <p class="price">Starting at $399</p>
-            </div>
+            <a href="https://hlpfl.store/products/contract-creation" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <div class="service-content">
+                <h3>Contract Creation</h3>
+                <p>Protect your business with professionally drafted contracts tailored to your specific needs and industry.</p>
+                <ul class="service-features">
+                  <li>Client/customer agreements</li>
+                  <li>Service contracts</li>
+                  <li>Terms and conditions</li>
+                  <li>Non-disclosure agreements</li>
+                  <li>Independent contractor agreements</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $399</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Operating Agreement</h3>
-              <p>Define how your LLC will operate with a comprehensive agreement that protects all members and the business itself.</p>
-              <ul class="service-features">
-                <li>Ownership structure documentation</li>
-                <li>Management provisions</li>
-                <li>Capital contribution terms</li>
-              </ul>
-              <p class="price">Starting at $349</p>
-            </div>
+            <a href="https://hlpfl.store/products/operating-agreement" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div class="service-content">
+                <h3>Operating Agreement</h3>
+                <p>Define how your LLC will operate with a comprehensive agreement that protects all members and the business itself.</p>
+                <ul class="service-features">
+                  <li>Ownership structure documentation</li>
+                  <li>Management provisions</li>
+                  <li>Capital contribution terms</li>
+                  <li>Profit and loss distribution</li>
+                  <li>Member rights and responsibilities</li>
+                </ul>
+                <div class="service-footer">
+ <p class="price">Starting at $499</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Partnership Documentation</h3>
-              <p>Formalize business partnerships with clear agreements that prevent future disputes and protect all parties involved.</p>
-              <ul class="service-features">
-                <li>Roles and responsibilities</li>
-                <li>Profit sharing structure</li>
-                <li>Exit strategy provisions</li>
-              </ul>
-              <p class="price">Starting at $499</p>
-            </div>
+            <a href="https://hlpfl.store/products/trademark-registration" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="service-content">
+                <h3>Trademark Registration</h3>
+                <p>Protect your brand identity with federal trademark registration to secure exclusive rights to your business name and logo.</p>
+                <ul class="service-features">
+                  <li>Comprehensive trademark search</li>
+                  <li>USPTO application filing</li>
+                  <li>Classification guidance</li>
+                  <li>Response to office actions</li>
+                  <li>Registration certificate delivery</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $799</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
 
         <div class="service-category">
-          <h2>Brand & Digital Services</h2>
+          <h2>Branding & Digital Services</h2>
           <div class="services-grid">
-            <div class="service-item">
-              <h3>Logo Design</h3>
-              <p>Create a professional visual identity that represents your brand values and resonates with your target audience.</p>
-              <ul class="service-features">
-                <li>Multiple concept options</li>
-                <li>Revision rounds</li>
-                <li>Final files in all formats</li>
-              </ul>
-              <p class="price">Starting at $99</p>
-            </div>
+            <a href="https://hlpfl.store/products/logo-design" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="service-content">
+                <h3>Professional Logo Design</h3>
+                <p>Create a memorable brand identity with custom logo design that reflects your business values and appeals to your target audience.</p>
+                <ul class="service-features">
+                  <li>Custom logo concepts</li>
+                  <li>Multiple design revisions</li>
+                  <li>Vector file formats</li>
+                  <li>Brand color palette</li>
+                  <li>Usage guidelines</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $599</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Website Development</h3>
-              <p>Establish your online presence with a custom-designed website that converts visitors into customers.</p>
-              <ul class="service-features">
-                <li>Custom design and development</li>
-                <li>Mobile-responsive layouts</li>
-                <li>Basic SEO implementation</li>
-              </ul>
-              <p class="price">Starting at $49</p>
-            </div>
+            <a href="https://hlpfl.store/products/website-development" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="service-content">
+                <h3>Website Development</h3>
+                <p>Establish your online presence with a professional, mobile-responsive website designed to convert visitors into customers.</p>
+                <ul class="service-features">
+                  <li>Custom website design</li>
+                  <li>Mobile-responsive layout</li>
+                  <li>SEO optimization</li>
+                  <li>Content management system</li>
+                  <li>SSL certificate included</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $1,299</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Social Media Setup</h3>
-              <p>Build your brand presence across relevant social platforms with professionally designed profiles.</p>
-              <ul class="service-features">
-                <li>Profile creation and optimization</li>
-                <li>Brand consistency across platforms</li>
-                <li>Content strategy recommendations</li>
-              </ul>
-              <p class="price">Custom Quotes Available</p>
-            </div>
+            <a href="https://hlpfl.store/products/brand-package" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-box"></i>
+              </div>
+              <div class="service-content">
+                <h3>Complete Brand Package</h3>
+                <p>Get everything you need for consistent branding across all platforms with our comprehensive brand identity package.</p>
+                <ul class="service-features">
+                  <li>Logo design and variations</li>
+                  <li>Business card design</li>
+                  <li>Letterhead template</li>
+                  <li>Social media templates</li>
+                  <li>Brand style guide</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $999</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
 
         <div class="service-category">
-          <h2>Privacy Protection Services</h2>
+          <h2>Privacy & Compliance Services</h2>
           <div class="services-grid">
-            <div class="service-item">
-              <h3>Personal Information Protection</h3>
-              <p>Shield your personal information from being connected to your business to maintain privacy and security.</p>
-              <ul class="service-features">
-                <li>Address privacy solutions</li>
-                <li>Public record protection</li>
-                <li>Identity separation strategies</li>
-              </ul>
-              <p class="price">Starting at $299</p>
-            </div>
+            <a href="https://hlpfl.store/products/privacy-policy" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <div class="service-content">
+                <h3>Privacy Policy Creation</h3>
+                <p>Ensure compliance with privacy laws and build customer trust with a comprehensive privacy policy tailored to your business.</p>
+                <ul class="service-features">
+                  <li>GDPR compliance</li>
+                  <li>CCPA compliance</li>
+                  <li>Industry-specific provisions</li>
+                  <li>Cookie policy inclusion</li>
+                  <li>Regular updates included</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $299</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Digital Privacy Implementation</h3>
-              <p>Secure your online presence and protect sensitive business information from digital threats.</p>
-              <ul class="service-features">
-                <li>Digital footprint assessment</li>
-                <li>Security protocol implementation</li>
-                <li>Data protection strategies</li>
-              </ul>
-              <p class="price">Starting at $349</p>
-            </div>
+            <a href="https://hlpfl.store/products/terms-of-service" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-scroll"></i>
+              </div>
+              <div class="service-content">
+                <h3>Terms of Service</h3>
+                <p>Protect your business with clear terms of service that outline user responsibilities and limit your liability.</p>
+                <ul class="service-features">
+                  <li>User agreement terms</li>
+                  <li>Liability limitations</li>
+                  <li>Dispute resolution clauses</li>
+                  <li>Intellectual property protection</li>
+                  <li>Termination provisions</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $249</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
             
-            <div class="service-item">
-              <h3>Privacy Policy Creation</h3>
-              <p>Develop compliant privacy policies for your website and business operations that build trust with customers.</p>
-              <ul class="service-features">
-                <li>GDPR/CCPA compliance</li>
-                <li>Data collection disclosure</li>
-                <li>Cookie policy implementation</li>
-              </ul>
-              <p class="price">Starting at $249</p>
-            </div>
+            <a href="https://hlpfl.store/products/compliance-audit" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-clipboard-check"></i>
+              </div>
+              <div class="service-content">
+                <h3>Compliance Audit</h3>
+                <p>Identify potential legal risks and ensure your business meets all regulatory requirements with our comprehensive audit service.</p>
+                <ul class="service-features">
+                  <li>Legal compliance review</li>
+                  <li>Risk assessment report</li>
+                  <li>Corrective action plan</li>
+                  <li>Industry-specific requirements</li>
+                  <li>Follow-up consultation</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $699</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-        
+
+        <div class="service-category">
+          <h2>Consultation & Strategy Services</h2>
+          <div class="services-grid">
+            <a href="https://calendly.com/founder-hlpfl/30min" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="service-content">
+                <h3>Business Strategy Consultation</h3>
+                <p>Get personalized guidance on business structure, legal protection, and growth strategies from experienced professionals.</p>
+                <ul class="service-features">
+                  <li>One-on-one consultation</li>
+                  <li>Business structure analysis</li>
+                  <li>Legal risk assessment</li>
+                  <li>Growth strategy planning</li>
+                  <li>Action plan development</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">$150/hour</p>
+                  <button class="service-cta">Book Now</button>
+                </div>
+              </div>
+            </a>
+            
+            <a href="https://hlpfl.store/products/business-plan-review" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="service-content">
+                <h3>Business Plan Review</h3>
+                <p>Get expert feedback on your business plan to identify strengths, weaknesses, and opportunities for improvement.</p>
+                <ul class="service-features">
+                  <li>Comprehensive plan analysis</li>
+                  <li>Market research validation</li>
+                  <li>Financial projection review</li>
+                  <li>Competitive analysis</li>
+                  <li>Detailed feedback report</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $399</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
+            
+            <a href="https://hlpfl.store/products/startup-package" class="service-item" target="_blank">
+              <div class="service-image">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="service-content">
+                <h3>Complete Startup Package</h3>
+                <p>Everything you need to launch your business legally and professionally, bundled together for maximum value and convenience.</p>
+                <ul class="service-features">
+                  <li>LLC formation</li>
+                  <li>EIN registration</li>
+                  <li>Business banking setup</li>
+                  <li>Basic contracts</li>
+                  <li>Logo design</li>
+                  <li>Privacy policy</li>
+                </ul>
+                <div class="service-footer">
+                  <p class="price">Starting at $1,999</p>
+                  <button class="service-cta">Order Now</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <div class="cta-section">
-          <h3>Ready to Build Your Business Right?</h3>
-          <p>Schedule a consultation to discuss which services are best suited for your specific business needs and goals.</p>
-          <a href="book.html" class="btn btn--primary">Schedule a Consultation</a>
+          <h3>Ready to Build Your Business Foundation?</h3>
+          <p>Don't let legal and administrative tasks slow down your entrepreneurial journey. Let our experts handle the foundation while you focus on growing your business.</p>
+          <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Schedule Free Consultation</a>
         </div>
       </div>
     </section>
   </main>
 
-   <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer" data-scroll-section>
     <div class="container">
       <div class="footer-main">
         <div class="footer-logo">
-          <img src="images/logo/logo-white.png" alt="HLPFL Consulting logo" />
+          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
         </div>
-        
         <div class="footer-contact">
-          <h4>Contact Us</h4>
-          <p><a href="mailto:info@hlpfl.org">info@hlpfl.org</a></p>
-          <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+          <h4>Get in Touch</h4>
+          <p><a href="mailto:founder@hlpfl.org">founder@hlpfl.org</a></p>
+          <p><a href="tel:+1234567890">+1 (234) 567-8900</a></p>
+          <p>Available Monday - Friday, 9 AM - 6 PM EST</p>
         </div>
       </div>
       
-      <nav class="footer-nav">
+      <div class="footer-nav">
         <div class="footer-nav-column">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html">Practice Assessment</a></li>
-            <li><a href="services.html">Workflow Optimization</a></li>
-            <li><a href="services.html">Compliance Solutions</a></li>
+            <li><a href="https://hlpfl.store/products/llc-formation" target="_blank">LLC Formation</a></li>
+            <li><a href="https://hlpfl.store/products/contract-creation" target="_blank">Contract Creation</a></li>
+            <li><a href="https://hlpfl.store/products/trademark-registration" target="_blank">Trademark Registration</a></li>
+            <li><a href="https://hlpfl.store/products/website-development" target="_blank">Website Development</a></li>
           </ul>
         </div>
-        
         <div class="footer-nav-column">
           <h4>Resources</h4>
           <ul>
             <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-nav-column">
-          <h4>Company</h4>
-          <ul>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="https://calendly.com/founder-hlpfl/30min">Let's Talk</a></li>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP Community</a></li>
           </ul>
         </div>
-      </nav>
+        <div class="footer-nav-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
       
       <div class="footer-bottom">
-        <p>© <span id="year">2023</span> HLPFL Co. All rights reserved.</p>
+        <p>© 2024 HLPFL Consulting. All rights reserved. | Empowering first-time founders with professional business services.</p>
       </div>
     </div>
   </footer>
 
- <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script>
     // Loading screen
     window.addEventListener('load', () => {
+      const loadingScreen = document.querySelector('.loading-screen');
       setTimeout(() => {
-        document.querySelector('.loading-screen').classList.add('hidden');
+        loadingScreen.classList.add('hidden');
       }, 1000);
     });
 
-    // Current year for footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile navigation toggle
-    const navToggle = document.querySelector('.nav__toggle');
-    const navList = document.querySelector('.nav__list');
-    
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !expanded);
-      navList.classList.toggle('active');
-    });
-
-    // Smooth scrolling with Locomotive Scroll
+    // Locomotive Scroll
     const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
-      smartphone: { smooth: false },
-      tablet: { smooth: false }
+      multiplier: 1,
+      class: 'is-reveal'
     });
 
-    // Header shrinking on scroll
+    // Header scroll effect
     const header = document.querySelector('.header');
-    
-    gsap.registerPlugin(ScrollTrigger);
-    
-    ScrollTrigger.create({
-      trigger: '.hero',
-      start: 'bottom top+=60',
-      onEnter: () => header.classList.add('scrolled'),
-      onLeaveBack: () => header.classList.remove('scrolled')
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
 
-    /* Custom cursor */
+    // Mobile navigation
+    const navToggle = document.querySelector('.nav__toggle');
+    const navList = document.querySelector('.nav__list');
+
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navList.classList.toggle('active');
+    });
+
+    // Close mobile nav when clicking on links
+    document.querySelectorAll('.nav__list a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navList.classList.remove('active');
+      });
+    });
+
+    // Custom cursor
     const cursor = document.querySelector('.custom-cursor');
-    const dot = document.querySelector('.cursor-dot');
-    let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-    const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-    
-    document.addEventListener('mousemove', e => { 
-      mouseX = e.clientX; 
-      mouseY = e.clientY; 
-      dot.style.transform = `translate(${mouseX}px,${mouseY}px)`; 
-    });
-    
-    gsap.ticker.add(() => { 
-      curX = lerp(curX, mouseX, 0.2); 
-      curY = lerp(curY, mouseY, 0.2); 
-      cursor.style.transform = `translate(${curX}px,${curY}px)`; 
-    });
-    
-    // Hover effect for links and buttons
-    const hoverables = document.querySelectorAll('a, button, .service-card');
-    
-    hoverables.forEach(hoverable => {
-      hoverable.addEventListener('mouseenter', () => {
-        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1.5)`;
-        cursor.style.borderColor = 'white';
+    const cursorDot = document.querySelector('.cursor-dot');
+
+    if (window.innerWidth > 992) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
       });
-      
-      hoverable.addEventListener('mouseleave', () => {
-        cursor.style.transform = `translate(${curX}px,${curY}px) scale(1)`;
-        cursor.style.borderColor = 'var(--c-gold)';
+
+      // Cursor hover effects
+      document.querySelectorAll('a, button, .service-item').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+          cursor.style.borderColor = '#ffffff';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+          cursor.style.borderColor = '#646464';
+        });
+      });
+    }
+
+    // Service item animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-item').forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(30px)';
+      item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+      observer.observe(item);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          scroll.scrollTo(target);
+        }
       });
     });
 
-    // Hide cursor when leaving window
-    document.addEventListener('mouseleave', () => {
-      cursor.style.opacity = '0';
-      dot.style.opacity = '0';
+    // Performance optimization
+    let ticking = false;
+    function updateScrollEffects() {
+      // Add any scroll-based animations here
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollEffects);
+        ticking = true;
+      }
     });
-    
-    document.addEventListener('mouseenter', () => {
-      cursor.style.opacity = '1';
-      dot.style.opacity = '1';
+
+    // Error handling for external links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        try {
+          // Track external link clicks if analytics is available
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'click', {
+              event_category: 'external_link',
+              event_label: this.href
+            });
+          }
+        } catch (error) {
+          console.log('Analytics tracking failed:', error);
+        }
+      });
     });
   </script>
 </body>
