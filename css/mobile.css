@@ -1,10 +1,16 @@
 /* Mobile-specific enhancements */
 @media (max-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+
   /* Larger touch targets for mobile */
   .btn {
     min-height: 48px;
     padding: 16px 24px;
     font-size: 1rem;
+    width: auto;
+    max-width: none;
   }
 
   /* Better mobile navigation */
@@ -16,6 +22,7 @@
   .nav__list a {
     padding: 16px 0;
     font-size: 1.1rem;
+    font-family: var(--ff-body);
     border-bottom: 1px solid var(--c-border);
   }
 
@@ -26,7 +33,7 @@
   }
 
   .hero__title {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: clamp(2rem, 6vw, 2.8rem);
     margin-bottom: 25px;
   }
 
@@ -39,10 +46,14 @@
   .content-box {
     padding: 40px 25px;
     margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .service-card {
     padding: 35px 25px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .service-card h3 {
@@ -76,6 +87,56 @@
     padding: 8px 0;
     display: block;
   }
+
+  /* Fix grids for mobile */
+  .red-flag-grid,
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  /* Page header mobile */
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  /* Content sections mobile */
+  .content-section {
+    padding: 80px 0;
+  }
+
+  .content-container {
+    padding: 0 20px;
+  }
+
+  /* Red flag cards mobile */
+  .red-flag-card {
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Quick reference mobile */
+  .quick-reference-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* CTA section mobile */
+  .cta-section {
+    padding: 80px 20px;
+  }
+
+  /* Custom cursor hide on mobile */
+  .custom-cursor,
+  .cursor-dot {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
@@ -108,6 +169,14 @@
   .vip-content h3,
   .shop-content h3 {
     font-size: 1.8rem;
+  }
+
+  .red-flag-card {
+    padding: 25px 20px;
+  }
+
+  .quick-reference {
+    padding: 40px 20px;
   }
 }
 
