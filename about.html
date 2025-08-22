@@ -3,9 +3,8 @@
 <head>
   <title>HLPFL – More About Us</title>
   <meta name="description" content="We help first-time founders create legally solid, privacy-first businesses with standout brands. Entity filing, contracts, web, more.">
-  <link rel="canonical" href="https://hlpfl.org/">
+  <link rel="canonical" href="https://hlpfl.org/about">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="mobile.css">
   
   <!-- Favicons for all devices -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/Artboard 1.webp">
@@ -18,8 +17,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="HLPFL Consulting">
-  <meta property="og:description" content="Chaos → Clarity for your startup.">
+  <meta property="og:title" content="About HLPFL Consulting">
+  <meta property="og:description" content="Learn more about our mission to help dreamers, visionaries, and pioneers build legally solid businesses.">
   <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
 
   <!-- Stylesheets -->
@@ -31,7 +30,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" crossorigin="anonymous" />
 
-<style>
+  <!-- Enhanced Styles -->
+  <style>
     :root {
       --c-bg-primary: #000;
       --c-bg-secondary: #111;
@@ -345,8 +345,8 @@
     }
 
     .btn--alert:hover {
-      background: #e55a2b;
-      border-color: #e55a2b;
+      background: #329ec8;
+      border-color: #329ec8;
     }
 
     /* Page Header */
@@ -414,7 +414,166 @@
       margin-bottom: 25px;
     }
 
-   
+    /* Founder Profile Section */
+    .founder-profile {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
+      padding: 60px 40px;
+    }
+
+    .founder-image {
+      text-align: center;
+      position: relative;
+    }
+
+    .founder-image::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      border: 3px solid var(--c-gold);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.1; }
+    }
+
+    .founder-image img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto;
+      border: 4px solid var(--c-gold);
+      position: relative;
+      z-index: 1;
+      transition: all var(--tr-smooth);
+    }
+
+    .founder-image img:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .founder-bio h3 {
+      font: 700 2.5rem/1.2 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 25px;
+    }
+
+    .founder-bio p {
+      margin-bottom: 25px;
+      color: var(--c-text);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* Values Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .value-card {
+      background: var(--c-bg-tertiary);
+      padding: 40px 30px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      transition: all var(--tr-smooth);
+      border: 1px solid var(--c-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+      transition: left var(--tr-smooth);
+    }
+
+    .value-card:hover::before {
+      left: 100%;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--c-gold);
+    }
+
+    .value-icon {
+      font-size: 3rem;
+      color: var(--c-gold);
+      margin-bottom: 20px;
+      transition: all var(--tr-smooth);
+    }
+
+    .value-card:hover .value-icon {
+      color: var(--c-accent);
+      transform: scale(1.1);
+    }
+
+    .value-card h4 {
+      font: 700 1.5rem/1.3 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 15px;
+    }
+
+    .value-card p {
+      color: var(--c-text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--c-bg-secondary);
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+    }
+
+    .cta-section h2 {
+      font: 700 clamp(2rem, 5vw, 3rem)/1.2 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      color: var(--c-text-muted);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     /* Enhanced Footer */
     .footer {
@@ -684,7 +843,41 @@
         font-size: 0.9rem;
       }
     }
-</style>
+  </style>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL Consulting logo" class="loading-logo">
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Header -->
+  <header class="header" data-scroll data-scroll-sticky>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__list" id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
+          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
+          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
+          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Let's talk</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main data-scroll-container>
     <!-- Page Header -->
