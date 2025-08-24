@@ -189,38 +189,40 @@
       width: 100%;
     }
 
-    /* Enhanced Navigation */
+   /* Enhanced Navigation */
     .nav__list {
       display: flex;
       align-items: center;
-      gap: 35px;
+      gap: 40px;
     }
 
-    .nav__list a {
+   .nav__list a {
       font-weight: 500;
       font-size: 1rem;
       font-family: var(--ff-display);
       position: relative;
-      transition: all var(--tr-quick);
-      padding: 8px 0;
+      transition: all var(--tr-smooth);
+      padding: 10px 0;
     }
 
-    .nav__list a:not(.btn)::after {
+   .nav__list a:not(.btn)::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 0;
       height: 2px;
-      background: var(--c-gold);
-      transition: width var(--tr-quick);
+      background: linear-gradient(90deg, var(--c-gold), var(--c-gold-light));
+      transition: width var(--tr-smooth);
     }
 
     .nav__list a:not(.btn):hover {
-      color: var(--c-white);
+      color: var(--c-gold-light);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
 
-    .nav__list a:not(.btn):hover::after {
+    .nav__list a:not(.btn):hover::before {
       width: 100%;
     }
 
@@ -229,20 +231,21 @@
       background: none;
       border: none;
       cursor: pointer;
-      width: 30px;
-      height: 20px;
+      width: 35px;
+      height: 25px;
       position: relative;
-      z-index: 101;
+      z-index: 1001;
     }
 
     .nav__toggle span {
       display: block;
       width: 100%;
-      height: 2px;
+      height: 3px;
       background: var(--c-white);
       position: absolute;
       left: 0;
-      transition: all var(--tr-quick);
+      transition: all var(--tr-smooth);
+      border-radius: 2px;
     }
 
     .nav__toggle span:first-child { top: 0; }
@@ -250,13 +253,15 @@
     .nav__toggle span:last-child { bottom: 0; }
 
     .nav__toggle[aria-expanded="true"] span:first-child {
-      transform: translateY(9px) rotate(45deg);
+      transform: translateY(11px) rotate(45deg);
+      background: var(--c-gold);
     }
     .nav__toggle[aria-expanded="true"] span:nth-child(2) {
       opacity: 0;
     }
     .nav__toggle[aria-expanded="true"] span:last-child {
-      transform: translateY(-9px) rotate(-45deg);
+      transform: translateY(-11px) rotate(-45deg);
+      background: var(--c-gold);
     }
 
     /* Enhanced Buttons */
