@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="vip.html">VIP</a></li>
                     <li><a href="https://calendly.com/founder-hlpfl/30min?month=2025-08" class="btn btn--primary" target="_blank">
-                        <i class="fas fa-calendar-alt"></i> ${isAboutPage ? "Let's Talk" : "RSVP"}
+                        <i class="fas fa-calendar-alt"></i> "Let's Talk"
                     </a></li>
                 </ul>
                 <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
