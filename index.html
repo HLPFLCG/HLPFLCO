@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HLPFL – Chaos -> Clarity</title>
+    <title>HLPFL – Dream, Design, Disrupt, Repeat</title>
     <meta name="description" content="We help first-time founders create legally solid, privacy-first businesses with standout brands. Entity filing, contracts, web, more.">
     <meta charset="UTF-8">
     <link rel="canonical" href="https://hlpfl.org/">
@@ -20,7 +20,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="HLPFL">
     <meta property="og:description" content="Chaos → Clarity for your startup.">
-    <meta property="og:image" content="https://hlpfl.org">
+    <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
@@ -143,7 +143,7 @@
         }
 
         .loading-text {
-            font: 600 1.2rem var(--ff-display);
+            font: 600 1.2rem var(--ff-body);
             color: var(--c-gold);
             letter-spacing: 2px;
             animation: fade-pulse 2s ease-in-out infinite;
@@ -227,7 +227,6 @@
         .nav__list a {
             font-weight: 500;
             font-size: 1rem;
-            font-family: var(--ff-display);
             position: relative;
             transition: all var(--tr-smooth);
             padding: 10px 0;
@@ -1160,7 +1159,7 @@
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="images/updatedimages/loadinglogo.svg" alt="HLPFL Logo" class="loading-logo">
+        <img src="images/logo/logo-white.svg" alt="HLPFL Logo" class="loading-logo">
         <div class="loading-text">Loading...</div>
     </div>
 
@@ -1171,16 +1170,16 @@
     <header class="header" id="header">
         <div class="container">
             <a href="/" class="logo">
-                <img src="images/header/websiteheader.webp" alt="HLPFL">
+                <img src="images/logo/logo-white.svg" alt="HLPFL">
             </a>
             <nav class="nav">
                 <ul class="nav__list" id="navList">
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-                    <li><a href="shop.html">Shop</a></li>
                     <li><a href="vip.html">VIP</a></li>
-                    <li><a href="https://calendly.com/founder-hlpfl/30min?month=2025-08" class="btn btn--primary" target="_blank">RSVP</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://calendly.com/hlpfl/discovery" class="btn btn--primary" target="_blank">Book Call</a></li>
                 </ul>
                 <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
@@ -1197,7 +1196,7 @@
             <div class="hero-content fade-in-up">
                 <div class="hero-badge">
                     <i class="fas fa-rocket"></i>
-                    <span>Dream, Design, Disrupt, Repeat.</span>
+                    <span>Dream, Design, Disrupt, Repeat</span>
                 </div>
                 <h1 class="hero-title">Chaos → Clarity</h1>
                 <p class="hero-subtitle">
@@ -1205,7 +1204,7 @@
                     From entity filing to contracts, web design to strategic guidance—we've got you covered.
                 </p>
                 <div class="hero-cta">
-                    <a href="https://calendly.com/founder-hlpfl/30min?month=2025-08" class="btn btn--primary" target="_blank">
+                    <a href="https://calendly.com/hlpfl/discovery" class="btn btn--primary" target="_blank">
                         <i class="fas fa-calendar-alt"></i>
                         Start Your Journey
                     </a>
@@ -1293,7 +1292,7 @@
         <div class="container">
             <div class="founder-section">
                 <div class="founder-image fade-in-left">
-                    <img src="images/founder/IMG_0597.jpeg" alt="HLPFL Founder">
+                    <img src="images/team/founder.jpg" alt="HLPFL Founder" onerror="this.src='https://via.placeholder.com/250x250/1a1a1a/d4af37?text=Founder'">
                 </div>
                 <div class="founder-content fade-in-right">
                     <h3>Meet Your Startup Architect</h3>
@@ -1324,7 +1323,7 @@
         <div class="container">
             <div class="red-flag-content-wrapper">
                 <div class="red-flag-cover fade-in-left">
-                    <img src="images/updatedimages/redflagcoverfinal.png" alt="Red Flag Guide" onerror="this.src='https://via.placeholder.com/300x400/1a1a1a/d4af37?text=Red+Flag+Guide'">
+                    <img src="images/guides/red-flag-guide-cover.jpg" alt="Red Flag Guide" onerror="this.src='https://via.placeholder.com/300x400/1a1a1a/d4af37?text=Red+Flag+Guide'">
                 </div>
                 <div class="red-flag-content fade-in-right">
                     <h3>Free Startup Red Flag Guide</h3>
@@ -1423,7 +1422,7 @@
         <div class="container">
             <div class="footer-main">
                 <div class="footer-brand fade-in-up">
-                    <img src="images/updatedimages/headerlogoaugust.svg" alt="HLPFL" class="footer-logo">
+                    <img src="images/logo/logo-white.svg" alt="HLPFL" class="footer-logo">
                     <p class="footer-description">
                         Transforming startup chaos into clarity. We help first-time founders build legally solid, 
                         privacy-first businesses with standout brands.
@@ -1468,12 +1467,13 @@
             </div>
 
             <div class="footer-bottom fade-in-up">
-                <p>© 2024 HLPFL, A Subsidiary of ZHC. All rights reserved. Built with ❤️ for ambitious founders.</p>
+                <p>© 2024 HLPFL. All rights reserved. Built with ❤️ for ambitious founders.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
+    <script src="js/menu-injector.js"></script>
     <script>
         // Loading Screen
         window.addEventListener('load', function() {
