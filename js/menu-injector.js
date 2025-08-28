@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navHTML = `
         <div class="container">
             <a href="/" class="logo">
-                <img src="images/tinified/noboxfaviconArtboard 1.webp" alt="HLPFL">
+                <img src="images/updatedimages/headerlogoaugust.svg" alt="HLPFL">
             </a>
             <nav class="nav">
                 <ul class="nav__list" id="navList">
