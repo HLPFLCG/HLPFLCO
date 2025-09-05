@@ -59,5 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+
+        // Add custom style for larger navigation text
+        const style = document.createElement('style');
+        style.textContent = `
+            .nav__list a {
+                font-size: 1.2rem !important; /* Increased from 1rem to 1.2rem */
+                font-weight: 500;
+            }
+        `;
+        document.head.appendChild(style);
     }
 });
