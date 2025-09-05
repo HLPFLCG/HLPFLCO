@@ -221,13 +221,13 @@
         .nav__list {
             display: flex;
             align-items: center;
-            font-family: var(--font-display);
+            font-family: var(--ff-display);
             gap: 40px;
         }
 
         .nav__list a {
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 1.2rem; /* Increased from 1rem to 1.2rem */
             position: relative;
             transition: all var(--tr-smooth);
             padding: 10px 0;
@@ -1133,26 +1133,7 @@
 
     <!-- Header -->
     <header class="header" id="header">
-        <div class="container">
-            <a href="/" class="logo">
-                <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL">
-            </a>
-            <nav class="nav">
-                <ul class="nav__list" id="navList">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="vip.html">VIPs</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Book Call</a></li>
-                </ul>
-                <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
-        </div>
+        <!-- Navigation will be injected by menu-injector.js -->
     </header>
 
     <!-- Hero Section -->
@@ -1284,7 +1265,7 @@
                 <div class="founder-content fade-in-right">
                     <h3>Meet the Founder</h3>
                     <p>
-                        I’m a serial entrepreneur who has built over a dozen ventures, overcome major challenges, and mastered every corner of business by the age of 24. 
+                        I'm a serial entrepreneur who has built over a dozen ventures, overcome major challenges, and mastered every corner of business by the age of 24. 
                         Today, I use that hard-earned experience to help first-time founders build solid, resilient businesses that thrive from day one.
                     </p>
                     <a href="about.html" class="btn btn--secondary">
@@ -1426,20 +1407,24 @@
         });
 
         // Mobile Navigation
-        const navToggle = document.getElementById('navToggle');
-        const navList = document.getElementById('navList');
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navList = document.getElementById('navList');
 
-        navToggle.addEventListener('click', function() {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-            navList.classList.toggle('active');
-        });
+            if (navToggle && navList) {
+                navToggle.addEventListener('click', function() {
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', !isExpanded);
+                    navList.classList.toggle('active');
+                });
 
-        // Close mobile nav when clicking on links
-        navList.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A') {
-                navList.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
+                // Close mobile nav when clicking on links
+                navList.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        navList.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
             }
         });
 

@@ -116,6 +116,68 @@
       padding-inline: clamp(20px, 4vw, 40px);
     }
 
+    /* Loading Screen */
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: linear-gradient(135deg, var(--c-bg-primary), var(--c-bg-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all .8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.1);
+    }
+
+    .loading-logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 30px;
+      animation: pulse-glow 2s ease-in-out infinite;
+      filter: drop-shadow(var(--glow-gold));
+    }
+
+    .loading-text {
+      font: 600 1.2rem var(--ff-body);
+      color: var(--c-gold);
+      letter-spacing: 2px;
+      animation: fade-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(var(--glow-gold));
+      }
+      50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+      }
+    }
+
+    @keyframes fade-pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+
     /* Header */
     .header {
       position: fixed;
@@ -158,11 +220,32 @@
 
     .nav__list a {
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.2rem; /* Increased from 1rem to 1.2rem */
       font-family: var(--ff-display);
       position: relative;
       transition: all var(--tr-smooth);
       padding: 10px 0;
+    }
+
+    .nav__list a:not(.btn)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c-gold), var(--c-gold-light));
+      transition: width var(--tr-smooth);
+    }
+
+    .nav__list a:not(.btn):hover {
+      color: var(--c-gold-light);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .nav__list a:not(.btn):hover::before {
+      width: 100%;
     }
 
     .nav__toggle {
@@ -187,6 +270,22 @@
       border-radius: 2px;
     }
 
+    .nav__toggle span:first-child { top: 0; }
+    .nav__toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .nav__toggle span:last-child { bottom: 0; }
+
+    .nav__toggle[aria-expanded="true"] span:first-child {
+      transform: translateY(11px) rotate(45deg);
+      background: var(--c-gold);
+    }
+    .nav__toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav__toggle[aria-expanded="true"] span:last-child {
+      transform: translateY(-11px) rotate(-45deg);
+      background: var(--c-gold);
+    }
+
     /* Buttons */
     .btn {
       display: inline-flex;
@@ -207,11 +306,36 @@
       letter-spacing: 1px;
     }
 
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left var(--tr-smooth);
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
     .btn--primary {
       background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
       color: var(--c-bg-primary);
       border-color: var(--c-gold);
       box-shadow: var(--glow-gold);
+    }
+
+    .btn--primary:hover {
+      background: linear-gradient(135deg, var(--c-gold-light), var(--c-white));
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     }
 
     /* Hero Section */
@@ -414,9 +538,17 @@
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <img src="images/updatedimages/loadinglogo.svg" alt="HLPFL Logo" class="loading-logo">
+    <div class="loading-text">Dreams Loading...</div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- Header -->
-  <header class="header" role="banner">
+  <header class="header" id="header">
     <!-- Navigation will be injected by menu-injector.js -->
   </header>
 
@@ -511,209 +643,68 @@
   </footer>
 
   <!-- Scripts -->
-     <!-- JavaScript -->
-    <script src="js/menu-injector.js"></script>
-    <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('hidden');
-            }, 500);
-        });
+  <script src="js/menu-injector.js"></script>
+  <script>
+    // Loading Screen
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 500);
+    });
 
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        const scrollProgress = document.getElementById('scrollProgress');
+    // Header Scroll Effect
+    const header = document.getElementById('header');
+    const scrollProgress = document.getElementById('scrollProgress');
 
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
+    window.addEventListener('scroll', function() {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
 
-            // Header background
-            if (scrolled > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+      // Header background
+      if (scrolled > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
 
-            // Scroll progress
-            const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrolled / winHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
-        });
+      // Scroll progress
+      const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrolled / winHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+    });
 
-        // Mobile Navigation
-        const navToggle = document.getElementById('navToggle');
-        const navList = document.getElementById('navList');
+    // Mobile Navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.getElementById('navToggle');
+      const navList = document.getElementById('navList');
 
+      if (navToggle && navList) {
         navToggle.addEventListener('click', function() {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-            navList.classList.toggle('active');
+          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', !isExpanded);
+          navList.classList.toggle('active');
         });
 
         // Close mobile nav when clicking on links
         navList.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A') {
-                navList.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
+          if (e.target.tagName === 'A') {
+            navList.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
         });
+      }
+    });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    // Service card hover effects
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px) scale(1.02)';
+      });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animation elements
-        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Red Flag Popup Functions
-        function openRedFlagPopup() {
-            document.getElementById('redFlagPopup').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeRedFlagPopup() {
-            document.getElementById('redFlagPopup').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function handleRedFlagSubmit(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-
-            // Here you would typically send the email to your backend
-            console.log('Email submitted:', email);
-
-            // Show success message or redirect to download
-            alert('Thank you! Check your email for the download link.');
-            closeRedFlagPopup();
-        }
-
-        // Close popup when clicking outside
-        document.getElementById('redFlagPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeRedFlagPopup();
-            }
-        });
-
-        // Escape key to close popup
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeRedFlagPopup();
-            }
-        });
-
-        // Service card hover effects
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
-            });
-
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Add some interactive elements
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // Create ripple effect
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255,255,255,0.1);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out;
-                    pointer-events: none;
-                `;
-
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(2);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Performance optimization: Debounce scroll events
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
-        // Apply debounce to scroll handler
-        const debouncedScrollHandler = debounce(function() {
-            // Any additional scroll-based animations can go here
-        }, 10);
-
-        window.addEventListener('scroll', debouncedScrollHandler);
-
-        // Add loading states for external links
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.addEventListener('click', function() {
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening...';
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                }, 2000);
-            });
-        });
-    </script>
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
 </body>
 </html>
