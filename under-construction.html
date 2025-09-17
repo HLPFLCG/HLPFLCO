@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coming Soon - HLPFL</title>
+    <meta name="description" content="This page is under construction. Enter your email to be notified when we launch.">
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://hlpfl.org/under-construction">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons for all devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/Artboard 1.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/Artboard 1.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/Artboard 1.webp">
+    <link rel="shortcut icon" href="images/favicon/new/favicon.ico">
+    <link rel="manifest" href="images/favicon/new/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#1e293b">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="css/color-scheme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+
+    <style>
+        .construction-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .construction-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(193, 154, 107, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 41, 59, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .construction-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--c-border);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .construction-icon {
+            font-size: 4rem;
+            color: var(--c-gold);
+            margin-bottom: 30px;
+        }
+
+        .construction-title {
+            font: 700 2.5rem/1.2 var(--ff-display);
+            color: var(--c-white);
+            margin-bottom: 20px;
+        }
+
+        .construction-text {
+            font-size: 1.2rem;
+            color: var(--c-text-light);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .construction-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .construction-form input {
+            padding: 15px;
+            border: 2px solid var(--c-border);
+            border-radius: var(--radius);
+            background: var(--c-bg-tertiary);
+            color: var(--c-white);
+            font-size: 1rem;
+            transition: border-color var(--tr-quick);
+        }
+
+        .construction-form input:focus {
+            outline: none;
+            border-color: var(--c-gold);
+        }
+
+        .construction-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .construction-content {
+                padding: 40px 20px;
+            }
+
+            .construction-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL">
+            </a>
+            <nav class="nav">
+                <ul class="nav__list" id="navList">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Book Call</a></li>
+                </ul>
+                <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Construction Section -->
+    <section class="construction-section">
+        <div class="construction-content">
+            <div class="construction-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            <h1 class="construction-title">Page Under Construction</h1>
+            <p class="construction-text">
+                We're working hard to bring you amazing content for independent musicians. 
+                This page isn't quite ready yet, but enter your email below and we'll notify you when we launch!
+            </p>
+            <form class="construction-form" id="notifyForm" onsubmit="handleSubmit(event)">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn--primary">
+                    <i class="fas fa-bell"></i> Notify Me
+                </button>
+            </form>
+            <div class="construction-buttons">
+                <a href="/" class="btn btn--secondary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--accent" target="_blank">
+                    <i class="fas fa-calendar-alt"></i> Book a Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Navigation
+        const navToggle = document.getElementById('navToggle');
+        const navList = document.getElementById('navList');
+
+        navToggle.addEventListener('click', function() {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navList.classList.toggle('active');
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Here you would typically send the email to your backend
+            console.log('Email submitted:', email);
+            
+            // Show success message
+            alert('Thank you! We\'ll notify you when we launch.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
