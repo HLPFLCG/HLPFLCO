@@ -64,59 +64,64 @@
 
   <style>
 :root {
-    /* Backgrounds */
-    --c-bg-primary: #f5f2ed;     /* Soft beige base */
-    --c-bg-secondary: #f9f6f1;   /* Lighter beige */
-    --c-bg-tertiary: #e8e4df;    /* Muted beige */
-    --c-bg-card: #ffffff;        /* Clean white */
+    /* === FOUNDATION COLORS === */
+    /* Warm beige with trendy terracotta touches */
+    --c-bg-primary: #f6f3ef;     /* Warm beige canvas */
+    --c-bg-secondary: #f9f6f2;   /* Light beige sections */
+    --c-bg-tertiary: #ede9e3;    /* Soft beige layers */
+    --c-bg-card: #ffffff;        /* Pure white cards */
 
-    /* Text */
-    --c-text: #2c3e50;           /* Deep blue for contrast */
-    --c-text-muted: #546e7a;     /* Muted blue-gray */
-    --c-text-light: #78909c;     /* Light blue-gray */
+    /* === READABLE TEXT === */
+    /* Warm browns for earthy feel */
+    --c-white: #ffffff;          /* Clean white */
+    --c-text: #5d4037;           /* Warm brown */
+    --c-text-muted: #795548;     /* Muted brown */
+    --c-text-light: #8d6e63;     /* Light brown */
 
-    /* Accents */
-    --c-gold: #d4c4a8;           /* Warm beige accent */
-    --c-accent: #34495e;         /* Deep navy blue */
-    --c-accent-light: #5d6d7e;   /* Softer blue */
-        /* === STRUCTURE & LINES === */
-    /* Gentle boundaries that guide the eye */
-    --c-border: #d4cfc7;         /* Divisions: warm stone */
-    --c-border-light: #e2ddd6;   /* Subtle: whisper lines */
+    /* === SIGNATURE COLORS === */
+    /* Beige with terracotta personality */
+    --c-gold: #dcc9a3;           /* Golden beige */
+    --c-gold-light: #e6d4b0;     /* Light golden beige */
+    --c-gold-dark: #cfbc96;      /* Deeper beige */
+    --c-accent: #c17b5a;         /* Muted terracotta */
+    --c-accent-light: #d4967a;   /* Soft terracotta */
+
+    /* === STRUCTURE & LINES === */
+    /* Warm terracotta-toned boundaries */
+    --c-border: #e0d0c4;         /* Warm borders */
+    --c-border-light: #e8ddd6;   /* Soft lines */
 
     /* === FEEDBACK COLORS === */
-    /* Positive, encouraging messages */
-    --c-success: #81a594;        /* Achievement: matching our sage */
-    --c-warning: #d69e2e;        /* Attention: honey amber */
+    /* Terracotta-toned feedback */
+    --c-success: #c17b5a;        /* Terracotta success */
+    --c-warning: #d69e2e;        /* Golden warning */
 
     /* === DEPTH & ATMOSPHERE === */
-    /* Creating space and dimension */
-    --shadow-sm: 0 1px 8px rgba(45, 55, 72, 0.04);    /* Whisper shadow */
-    --shadow-md: 0 4px 20px rgba(45, 55, 72, 0.06);   /* Gentle lift */
-    --shadow-lg: 0 10px 35px rgba(45, 55, 72, 0.08);  /* Floating feel */
-    --shadow-xl: 0 20px 50px rgba(45, 55, 72, 0.10);  /* Elevated presence */
-    --glow-gold: 0 0 20px rgba(220, 201, 163, 0.3);   /* Golden warmth */
-    --glow-accent: 0 0 20px rgba(129, 165, 148, 0.25); /* Sage serenity */
+    /* Warm brown shadows */
+    --shadow-sm: 0 1px 8px rgba(93, 64, 55, 0.04);
+    --shadow-md: 0 4px 20px rgba(93, 64, 55, 0.06);
+    --shadow-lg: 0 10px 35px rgba(93, 64, 55, 0.08);
+    --shadow-xl: 0 20px 50px rgba(93, 64, 55, 0.10);
+    --glow-gold: 0 0 20px rgba(220, 201, 163, 0.3);
+    --glow-accent: 0 0 20px rgba(193, 123, 90, 0.2);
 
     /* === TYPOGRAPHY SYSTEM === */
-    /* Fonts that feel both professional and personal */
-    --ff-display: "Iceland", system-ui, sans-serif;     /* Headings with character */
-    --ff-body: "Montserrat", sans-serif;                /* Body text that flows */
+    --ff-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --ff-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
     /* === MOTION & FEEL === */
-    /* Smooth interactions that feel natural */
-    --tr-quick: 0.15s ease-out;                         /* Snappy responses */
-    --tr-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Fluid motion */
-    --tr-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Gentle spring */
+    --tr-quick: 0.15s ease-out;
+    --tr-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --tr-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
     /* === SHAPE & SPACE === */
-    /* Comfortable proportions for every screen */
-    --radius: 10px;              /* Friendly corners */
-    --radius-lg: 16px;           /* Welcoming curves */
-    --radius-xl: 24px;           /* Embracing roundness */
-    --wrapper: 90%;              /* Breathing room */
-    --wrapper-max: 1200px;       /* Cozy max width */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --wrapper: 90%;
+    --wrapper-max: 1200px;
 }
+
 
 
 
