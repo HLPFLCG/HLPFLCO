@@ -24,58 +24,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
     <style>
-        :root {
-    /* 🏠 Background Colors - Creating a warm, welcoming space */
-    --c-bg-primary: #f8f6f3;   /* Main background: soft, warm light gray */
-    --c-bg-secondary: #f2e6d0; /* Secondary areas: cozy warm beige */
-    --c-bg-tertiary: #e8e5e0;  /* Accent areas: gentle neutral tone */
-    --c-bg-card: #ffffff;      /* Cards & panels: clean, fresh white */
+   :root {
+    /* === FOUNDATION COLORS === */
+    /* The base layers that create our welcoming atmosphere */
+    --c-bg-primary: #faf9f7;     /* Canvas: warm paper white */
+    --c-bg-secondary: #f1e8d9;   /* Sections: creamy vanilla */
+    --c-bg-tertiary: #ede7df;    /* Layers: soft linen */
+    --c-bg-card: #ffffff;        /* Content: pure white */
 
-    /* ✍️ Text Colors - Easy to read, trustworthy tones */
-    --c-white: #f3f2ed;        /* Off-white for softer contrast */
-    --c-text: #34495e;         /* Main text: friendly blue-gray */
-    --c-text-muted: #7f8c8d;   /* Secondary text: approachable gray */
-    --c-text-light: #5d6d7e;   /* Light text: balanced medium tone */
+    /* === READABLE TEXT === */
+    /* Carefully chosen for comfort and clarity */
+    --c-white: #fefefe;          /* Pure light for contrast */
+    --c-text: #2d3748;           /* Headlines: confident charcoal */
+    --c-text-muted: #718096;     /* Details: gentle slate */
+    --c-text-light: #4a5568;     /* Captions: balanced gray */
 
-    /* 🎨 Brand Colors - Warm and inviting accents */
-    --c-gold: #e8d5b7;         /* Primary accent: rich warm beige */
-    --c-gold-light: #f0e4d0;   /* Light accent: soft highlight */
-    --c-gold-dark: #d4c4a8;    /* Dark accent: grounding earth tone */
-    --c-accent: #7db99a;       /* Success color: calming sage green */
-    --c-accent-light: #a8c8a8; /* Light green: gentle comfort tone */
+    /* === SIGNATURE COLORS === */
+    /* Your brand's personality in color */
+    --c-gold: #dcc9a3;           /* Signature: golden sand */
+    --c-gold-light: #e8d6b8;     /* Highlight: champagne */
+    --c-gold-dark: #c9b388;      /* Depth: antique brass */
+    --c-accent: #81a594;         /* Feature: forest sage */
+    --c-accent-light: #9fb8a8;   /* Soft: morning mist */
 
-    /* 🔲 Borders - Subtle definition without harshness */
-    --c-border: #d7d3ce;       /* Main borders: warm, soft edges */
-    --c-border-light: #e6e2dd; /* Light borders: barely-there definition */
+    /* === STRUCTURE & LINES === */
+    /* Gentle boundaries that guide the eye */
+    --c-border: #d4cfc7;         /* Divisions: warm stone */
+    --c-border-light: #e2ddd6;   /* Subtle: whisper lines */
 
-    /* ✅ Status Colors - Clear, positive messaging */
-    --c-success: #7db99a;      /* Success: matches our calming green */
-    --c-warning: #e6b800;      /* Warning: warm, friendly gold */
+    /* === FEEDBACK COLORS === */
+    /* Positive, encouraging messages */
+    --c-success: #81a594;        /* Achievement: matching our sage */
+    --c-warning: #d69e2e;        /* Attention: honey amber */
 
-    /* ✨ Visual Effects - Gentle depth and warmth */
-    --shadow-sm: 0 2px 10px rgba(52, 73, 94, .06);   /* Small shadow: subtle lift */
-    --shadow-md: 0 8px 25px rgba(52, 73, 94, .08);   /* Medium shadow: gentle depth */
-    --shadow-lg: 0 15px 40px rgba(52, 73, 94, .10);  /* Large shadow: soft presence */
-    --shadow-xl: 0 25px 60px rgba(52, 73, 94, .12);  /* Extra large: floating effect */
-    --glow-gold: 0 0 30px rgba(232, 213, 183, 0.4);  /* Gold glow: warm highlight */
-    --glow-accent: 0 0 25px rgba(125, 185, 154, 0.35); /* Green glow: calming aura */
+    /* === DEPTH & ATMOSPHERE === */
+    /* Creating space and dimension */
+    --shadow-sm: 0 1px 8px rgba(45, 55, 72, 0.04);    /* Whisper shadow */
+    --shadow-md: 0 4px 20px rgba(45, 55, 72, 0.06);   /* Gentle lift */
+    --shadow-lg: 0 10px 35px rgba(45, 55, 72, 0.08);  /* Floating feel */
+    --shadow-xl: 0 20px 50px rgba(45, 55, 72, 0.10);  /* Elevated presence */
+    --glow-gold: 0 0 20px rgba(220, 201, 163, 0.3);   /* Golden warmth */
+    --glow-accent: 0 0 20px rgba(129, 165, 148, 0.25); /* Sage serenity */
 
-    /* 📱 Typography & Layout - Optimized for all devices */
-    --ff-display: "Iceland", system-ui, sans-serif;    /* Headers: distinctive yet readable */
-    --ff-body: "Montserrat", sans-serif;               /* Body text: clean and friendly */
+    /* === TYPOGRAPHY SYSTEM === */
+    /* Fonts that feel both professional and personal */
+    --ff-display: "Iceland", system-ui, sans-serif;     /* Headings with character */
+    --ff-body: "Montserrat", sans-serif;                /* Body text that flows */
     
-    /* 🎭 Animations - Smooth, welcoming interactions */
-    --tr-quick: .2s ease;                              /* Quick transitions */
-    --tr-smooth: .4s cubic-bezier(0.4, 0, 0.2, 1);   /* Smooth, natural feel */
-    --tr-bounce: .6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Playful bounce */
+    /* === MOTION & FEEL === */
+    /* Smooth interactions that feel natural */
+    --tr-quick: 0.15s ease-out;                         /* Snappy responses */
+    --tr-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Fluid motion */
+    --tr-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Gentle spring */
     
-    /* 📐 Spacing & Shape - Comfortable, modern feel */
-    --radius: 12px;            /* Standard corners: friendly roundness */
-    --radius-lg: 20px;         /* Large corners: soft, welcoming */
-    --radius-xl: 30px;         /* Extra large: gentle, organic feel */
-    --wrapper: 92%;            /* Content width: breathing room on mobile */
-    --wrapper-max: 1400px;     /* Max width: comfortable reading on desktop */
+    /* === SHAPE & SPACE === */
+    /* Comfortable proportions for every screen */
+    --radius: 10px;              /* Friendly corners */
+    --radius-lg: 16px;           /* Welcoming curves */
+    --radius-xl: 24px;           /* Embracing roundness */
+    --wrapper: 90%;              /* Breathing room */
+    --wrapper-max: 1200px;       /* Cozy max width */
 }
+
 
 
 
