@@ -4,67 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Under Construction - HLPFL</title>
-     <link rel="stylesheet" href="style.css" />
-     <link rel="stylesheet" href="mobile.css">
-     <link rel="stylesheet" href="css/color-scheme.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-     <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+    
+    <!-- Favicons for all devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/Artboard 1.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/Artboard 1.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/Artboard 1.webp">
+    <link rel="shortcut icon" href="images/favicon/new/favicon.ico">
+    <link rel="manifest" href="images/favicon/new/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="css/color-scheme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+
     <style>
+        :root {
+            --c-bg-primary: #f8f6f3;
+            --c-bg-secondary: #f0ede8;
+            --c-bg-tertiary: #e8e4df;
+            --c-bg-card: #ffffff;
+            --c-white: #ffffff;
+            --c-text: #4a4a4a;
+            --c-text-muted: #8a8a8a;
+            --c-text-light: #6b6b6b;
+            --c-gold: #ff9aa2;
+            --c-gold-light: #ffb3ba;
+            --c-gold-dark: #ff8a95;
+            --c-accent: #b5ead7;
+            --c-accent-light: #c7f0db;
+            --c-border: #e0ddd8;
+            --c-border-light: #ebe8e3;
+            --c-success: #b5ead7;
+            --c-warning: #ffd93d;
+
+            --shadow-sm: 0 2px 10px rgba(0,0,0,.08);
+            --shadow-md: 0 8px 25px rgba(0,0,0,.12);
+            --shadow-lg: 0 15px 40px rgba(0,0,0,.15);
+            --shadow-xl: 0 25px 60px rgba(0,0,0,.18);
+            --glow-gold: 0 0 25px rgba(255, 154, 162, 0.25);
+            --glow-accent: 0 0 25px rgba(181, 234, 215, 0.3);
+
+            --ff-display: "Iceland", system-ui, sans-serif;
+            --ff-body: "Montserrat", sans-serif;
+            --tr-quick: .2s ease;
+            --tr-smooth: .4s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        body {
+            font-family: var(--ff-body);
+            line-height: 1.6;
+            color: var(--c-text);
+            background: var(--c-bg-primary);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
         .construction-container {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
             padding: 2rem;
+            position: relative;
+        }
+
+        .construction-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 154, 162, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(181, 234, 215, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .construction-content {
             text-align: center;
             max-width: 600px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 20px;
+            background: var(--c-bg-card);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-lg);
             padding: 3rem 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            z-index: 2;
         }
 
         .construction-icon {
             font-size: 4rem;
-            color: #d4af37;
+            color: var(--c-gold);
             margin-bottom: 1.5rem;
             animation: pulse 2s infinite;
         }
 
         .construction-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
+            font: 800 2.5rem/1.1 var(--ff-display);
+            color: var(--c-text);
             margin-bottom: 1rem;
-            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.02em;
         }
 
         .construction-subtitle {
             font-size: 1.2rem;
-            color: #cccccc;
+            color: var(--c-text-muted);
             margin-bottom: 2rem;
             line-height: 1.6;
         }
 
         .lead-form {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background: var(--c-bg-secondary);
+            border-radius: var(--radius);
             padding: 2rem;
             margin-top: 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid var(--c-border);
         }
 
         .form-title {
-            font-size: 1.5rem;
-            color: #d4af37;
+            font: 700 1.5rem var(--ff-display);
+            color: var(--c-gold);
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
@@ -76,7 +147,7 @@
 
         .form-group label {
             display: block;
-            color: #ffffff;
+            color: var(--c-text);
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
@@ -86,44 +157,64 @@
         .form-group textarea {
             width: 100%;
             padding: 0.75rem 1rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius);
+            background: var(--c-white);
+            color: var(--c-text);
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all var(--tr-smooth);
+            box-sizing: border-box;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+            border-color: var(--c-gold);
+            box-shadow: 0 0 0 2px rgba(255, 154, 162, 0.2);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #999999;
+            color: var(--c-text-muted);
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            color: #000000;
+            background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
+            color: var(--c-white);
             border: none;
             padding: 1rem 2rem;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all var(--tr-smooth);
             width: 100%;
             margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left var(--tr-smooth);
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            box-shadow: var(--glow-gold);
         }
 
         .back-home {
@@ -131,14 +222,17 @@
         }
 
         .back-home a {
-            color: #d4af37;
+            color: var(--c-gold);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color var(--tr-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .back-home a:hover {
-            color: #f4d03f;
+            color: var(--c-gold-light);
         }
 
         @keyframes pulse {
@@ -150,6 +244,7 @@
         @media (max-width: 768px) {
             .construction-content {
                 padding: 2rem 1.5rem;
+                margin: 1rem;
             }
             
             .construction-title {
@@ -160,12 +255,30 @@
                 padding: 1.5rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .construction-container {
+                padding: 1rem;
+            }
+
+            .construction-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .construction-title {
+                font-size: 1.8rem;
+            }
+
+            .construction-subtitle {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="construction-container">
         <div class="construction-content">
-            <div class="construction-icon">🚧</div>
+            <div class="construction-icon">🎵</div>
             <h1 class="construction-title">Coming Soon</h1>
             <p class="construction-subtitle">
                 We're working hard to bring you something amazing. This page is currently under construction, 
@@ -199,27 +312,31 @@
                         <label for="interest">What are you interested in?</label>
                         <select id="interest" name="interest">
                             <option value="">Select an option</option>
-                            <option value="business-consulting">Business Consulting</option>
-                            <option value="financial-services">Financial Services</option>
-                            <option value="red-flag-analysis">Red Flag Analysis</option>
-                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="music-foundation">Music Foundation</option>
+                            <option value="artist-branding">Artist Branding</option>
+                            <option value="music-rights">Music Rights & Royalties</option>
+                            <option value="career-growth">Career Growth</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message (Optional)</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your needs..."></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your music career goals..."></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">
+                        <i class="fas fa-music"></i>
                         Get Early Access
                     </button>
                 </form>
             </div>
 
             <div class="back-home">
-                <a href="index.html">← Back to Home</a>
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
             </div>
         </div>
     </div>
@@ -232,26 +349,52 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Here you can integrate with your preferred form handler
-            // Examples: Netlify Forms, Formspree, EmailJS, etc.
+            // Show success message
+            alert('Thank you for your interest! We\'ll be in touch soon with updates about your music business journey.');
             
-            // For now, we'll show a success message
-            alert('Thank you for your interest! We\'ll be in touch soon.');
-            
-            // Optional: Reset form
+            // Reset form
             this.reset();
-            
-            // Optional: Redirect to thank you page
-            // window.location.href = 'thank-you.html';
         });
 
-        // Auto-redirect script (optional)
-        // Uncomment if you want automatic redirect after a delay
-        /*
-        setTimeout(function() {
-            window.location.href = 'index.html';
-        }, 30000); // Redirect after 30 seconds
-        */
+        // Add ripple effect to button
+        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+            `;
+
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
