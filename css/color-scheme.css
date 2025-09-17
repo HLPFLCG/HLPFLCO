@@ -1,0 +1,161 @@
+/* Night Mode Elegance 4 Color Scheme */
+:root {
+  /* Primary colors */
+  --c-bg-primary: #000000;
+  --c-bg-secondary: #0a0a0a;
+  --c-bg-tertiary: #151515;
+  --c-bg-card: #1a1a1a;
+  
+  /* Text colors */
+  --c-white: #f5f5f5;
+  --c-text: #f5f5f5;
+  --c-text-muted: #c5c5c5;
+  --c-text-light: #e0e0e0;
+  
+  /* Accent colors - replacing gold with camel brown */
+  --c-gold: #c19a6b;
+  --c-gold-light: #d5b48c;
+  --c-gold-dark: #a07c50;
+  
+  /* Accent blue - replacing previous accent */
+  --c-accent: #1e293b;
+  --c-accent-light: #2d3b52;
+  
+  /* Other colors */
+  --c-border: #333;
+  --c-border-light: #444;
+  --c-success: #27ae60;
+  --c-warning: #f39c12;
+  --c-danger: #e74c3c;
+  
+  /* Shadows and glows */
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 25px rgba(0,0,0,.4);
+  --shadow-lg: 0 15px 40px rgba(0,0,0,.5);
+  --shadow-xl: 0 25px 60px rgba(0,0,0,.6);
+  --glow-gold: 0 0 20px rgba(193, 154, 107, 0.3);
+  --glow-accent: 0 0 20px rgba(30, 41, 59, 0.3);
+}
+
+/* Button styles */
+.btn--primary {
+  background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
+  color: var(--c-bg-primary);
+  border-color: var(--c-gold);
+  box-shadow: var(--glow-gold);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, var(--c-gold-light), #e6c9a8);
+  box-shadow: 0 8px 25px rgba(193, 154, 107, 0.4);
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+}
+
+.btn--secondary:hover {
+  background: var(--c-gold);
+  color: var(--c-bg-primary);
+  box-shadow: var(--glow-gold);
+}
+
+.btn--accent {
+  background: linear-gradient(135deg, var(--c-accent), var(--c-accent-light));
+  color: white;
+  border-color: var(--c-accent);
+}
+
+.btn--accent:hover {
+  background: linear-gradient(135deg, var(--c-accent-light), #3a4d6b);
+  box-shadow: var(--glow-accent);
+}
+
+/* Hero title gradient */
+.hero-title {
+  background: linear-gradient(135deg, var(--c-white), var(--c-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Service icon color */
+.service-icon {
+  color: var(--c-gold);
+}
+
+.service-card:hover .service-icon {
+  color: var(--c-accent);
+}
+
+/* Timeline and progress bar gradients */
+.story-timeline::before,
+.scroll-progress,
+.footer::before {
+  background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
+}
+
+/* Value icon background */
+.value-icon {
+  background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
+}
+
+/* Footer social hover */
+.footer-social a:hover {
+  background: var(--c-gold);
+  color: var(--c-bg-primary);
+}
+
+/* Footer column heading underline */
+.footer-column h4::after {
+  background: var(--c-gold);
+}
+
+/* Navigation hover effects */
+.nav__list a:not(.btn)::before {
+  background: linear-gradient(90deg, var(--c-gold), var(--c-gold-light));
+}
+
+.nav__list a:not(.btn):hover {
+  color: var(--c-gold-light);
+  text-shadow: 0 0 10px rgba(193, 154, 107, 0.3);
+}
+
+/* Mobile nav toggle */
+.nav__toggle[aria-expanded="true"] span:first-child,
+.nav__toggle[aria-expanded="true"] span:last-child {
+  background: var(--c-gold);
+}
+
+/* Red flag guide specific */
+.red-flag-card::before {
+  background: linear-gradient(90deg, var(--c-gold), var(--c-gold-light));
+}
+
+.red-flag-number {
+  color: var(--c-gold);
+}
+
+/* Focus styles */
+.btn:focus,
+.nav__list a:focus,
+.footer-social a:focus {
+  outline: 3px solid var(--c-gold);
+}
+
+/* Skip link */
+.skip-link {
+  background: var(--c-gold);
+  color: var(--c-bg-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--c-gold), var(--c-accent));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--c-gold-light), var(--c-accent-light));
+}
