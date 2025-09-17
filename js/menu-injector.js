@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
             <nav class="nav">
                 <ul class="nav__list" id="navList">
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="under-construction.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="vip.html">VIP</a></li>
+                    <li><a href="under-construction.html">Red Flag Guide</a></li>
+                    <li><a href="under-construction.html">Shop</a></li>
+                    <li><a href="under-construction.html">VIP</a></li>
                     <li><a href="https://calendly.com/founder-hlpfl/30min?month=2025-08" class="btn btn--primary" target="_blank">
                         <i class="fas fa-calendar-alt"></i> Let's Talk
                     </a></li>

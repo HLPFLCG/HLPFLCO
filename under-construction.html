@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Under Construction - HLPFL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .construction-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 2rem;
+        }
+
+        .construction-content {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .construction-icon {
+            font-size: 4rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .construction-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .construction-subtitle {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .lead-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999999;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #000000;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-home {
+            margin-top: 2rem;
+        }
+
+        .back-home a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-home a:hover {
+            color: #f4d03f;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .construction-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .construction-title {
+                font-size: 2rem;
+            }
+            
+            .lead-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="construction-container">
+        <div class="construction-content">
+            <div class="construction-icon">🚧</div>
+            <h1 class="construction-title">Coming Soon</h1>
+            <p class="construction-subtitle">
+                We're working hard to bring you something amazing. This page is currently under construction, 
+                but we'd love to connect with you in the meantime!
+            </p>
+
+            <div class="lead-form">
+                <h2 class="form-title">Get Notified When We Launch</h2>
+                <form id="leadForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">What are you interested in?</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select an option</option>
+                            <option value="business-consulting">Business Consulting</option>
+                            <option value="financial-services">Financial Services</option>
+                            <option value="red-flag-analysis">Red Flag Analysis</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Get Early Access
+                    </button>
+                </form>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you can integrate with your preferred form handler
+            // Examples: Netlify Forms, Formspree, EmailJS, etc.
+            
+            // For now, we'll show a success message
+            alert('Thank you for your interest! We\'ll be in touch soon.');
+            
+            // Optional: Reset form
+            this.reset();
+            
+            // Optional: Redirect to thank you page
+            // window.location.href = 'thank-you.html';
+        });
+
+        // Auto-redirect script (optional)
+        // Uncomment if you want automatic redirect after a delay
+        /*
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 30000); // Redirect after 30 seconds
+        */
+    </script>
+</body>
+</html>
