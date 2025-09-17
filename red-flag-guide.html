@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>HLPFL – Red Flag Guide</title>
-  <meta name="description" content="Essential red flags every first-time founder should watch for when starting and growing their business. Avoid costly mistakes with our comprehensive guide.">
+  <title>Music Industry Red Flag Guide - HLPFL</title>
+  <meta name="description" content="Essential guide for independent musicians to identify and avoid common music industry pitfalls, predatory contracts, and business mistakes.">
+  <meta charset="UTF-8">
   <link rel="canonical" href="https://hlpfl.org/red-flag-guide">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Favicons for all devices -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/Artboard 1.webp">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/Artboard 1.webp">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/Artboard 1.webp">
@@ -17,51 +18,62 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="HLPFL Red Flag Guide">
-  <meta property="og:description" content="Essential red flags every first-time founder should watch for. Avoid costly mistakes with our comprehensive business guide.">
-  <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
+  <meta property="og:title" content="Music Industry Red Flag Guide - HLPFL">
+  <meta property="og:description" content="Essential guide for independent musicians to identify and avoid common music industry pitfalls, predatory contracts, and business mistakes.">
+  <meta property="og:image" content="https://hlpfl.org/images/og/red-flag-guide-cover.jpg">
+  <meta property="og:url" content="https://hlpfl.org/red-flag-guide">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mobile.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
-  <!-- Enhanced Styles -->
   <style>
+    /* Basic styles to match the theme */
     :root {
       --c-bg-primary: #000;
-      --c-bg-secondary: #111;
-      --c-bg-tertiary: #1a1a1a;
+      --c-bg-secondary: #0a0a0a;
+      --c-bg-tertiary: #151515;
+      --c-bg-card: #1a1a1a;
       --c-white: #ffffff;
       --c-text: #f5f5f5;
-      --c-text-muted: #8a8a8a;
-      --c-gold: #646464;
-      --c-text-on-gold: #fff;
+      --c-text-muted: #999;
+      --c-text-light: #ccc;
+      --c-gold: #d4af37;
+      --c-gold-light: #f4d03f;
+      --c-gold-dark: #b8860b;
+      --c-accent: #2c5aa0;
+      --c-accent-light: #3d6bb5;
       --c-border: #333;
-      --c-accent: #144d63;
-      --c-danger: #dc3545;
-      --c-warning: #ffc107;
-      --c-success: #28a745;
+      --c-border-light: #444;
+      --c-success: #27ae60;
+      --c-warning: #f39c12;
+      --c-danger: #e74c3c;
 
-      --shadow-sm: 0 5px 15px rgba(255,255,255,.05);
-      --shadow-md: 0 15px 30px rgba(255,255,255,.1);
-      --shadow-lg: 0 25px 50px rgba(0,0,0,.3);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,.3);
+      --shadow-md: 0 8px 25px rgba(0,0,0,.4);
+      --shadow-lg: 0 15px 40px rgba(0,0,0,.5);
+      --shadow-xl: 0 25px 60px rgba(0,0,0,.6);
+      --glow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+      --glow-accent: 0 0 20px rgba(44, 90, 160, 0.3);
+      --glow-danger: 0 0 20px rgba(231, 76, 60, 0.3);
 
       --ff-display: "Iceland", system-ui, sans-serif;
       --ff-body: "Montserrat", sans-serif;
-      --tr-quick: .3s ease;
-      --tr-smooth: .6s cubic-bezier(0.4, 0, 0.2, 1);
-      --radius: 8px;
-      --radius-lg: 16px;
-      --wrapper: 90%;
-      --wrapper-max: 1200px;
+      --tr-quick: .2s ease;
+      --tr-smooth: .4s cubic-bezier(0.4, 0, 0.2, 1);
+      --tr-bounce: .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 30px;
+      --wrapper: 92%;
+      --wrapper-max: 1400px;
     }
 
-    /* Enhanced Global Reset */
+    /* Global Reset */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -70,16 +82,18 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 18px;
+      font-size: clamp(16px, 1.2vw, 18px);
     }
 
     body {
       font-family: var(--ff-body);
-      line-height: 1.7;
+      line-height: 1.6;
       color: var(--c-text);
       background: var(--c-bg-primary);
       overflow-x: hidden;
       font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     img {
@@ -97,101 +111,31 @@
       list-style: none;
     }
 
-    /* Enhanced Container */
+    /* Container */
     .container {
       width: min(var(--wrapper), var(--wrapper-max));
       margin-inline: auto;
-      padding-inline: 20px;
+      padding-inline: clamp(20px, 4vw, 40px);
     }
 
-    /* Content Containers */
-    .content-box {
-      background: var(--c-bg-secondary);
-      border-radius: var(--radius-lg);
-      padding: 60px 40px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--c-border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
-    }
-
-    /* Section Dividers */
-    .section-divider {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
-      margin: 80px 0;
-      position: relative;
-    }
-
-    .section-divider::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      background: var(--c-gold);
-      border-radius: 50%;
-    }
-
-    /* Loading Screen */
-    .loading-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: var(--c-bg-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      transition: opacity .5s ease-out, visibility .5s ease-out;
-    }
-
-    .loading-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loading-logo {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 20px;
-      animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Enhanced Header */
+    /* Header */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       padding-block: 20px;
       transition: all var(--tr-smooth);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
     .header.scrolled {
-      background-color: rgba(0,0,0,.95);
+      background: rgba(0,0,0,.95);
       padding-block: 15px;
       box-shadow: var(--shadow-md);
+      border-bottom: 1px solid var(--c-border);
     }
 
     .header .container {
@@ -202,91 +146,55 @@
 
     .logo {
       display: block;
-      width: 140px;
-      transition: transform var(--tr-quick);
+      width: 160px;
+      transition: all var(--tr-smooth);
+      position: relative;
     }
 
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo img {
-      width: 100%;
-    }
-
-    /* Enhanced Navigation */
-    .nav__list {
+    /* Hero Section */
+    .hero-section {
+      min-height: 60vh;
       display: flex;
       align-items: center;
-      gap: 35px;
-    }
-
-    .nav__list a {
-      font-weight: 500;
-      font-size: 1rem;
-      font-family: var(--ff-display);
+      background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
       position: relative;
-      transition: all var(--tr-quick);
-      padding: 8px 0;
+      overflow: hidden;
+      padding-top: 100px;
     }
 
-    .nav__list a:not(.btn)::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--c-gold);
-      transition: width var(--tr-quick);
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .nav__list a:not(.btn):hover {
+    .hero-title {
+      font: 900 clamp(3rem, 8vw, 6rem)/0.9 var(--ff-display);
       color: var(--c-white);
+      margin-bottom: 30px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--c-white), var(--c-danger));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .nav__list a:not(.btn):hover::after {
-      width: 100%;
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: var(--c-text-light);
+      margin-bottom: 50px;
+      line-height: 1.5;
+      font-weight: 300;
     }
 
-    .nav__toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      width: 30px;
-      height: 20px;
-      position: relative;
-      z-index: 101;
-    }
-
-    .nav__toggle span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: var(--c-white);
-      position: absolute;
-      left: 0;
-      transition: all var(--tr-quick);
-    }
-
-    .nav__toggle span:first-child { top: 0; }
-    .nav__toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-    .nav__toggle span:last-child { bottom: 0; }
-
-    .nav__toggle[aria-expanded="true"] span:first-child {
-      transform: translateY(9px) rotate(45deg);
-    }
-    .nav__toggle[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav__toggle[aria-expanded="true"] span:last-child {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* Enhanced Buttons */
+    /* Buttons */
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       padding: 16px 32px;
       border-radius: var(--radius);
       font-weight: 700;
@@ -297,426 +205,211 @@
       border: 2px solid transparent;
       position: relative;
       overflow: hidden;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: left var(--tr-smooth);
-    }
-
-    .btn:hover::before {
-      left: 100%;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .btn--primary {
-      background: var(--c-gold);
-      color: var(--c-text-on-gold);
-      border-color: var(--c-gold);
-    }
-
-    .btn--primary:hover {
-      background: var(--c-white);
+      background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
       color: var(--c-bg-primary);
-      border-color: var(--c-white);
-    }
-
-    .btn--secondary {
-      background: transparent;
       border-color: var(--c-gold);
-      color: var(--c-gold);
+      box-shadow: var(--glow-gold);
     }
 
-    .btn--secondary:hover {
-      background: var(--c-gold);
-      color: var(--c-text-on-gold);
+    .btn--danger {
+      background: linear-gradient(135deg, var(--c-danger), #f5593d);
+      color: var(--c-white);
+      border-color: var(--c-danger);
+      box-shadow: var(--glow-danger);
     }
 
-    /* Page Header */
-    .page-header {
-      padding-top: 140px;
-      padding-bottom: 80px;
+    .btn--danger:hover {
+      background: linear-gradient(135deg, #f5593d, #ff7566);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+    }
+
+    /* Red Flag Section */
+    .red-flag-section {
+      padding: 100px 0;
       background: var(--c-bg-secondary);
+    }
+
+    .red-flag-intro {
+      max-width: 800px;
+      margin: 0 auto 60px;
       text-align: center;
-      position: relative;
     }
 
-    .page-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
-    }
-
-    .page-header h1 {
-      font: 800 clamp(2.5rem, 6vw, 4rem)/1.1 var(--ff-display);
+    .red-flag-intro h2 {
+      font: 700 2.5rem/1.2 var(--ff-display);
       color: var(--c-white);
       margin-bottom: 20px;
-      letter-spacing: -.03em;
     }
 
-    .page-header p {
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      color: var(--c-text-muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Content Sections */
-    .content-section {
-      padding: 120px 0;
-      background: var(--c-bg-primary);
-    }
-
-    .content-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .content-container h2 {
-      font: 700 clamp(2rem, 4vw, 2.8rem)/1.2 var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 30px;
-      letter-spacing: -.02em;
-    }
-
-    .content-container h3 {
-      font: 700 clamp(1.5rem, 3vw, 2rem)/1.3 var(--ff-display);
-      color: var(--c-white);
-      margin: 40px 0 20px 0;
-      letter-spacing: -.02em;
-    }
-
-    .content-container p {
-      font-size: 1.1rem;
+    .red-flag-intro p {
+      color: var(--c-text-light);
+      font-size: 1.2rem;
       line-height: 1.7;
-      color: var(--c-text);
-      margin-bottom: 25px;
     }
 
-    /* Red Flag Cards */
     .red-flag-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      gap: 40px;
+      margin-top: 60px;
     }
 
     .red-flag-card {
-      background: var(--c-bg-tertiary);
+      background: var(--c-bg-card);
       padding: 40px 30px;
       border-radius: var(--radius-lg);
-      transition: all var(--tr-smooth);
       border: 1px solid var(--c-border);
+      transition: all var(--tr-smooth);
       position: relative;
       overflow: hidden;
+    }
+
+    .red-flag-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--c-danger);
     }
 
     .red-flag-card::before {
       content: '';
       position: absolute;
       top: 0;
-      left: -100%;
+      left: 0;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-      transition: left var(--tr-smooth);
+      height: 4px;
+      background: linear-gradient(90deg, var(--c-danger), #f5593d);
     }
 
-    .red-flag-card:hover::before {
-      left: 100%;
-    }
-
-    .red-flag-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--c-danger);
-    }
-
-    .red-flag-card.warning {
-      border-left: 4px solid var(--c-warning);
-    }
-
-    .red-flag-card.danger {
-      border-left: 4px solid var(--c-danger);
-    }
-
-    .red-flag-card.critical {
-      border-left: 4px solid #ff4757;
-    }
-
-    .red-flag-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .red-flag-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      font-size: 1.2rem;
-    }
-
-    .red-flag-icon.warning {
-      background: rgba(255, 193, 7, 0.2);
-      color: var(--c-warning);
-    }
-
-    .red-flag-icon.danger {
-      background: rgba(220, 53, 69, 0.2);
+    .red-flag-number {
+      font: 700 1.8rem var(--ff-display);
       color: var(--c-danger);
-    }
-
-    .red-flag-icon.critical {
-      background: rgba(255, 71, 87, 0.2);
-      color: #ff4757;
+      margin-bottom: 20px;
     }
 
     .red-flag-card h3 {
-      font: 700 1.4rem/1.3 var(--ff-display);
+      font: 700 1.5rem/1.3 var(--ff-display);
       color: var(--c-white);
-      margin: 0;
+      margin-bottom: 20px;
     }
 
     .red-flag-card p {
-      color: var(--c-text);
-      margin-bottom: 20px;
-      font-size: 1rem;
+      color: var(--c-text-light);
+      font-size: 1.1rem;
       line-height: 1.6;
-    }
-
-    .red-flag-indicators {
-      list-style: none;
       margin-bottom: 25px;
     }
 
-    .red-flag-indicators li {
-      color: var(--c-text-muted);
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 20px;
-      font-size: 0.95rem;
+    .red-flag-solution {
+      background: rgba(39, 174, 96, 0.1);
+      border-left: 3px solid var(--c-success);
+      padding: 15px;
+      margin-top: 20px;
     }
 
-    .red-flag-indicators li::before {
-      content: '⚠';
-      position: absolute;
-      left: 0;
-      color: var(--c-warning);
-      font-weight: bold;
-    }
-
-    .red-flag-card.danger .red-flag-indicators li::before {
-      content: '🚩';
-    }
-
-    .red-flag-card.critical .red-flag-indicators li::before {
-      content: '💀';
-    }
-
-    .severity-level {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: var(--radius);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .severity-level.warning {
-      background: rgba(255, 193, 7, 0.2);
-      color: var(--c-warning);
-      border: 1px solid var(--c-warning);
-    }
-
-    .severity-level.danger {
-      background: rgba(220, 53, 69, 0.2);
-      color: var(--c-danger);
-      border: 1px solid var(--c-danger);
-    }
-
-    .severity-level.critical {
-      background: rgba(255, 71, 87, 0.2);
-      color: #ff4757;
-      border: 1px solid #ff4757;
-    }
-
-    /* Red Flag Categories */
-    .red-flag-category {
-      margin-bottom: 80px;
-    }
-
-    .red-flag-category:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Quick Reference Section */
-    .quick-reference {
-      background: var(--c-bg-secondary);
-      padding: 60px 40px;
-      border-radius: var(--radius-lg);
-      margin: 60px 0;
-      border: 1px solid var(--c-border);
-    }
-
-    .quick-reference h3 {
-      font: 700 1.8rem/1.3 var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .quick-reference-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .quick-reference-item {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .quick-reference-item .icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .quick-reference-item h4 {
-      font: 700 1.2rem var(--ff-display);
-      color: var(--c-white);
+    .red-flag-solution h4 {
+      font-size: 1.1rem;
+      color: var(--c-success);
       margin-bottom: 10px;
     }
 
-    .quick-reference-item p {
-      font-size: 0.9rem;
-      color: var(--c-text-muted);
-      margin: 0;
+    .red-flag-solution p {
+      color: var(--c-text);
+      margin-bottom: 0;
     }
 
     /* CTA Section */
     .cta-section {
-      background: var(--c-bg-secondary);
-      padding: 100px 20px;
+      padding: 100px 0;
       text-align: center;
+      background: var(--c-bg-tertiary);
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font: 700 2.5rem/1.2 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 25px;
+    }
+
+    .cta-content p {
+      color: var(--c-text-light);
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--c-bg-tertiary);
+      padding: 80px 0 30px;
+      border-top: 1px solid var(--c-border);
       position: relative;
     }
 
-    .cta-section::before {
+    .footer::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(90deg, var(--c-gold), var(--c-accent));
     }
 
-    .cta-section h2 {
-      font: 700 clamp(2rem, 5vw, 3rem)/1.2 var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 20px;
-      letter-spacing: -.02em;
-    }
-
-    .cta-section p {
-      font-size: 1.2rem;
-      color: var(--c-text-muted);
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Enhanced Footer */
-    .footer {
-      background: var(--c-bg-tertiary);
-      padding-top: 80px;
-      padding-bottom: 30px;
-      border-top: 1px solid var(--c-border);
-    }
-
     .footer-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
       margin-bottom: 60px;
     }
 
+    .footer-brand {
+      max-width: 350px;
+    }
+
     .footer-logo {
-      width: 180px;
+      width: 200px;
+      margin-bottom: 25px;
     }
 
-    .footer-contact h4 {
+    .footer-description {
+      color: var(--c-text-light);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-column h4 {
       font: 700 1.3rem var(--ff-display);
       color: var(--c-white);
-      margin-bottom: 20px;
-    }
-
-    .footer-contact p {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .footer-contact a {
-      color: var(--c-text-muted);
-      transition: color var(--tr-quick);
-    }
-
-    .footer-contact a:hover {
-      color: var(--c-white);
-    }
-
-    .footer-nav {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-      margin-bottom: 50px;
-    }
-
-    .footer-nav-column h4 {
-      font: 700 1.3rem var(--ff-display);
-      color: var(--c-white);
-      margin-bottom: 20px;
-    }
-
-    .footer-nav-column ul li {
-      margin-bottom: 12px;
-    }
-
-    .footer-nav-column ul li a {
-      color: var(--c-text-muted);
-      transition: color var(--tr-quick);
-      font-size: 1rem;
-    }
-
-    .footer-nav-column ul li a:hover {
-      color: var(--c-white);
+      margin-bottom: 25px;
+      position: relative;
     }
 
     .footer-bottom {
       text-align: center;
-      padding-top: 30px;
+      padding-top: 40px;
       border-top: 1px solid var(--c-border);
     }
 
@@ -725,985 +418,439 @@
       font-size: 1rem;
     }
 
-    /* Animation Classes */
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in-up.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-in-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in-left.animate {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .fade-in-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in-right.animate {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Custom Cursor Enhancement */
-    .custom-cursor {
+    /* Popup */
+    .popup-overlay {
       position: fixed;
-      width: 40px;
-      height: 40px;
-      border: 2px solid var(--c-gold);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       opacity: 0;
-      transition: all var(--tr-quick);
+      visibility: hidden;
+      transition: all var(--tr-smooth);
     }
 
-    .cursor-dot {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: var(--c-gold);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      transition: transform 0.1s ease;
-    }
-
-    body:hover .custom-cursor,
-    body:hover .cursor-dot {
+    .popup-overlay.active {
       opacity: 1;
+      visibility: visible;
     }
 
-    /* Mobile Responsive Enhancements */
+    .popup-content {
+      background: var(--c-bg-secondary);
+      border-radius: var(--radius-lg);
+      padding: 50px 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      border: 2px solid var(--c-accent);
+      box-shadow: var(--shadow-lg);
+      transform: scale(0.8);
+      transition: transform var(--tr-smooth);
+    }
+
+    .popup-overlay.active .popup-content {
+      transform: scale(1);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--c-text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color var(--tr-quick);
+    }
+
+    .popup-close:hover {
+      color: var(--c-white);
+    }
+
+    .popup-content h3 {
+      font: 700 2rem/1.2 var(--ff-display);
+      color: var(--c-white);
+      margin-bottom: 20px;
+    }
+
+    .popup-content p {
+      color: var(--c-text);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .popup-form input {
+      padding: 15px;
+      border: 2px solid var(--c-border);
+      border-radius: var(--radius);
+      background: var(--c-bg-tertiary);
+      color: var(--c-white);
+      font-size: 1rem;
+      transition: border-color var(--tr-quick);
+    }
+
+    .popup-form input:focus {
+      outline: none;
+      border-color: var(--c-accent);
+    }
+
+    /* Mobile Responsive */
     @media (max-width: 992px) {
-      html {
-        font-size: 16px;
-      }
-
-      .nav__list {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 85%;
-        max-width: 400px;
-        height: 100vh;
-        background: var(--c-bg-primary);
-        flex-direction: column;
-        justify-content: center;
-        transition: right var(--tr-smooth);
-        z-index: 100;
-        border-left: 1px solid var(--c-border);
-      }
-
-      .nav__list.active {
-        right: 0;
-      }
-
-      .nav__toggle {
-        display: block;
-      }
-
-      .page-header {
-        padding-top: 120px;
-        padding-bottom: 60px;
-      }
-
-      .page-header h1 {
-        font-size: clamp(2rem, 6vw, 2.8rem);
-      }
-
-      .content-section {
-        padding: 80px 0;
-      }
-
-      .content-container {
-        padding: 0 20px;
-      }
-
       .red-flag-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .red-flag-card {
-        padding: 30px 25px;
-      }
-
-      .quick-reference-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .cta-section {
-        padding: 80px 20px;
       }
 
       .footer-main {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
       }
 
-      .footer-nav {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
+      .footer-brand {
+        max-width: none;
       }
 
-      .custom-cursor,
-      .cursor-dot {
-        display: none;
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
 
-    @media (max-width: 576px) {
-      .container {
-        padding-inline: 15px;
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
       }
 
-      .content-container {
-        padding: 0 15px;
-      }
-
-      .red-flag-card {
-        padding: 25px 20px;
+      .hero-subtitle {
+        font-size: 1.1rem;
       }
 
       .btn {
-        padding: 14px 28px;
+        padding: 14px 24px;
         font-size: 0.9rem;
       }
 
-      .quick-reference {
-        padding: 40px 20px;
+      .red-flag-card {
+        padding: 30px 20px;
+      }
+
+      .popup-content {
+        padding: 30px 20px;
+        margin: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 
 <body>
-    <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-      <img src="images/updatedimages/loadinglogo.svg" alt="HLPFL Logo" class="loading-logo">
-      <div class="loading-text">Dreams Loading...</div>
-  </div>
-
   <!-- Header -->
   <header class="header" role="banner">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="HLPFL Consulting - Home">
-        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
-      </a>
-      <nav role="navigation" aria-label="Main navigation">
-        <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav__list" id="main-menu">
-          <li><a href="about.html" aria-current="page">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-          <li><a href="https://hlpfl.store" target="_blank" rel="noopener">Shop</a></li>
-          <li><a href="https://app.grouped.com/hlpflco" target="_blank" rel="noopener">VIP</a></li>
-          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank" rel="noopener">
-            <i class="fas fa-calendar-alt"></i> Let's Talk
-          </a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Navigation will be injected by menu-injector.js -->
   </header>
 
-  <main data-scroll-container>
-    <!-- Page Header -->
-    <section class="page-header fade-in-up">
-      <div class="container">
-        <h1>Red Flag Guide</h1>
-        <p>Essential warning signs every first-time founder should watch for to avoid costly mistakes and protect their business.</p>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Music Industry Red Flag Guide</h1>
+        <p class="hero-subtitle">Protect your music career by learning to identify and avoid the most common pitfalls, predatory contracts, and business mistakes that can derail independent musicians.</p>
+        <a href="#download" class="btn btn--danger">
+          <i class="fas fa-download"></i> Get The Full Guide
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="section-divider"></div>
+  <!-- Red Flag Section -->
+  <section class="red-flag-section">
+    <div class="container">
+      <div class="red-flag-intro">
+        <h2>10 Critical Red Flags Every Musician Should Know</h2>
+        <p>After helping hundreds of independent musicians navigate the complex music business landscape, we've identified these common red flags that can seriously damage your career. Learn to spot them before they cost you money, rights, or opportunities.</p>
+      </div>
 
-    <!-- Introduction Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <h2>Why This Guide Matters</h2>
-            <p>Starting a business is exciting, but it's also filled with potential pitfalls that can cost you time, money, and even your entire venture. This comprehensive guide highlights the most critical red flags that first-time founders encounter, helping you identify and avoid these costly mistakes before they derail your success.</p>
-            <p>Each red flag is categorized by severity level to help you prioritize which issues need immediate attention and which ones to monitor as your business grows.</p>
+      <div class="red-flag-grid">
+        <div class="red-flag-card">
+          <div class="red-flag-number">01</div>
+          <h3>Signing Away Your Master Rights</h3>
+          <p>Many record deals require artists to sign away ownership of their master recordings permanently. This means you'll never control how your music is used or monetized, and you'll receive only a fraction of the revenue your music generates.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Negotiate for limited-term licensing deals rather than permanent transfers of copyright. Consider independent distribution options that let you maintain ownership while still reaching global audiences.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">02</div>
+          <h3>Perpetual Publishing Agreements</h3>
+          <p>Publishing deals that last "for the life of copyright" (70+ years after your death) lock you into arrangements that may not serve your career long-term, especially if the publisher isn't actively promoting your catalog.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Negotiate for term-limited deals (3-5 years) with clear performance requirements. Include reversion clauses that return rights to you if minimum thresholds aren't met.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">03</div>
+          <h3>Undefined Recoupment Terms</h3>
+          <p>Advances that are recoupable but don't clearly define what expenses count toward recoupment can leave you in perpetual debt to labels or managers, who may charge everything from marketing to travel against your future earnings.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Ensure all contracts explicitly state what expenses are recoupable. Negotiate for non-recoupable marketing budgets and caps on recoupable expenses.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">04</div>
+          <h3>360 Deals Without Services</h3>
+          <p>Labels increasingly want a percentage of all your income streams (touring, merchandise, endorsements), but many don't provide actual services in these areas, essentially taking a commission for doing nothing.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Only grant revenue shares in areas where the partner provides actual services. Include sunset clauses that end revenue sharing after the deal term expires.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">05</div>
+          <h3>Vague Delivery Requirements</h3>
+          <p>Contracts that don't clearly define what constitutes "commercially satisfactory" material give labels the power to reject your work indefinitely, holding your career hostage while still keeping you under contract.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Insist on objective delivery standards. Include clauses that release you from obligations if your work is repeatedly rejected without specific feedback.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">06</div>
+          <h3>Missing Mechanical Royalty Provisions</h3>
+          <p>Many record deals are silent on mechanical royalties (payments for each copy of a song made), allowing labels to deduct these from your royalty share rather than paying them separately as required by law.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Ensure your contract explicitly states that mechanical royalties will be paid separately and not deducted from your artist royalty percentage.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">07</div>
+          <h3>Unregistered Copyrights</h3>
+          <p>Many independent musicians fail to properly register their compositions and sound recordings with the Copyright Office, limiting their legal remedies if infringement occurs and making it harder to collect royalties.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Register all compositions with the Copyright Office before release. Join a PRO (ASCAP, BMI, SESAC) and register with SoundExchange to collect digital performance royalties.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">08</div>
+          <h3>Verbal Agreements with Collaborators</h3>
+          <p>Creating music without clear written agreements about ownership percentages, credit, and usage rights can lead to costly disputes later, especially if the song becomes successful.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Use split sheets for every collaboration, documenting ownership percentages and roles before releasing music. Have all parties sign work-for-hire agreements when appropriate.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">09</div>
+          <h3>DIY Business Structure</h3>
+          <p>Operating your music career without a proper business entity (LLC, S-Corp) exposes your personal assets to business liabilities and prevents you from taking advantage of tax benefits available to businesses.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Form an appropriate business entity for your music career. Separate personal and business finances completely with dedicated accounts and record-keeping.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-card">
+          <div class="red-flag-number">10</div>
+          <h3>Signing Without Legal Review</h3>
+          <p>The most dangerous red flag is signing any music industry contract without having it reviewed by an entertainment attorney who specializes in music. Standard contracts are almost always heavily slanted against artists.</p>
+          <div class="red-flag-solution">
+            <h4>The Solution:</h4>
+            <p>Always have contracts reviewed by a music attorney before signing. The few hundred dollars spent on legal review can save you thousands or millions in the long run.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Quick Reference -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="quick-reference">
-            <h3>Severity Levels</h3>
-            <div class="quick-reference-grid">
-              <div class="quick-reference-item">
-                <span class="icon" style="color: var(--c-warning);">⚠️</span>
-                <h4>Warning</h4>
-                <p>Monitor closely and address when possible</p>
-              </div>
-              <div class="quick-reference-item">
-                <span class="icon" style="color: var(--c-danger);">🚩</span>
-                <h4>Danger</h4>
-                <p>Address immediately to prevent serious issues</p>
-              </div>
-              <div class="quick-reference-item">
-                <span class="icon" style="color: #ff4757;">💀</span>
-                <h4>Critical</h4>
-                <p>Business-threatening issues requiring urgent action</p>
-              </div>
-            </div>
-          </div>
+  <!-- CTA Section -->
+  <section class="cta-section" id="download">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Get The Complete Music Industry Red Flag Guide</h2>
+        <p>Our comprehensive guide includes 50+ red flags, detailed contract clauses to watch for, real-world case studies, and actionable strategies to protect your music career. It's the resource we wish every musician had from day one.</p>
+        
+        <div class="cta-buttons">
+          <button class="btn btn--danger" onclick="openRedFlagPopup()">
+            <i class="fas fa-download"></i> Download Free Guide
+          </button>
+          <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">
+            <i class="fas fa-calendar-alt"></i> Book Free Strategy Call
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Legal & Compliance Red Flags -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <div class="red-flag-category">
-              <h2>Legal & Compliance Red Flags</h2>
-              <p>Legal issues can destroy your business overnight. These red flags indicate potential legal problems that need immediate attention.</p>
-              
-              <div class="red-flag-grid">
-                <div class="red-flag-card critical fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon critical">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <h3>Operating Without Proper Business Structure</h3>
-                  </div>
-                  <p>Running your business as a sole proprietorship or without any legal structure exposes your personal assets to business liabilities.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Using personal bank accounts for business transactions</li>
-                    <li>No LLC, Corporation, or Partnership formation</li>
-                    <li>Mixing personal and business expenses</li>
-                    <li>No business insurance coverage</li>
-                  </ul>
-                  <span class="severity-level critical">Critical</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>No Written Contracts</h3>
-                  </div>
-                  <p>Verbal agreements and handshake deals leave you vulnerable to disputes and unpaid invoices.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Relying on verbal agreements with clients</li>
-                    <li>No clear scope of work documentation</li>
-                    <li>Missing payment terms and conditions</li>
-                    <li>No intellectual property protections</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Inadequate Privacy Policies</h3>
-                  </div>
-                  <p>Collecting customer data without proper privacy policies violates laws like GDPR and CCPA.</p>
-                  <ul class="red-flag-indicators">
-                    <li>No privacy policy on your website</li>
-                    <li>Collecting emails without consent</li>
-                    <li>Storing customer data without protection</li>
-                    <li>No terms of service for your platform</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-trademark"></i>
-                    </div>
-                    <h3>Trademark and IP Violations</h3>
-                  </div>
-                  <p>Using names, logos, or content that infringe on others' intellectual property can result in costly lawsuits.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Not researching trademark availability</li>
-                    <li>Using copyrighted images without permission</li>
-                    <li>Similar business names to established companies</li>
-                    <li>No protection for your own intellectual property</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Financial Red Flags -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="content-box">
-            <div class="red-flag-category">
-              <h2>Financial Red Flags</h2>
-              <p>Poor financial management is one of the leading causes of business failure. Watch for these warning signs.</p>
-              
-              <div class="red-flag-grid">
-                <div class="red-flag-card critical fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon critical">
-                      <i class="fas fa-chart-line-down"></i>
-                    </div>
-                    <h3>Negative Cash Flow for Extended Periods</h3>
-                  </div>
-                  <p>Consistently spending more than you earn will eventually lead to business closure.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Monthly expenses exceed revenue for 3+ months</li>
-                    <li>Relying on personal funds to cover business expenses</li>
-                    <li>Unable to pay suppliers or contractors on time</li>
-                    <li>No emergency fund or cash reserves</li>
-                  </ul>
-                  <span class="severity-level critical">Critical</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>No Financial Tracking or Bookkeeping</h3>
-                  </div>
-                  <p>Flying blind financially makes it impossible to make informed business decisions.</p>
-                  <ul class="red-flag-indicators">
-                    <li>No accounting software or system</li>
-                    <li>Mixing personal and business finances</li>
-                    <li>Not tracking expenses or revenue</li>
-                    <li>No regular financial reports or analysis</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Over-Reliance on Credit</h3>
-                  </div>
-                  <p>Using credit cards or loans to fund operations without a clear repayment plan.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Maxing out business credit cards</li>
-                    <li>Taking loans without revenue projections</li>
-                    <li>High debt-to-income ratio</li>
-                    <li>No plan for debt repayment</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-piggy-bank"></i>
-                    </div>
-                    <h3>Underpricing Products or Services</h3>
-                  </div>
-                  <p>Pricing too low to compete can make it impossible to achieve profitability.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Prices don't cover all costs plus profit</li>
-                    <li>Competing solely on price</li>
-                    <li>Not accounting for time and overhead</li>
-                    <li>Afraid to raise prices due to competition</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Partnership & Team Red Flags -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-right">
-          <div class="content-box">
-            <div class="red-flag-category">
-              <h2>Partnership & Team Red Flags</h2>
-              <p>The wrong partners or team members can sink your business. Recognize these warning signs early.</p>
-              
-              <div class="red-flag-grid">
-                <div class="red-flag-card critical fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon critical">
-                      <i class="fas fa-handshake-slash"></i>
-                    </div>
-                    <h3>Unequal Commitment from Partners</h3>
-                  </div>
-                  <p>When partners aren't equally invested in time, money, or effort, conflicts are inevitable.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Partners contributing different amounts of time</li>
-                    <li>Unequal financial investments</li>
-                    <li>Different levels of business commitment</li>
-                    <li>No clear roles and responsibilities</li>
-                  </ul>
-                  <span class="severity-level critical">Critical</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-users-slash"></i>
-                    </div>
-                    <h3>No Partnership Agreement</h3>
-                  </div>
-                  <p>Operating without a formal partnership agreement leaves you vulnerable to disputes and legal issues.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Verbal partnership agreements only</li>
-                    <li>No defined ownership percentages</li>
-                    <li>Unclear profit and loss distribution</li>
-                    <li>No exit strategy or dissolution plan</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-user-times"></i>
-                    </div>
-                    <h3>High Employee Turnover</h3>
-                  </div>
-                  <p>Constantly losing team members indicates deeper problems with management or company culture.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Employees leaving within first 6 months</li>
-                    <li>Difficulty finding qualified candidates</li>
-                    <li>Negative reviews on job sites</li>
-                    <li>High recruitment and training costs</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Poor Communication</h3>
-                  </div>
-                  <p>Lack of clear communication leads to misunderstandings, missed deadlines, and team conflicts.</p>
-                  <ul class="red-flag-indicators">
-                    <li>No regular team meetings or check-ins</li>
-                    <li>Important decisions made without consultation</li>
-                    <li>Unclear project requirements or deadlines</li>
-                    <li>Team members working in silos</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Market & Customer Red Flags -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <div class="red-flag-category">
-              <h2>Market & Customer Red Flags</h2>
-              <p>Understanding your market and customers is crucial for success. These red flags indicate market-related problems.</p>
-              
-              <div class="red-flag-grid">
-                <div class="red-flag-card critical fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon critical">
-                      <i class="fas fa-search-minus"></i>
-                    </div>
-                    <h3>No Market Research</h3>
-                  </div>
-                  <p>Building a product or service without understanding market demand is a recipe for failure.</p>
-                  <ul class="red-flag-indicators">
-                    <li>No competitor analysis conducted</li>
-                    <li>Unclear target audience definition</li>
-                    <li>No validation of product-market fit</li>
-                    <li>Assumptions about customer needs</li>
-                  </ul>
-                  <span class="severity-level critical">Critical</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-user-minus"></i>
-                    </div>
-                    <h3>Declining Customer Base</h3>
-                  </div>
-                  <p>Losing customers faster than you're gaining them indicates serious problems with your offering.</p>
-                  <ul class="red-flag-indicators">
-                    <li>High customer churn rate</li>
-                    <li>Difficulty acquiring new customers</li>
-                    <li>Negative customer feedback trends</li>
-                    <li>Customers switching to competitors</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>Consistently Poor Reviews</h3>
-                  </div>
-                  <p>Bad reviews and ratings damage your reputation and make it harder to attract new customers.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Average rating below 3 stars</li>
-                    <li>Common complaints about quality or service</li>
-                    <li>No response to customer feedback</li>
-                    <li>Negative word-of-mouth spreading</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Trying to Serve Everyone</h3>
-                  </div>
-                  <p>A lack of focus on a specific target market makes marketing ineffective and expensive.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Generic marketing messages</li>
-                    <li>No clear ideal customer profile</li>
-                    <li>Trying to compete in multiple markets</li>
-                    <li>Difficulty explaining who you serve</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Operations Red Flags -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-left">
-          <div class="content-box">
-            <div class="red-flag-category">
-              <h2>Operations Red Flags</h2>
-              <p>Operational inefficiencies can drain resources and prevent growth. Watch for these operational warning signs.</p>
-              
-              <div class="red-flag-grid">
-                <div class="red-flag-card danger fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon danger">
-                      <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Consistently Missing Deadlines</h3>
-                  </div>
-                  <p>Chronic delays damage your reputation and can lead to contract cancellations and lost customers.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Projects regularly delivered late</li>
-                    <li>Unrealistic timeline estimates</li>
-                    <li>No project management system</li>
-                    <li>Clients complaining about delays</li>
-                  </ul>
-                  <span class="severity-level danger">Danger</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>No Standard Operating Procedures</h3>
-                  </div>
-                  <p>Lack of documented processes leads to inconsistent quality and makes scaling difficult.</p>
-                  <ul class="red-flag-indicators">
-                    <li>Every project handled differently</li>
-                    <li>No training materials for new team members</li>
-                    <li>Quality varies between team members</li>
-                    <li>Difficulty delegating tasks</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Over-Dependence on Founder</h3>
-                  </div>
-                  <p>If the business can't operate without you, it's not scalable and creates a single point of failure.</p>
-                  <ul class="red-flag-indicators">
-                    <li>All decisions require founder approval</li>
-                    <li>Founder handles all client communication</li>
-                    <li>No delegation of important tasks</li>
-                    <li>Business stops when founder is unavailable</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-                
-                <div class="red-flag-card warning fade-in-up">
-                  <div class="red-flag-header">
-                    <div class="red-flag-icon warning">
-                      <i class="fas fa-shield-virus"></i>
-                    </div>
-                    <h3>No Backup or Disaster Recovery Plan</h3>
-                  </div>
-                  <p>Lack of preparation for emergencies can result in permanent data loss and business closure.</p>
-                  <ul class="red-flag-indicators">
-                    <li>No data backup systems</li>
-                    <li>Single points of failure in operations</li>
-                    <li>No insurance coverage</li>
-                    <li>No plan for business continuity</li>
-                  </ul>
-                  <span class="severity-level warning">Warning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Action Steps Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-container fade-in-up">
-          <div class="content-box">
-            <h2>What to Do When You Spot Red Flags</h2>
-            <div class="red-flag-grid">
-              <div class="red-flag-card" style="border-left: 4px solid var(--c-success);">
-                <div class="red-flag-header">
-                  <div class="red-flag-icon" style="background: rgba(40, 167, 69, 0.2); color: var(--c-success);">
-                    <i class="fas fa-list-check"></i>
-                  </div>
-                  <h3>Immediate Action Steps</h3>
-                </div>
-                <ul class="red-flag-indicators">
-                  <li>Prioritize critical and danger-level red flags</li>
-                  <li>Create an action plan with specific deadlines</li>
-                  <li>Seek professional help when needed</li>
-                  <li>Document all changes and improvements</li>
-                </ul>
-              </div>
-              
-              <div class="red-flag-card" style="border-left: 4px solid var(--c-accent);">
-                <div class="red-flag-header">
-                  <div class="red-flag-icon" style="background: rgba(20, 77, 99, 0.2); color: var(--c-accent);">
-                    <i class="fas fa-users"></i>
-                  </div>
-                  <h3>Get Expert Help</h3>
-                </div>
-                <ul class="red-flag-indicators">
-                  <li>Consult with business attorneys for legal issues</li>
-                  <li>Work with accountants for financial problems</li>
-                  <li>Hire business consultants for strategic guidance</li>
-                  <li>Join entrepreneur communities for support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section fade-in-up">
-      <div class="container">
-        <h2>Need Help Addressing These Red Flags?</h2>
-        <p>Don't let these warning signs derail your business success. Get expert guidance to identify and resolve issues before they become critical problems.</p>
-        <a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Schedule Your Business Review</a>
-      </div>
-    </section>
-  </main>
+  <!-- Red Flag Popup -->
+  <div class="popup-overlay" id="redFlagPopup">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closeRedFlagPopup()">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3>Get Your Free Music Industry Red Flag Guide</h3>
+      <p>Enter your email to instantly download the complete guide and join our musician community for exclusive resources and updates.</p>
+      <form class="popup-form" onsubmit="handleRedFlagSubmit(event)">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn--danger">
+          <i class="fas fa-download"></i> Download Now
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
-        <div class="footer-logo">
-          <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
-        </div>
-        <div class="footer-contact">
-          <h4>Get in Touch</h4>
-          <p><a href="mailto:founder@hlpfl.org">founder@hlpfl.org</a></p>
-          <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+        <div class="footer-brand">
+          <img src="images/header/websiteheader.webp" alt="HLPFL" class="footer-logo">
+          <p class="footer-description">
+            Transforming music career chaos into clarity. We help independent musicians build legally solid, 
+            privacy-first businesses with standout brands.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
-      
-      <nav class="footer-nav">
-        <div class="footer-nav-column">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html#business-foundation">Business Foundation</a></li>
-            <li><a href="services.html#legal-protection">Legal Protection</a></li>
-            <li><a href="services.html#brand-digital">Brand & Digital</a></li>
-            <li><a href="services.html#privacy-compliance">Privacy & Compliance</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-            <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-            <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP Community</a></li>
-            <li><a href="about.html">About Us</a></li>
-          </ul>
-        </div>
-          <div class="footer-nav-column">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="privacy-policy.html">Privacy Policy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="disclaimer.html">Disclaimer</a></li>
-            </ul>
-          </div>
-      </nav>
-      
+
       <div class="footer-bottom">
-        <p>© 2024 HLPFL Consulting. All rights reserved.</p>
+        <p>© 2024 HLPFL. All rights reserved. Built with ❤️ for independent musicians.</p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="js/menu-injector.js"></script>
   <script>
-    // Loading Screen
-    window.addEventListener('load', () => {
-      const loadingScreen = document.querySelector('.loading-screen');
-      setTimeout(() => {
-        loadingScreen.classList.add('hidden');
-      }, 1000);
-    });
-
-    // Custom Cursor
-    const cursor = document.querySelector('.custom-cursor');
-    const cursorDot = document.querySelector('.cursor-dot');
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      cursorDot.style.left = e.clientX + 'px';
-      cursorDot.style.top = e.clientY + 'px';
-    });
-
-    // Enhanced Navigation
-    const navToggle = document.querySelector('.nav__toggle');
-    const navList = document.querySelector('.nav__list');
-
-    navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
-      navList.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav__list a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('active');
-      });
-    });
-
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-      lastScrollY = window.scrollY;
     });
 
-    // Smooth scroll for anchor links
+    // Red Flag Popup Functions
+    function openRedFlagPopup() {
+      document.getElementById('redFlagPopup').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRedFlagPopup() {
+      document.getElementById('redFlagPopup').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleRedFlagSubmit(event) {
+      event.preventDefault();
+      const email = event.target.querySelector('input[type="email"]').value;
+
+      // Here you would typically send the email to your backend
+      console.log('Email submitted:', email);
+
+      // Show success message or redirect to download
+      alert('Thank you! Check your email for the download link.');
+      closeRedFlagPopup();
+    }
+
+    // Close popup when clicking outside
+    document.getElementById('redFlagPopup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeRedFlagPopup();
+      }
+    });
+
+    // Escape key to close popup
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeRedFlagPopup();
+      }
+    });
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
         }
       });
     });
 
-    // Intersection Observer for animations
+    // Animation on scroll
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
         }
       });
     }, observerOptions);
 
-    // Observe all animation elements
-    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Enhanced red flag card hover effects
     document.querySelectorAll('.red-flag-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
     });
-
-    // Enhanced button hover effects
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px) scale(1.02)';
-      });
-      
-      btn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Locomotive Scroll initialization
-    if (window.innerWidth > 768) {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        multiplier: 0.8,
-        class: 'is-reveal'
-      });
-
-      // Update scroll on window resize
-      window.addEventListener('resize', () => {
-        scroll.update();
-      });
-    }
-
-    // Performance optimization: Debounce scroll events
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    }
-
-    // Optimized scroll handler
-    const optimizedScrollHandler = debounce(() => {
-      // Any additional scroll-based functionality
-    }, 10);
-
-    window.addEventListener('scroll', optimizedScrollHandler);
-
-    // Preload critical images
-    const criticalImages = [
-      'images/header/websiteheader.webp',
-      'images/updatedimages/landinglogosmall.svg'
-    ];
-
-    criticalImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-
-    // Error handling for missing images
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function() {
-        this.style.display = 'none';
-        console.warn('Failed to load image:', this.src);
-      });
-    });
-
-    // Accessibility improvements
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('active');
-      }
-    });
-
-    // Focus management for mobile menu
-    navToggle.addEventListener('click', () => {
-      setTimeout(() => {
-        if (navList.classList.contains('active')) {
-          navList.querySelector('a').focus();
-        }
-      }, 300);
-    });
-
-    // Red flag severity filter (optional enhancement)
-    function filterRedFlags(severity) {
-      const cards = document.querySelectorAll('.red-flag-card');
-      cards.forEach(card => {
-        if (severity === 'all' || card.classList.contains(severity)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Add filter buttons if needed
-    // This can be expanded to include interactive filtering
   </script>
 </body>
 </html>
