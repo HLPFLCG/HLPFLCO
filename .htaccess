@@ -1,0 +1,20 @@
+# Redirect specific HTML files to under-construction.html
+RedirectMatch 302 ^/services\.html$ /under-construction.html
+RedirectMatch 302 ^/about\.html$ /under-construction.html
+RedirectMatch 302 ^/red-flag-guide\.html$ /under-construction.html
+RedirectMatch 302 ^/vip\.html$ /under-construction.html
+RedirectMatch 302 ^/shop\.html$ /under-construction.html
+RedirectMatch 302 ^/contact\.html$ /under-construction.html
+RedirectMatch 302 ^/privacy\.html$ /under-construction.html
+RedirectMatch 302 ^/terms\.html$ /under-construction.html
+RedirectMatch 302 ^/disclaimer\.html$ /under-construction.html
+
+# Allow direct access to index.html and under-construction.html
+# No redirect needed as these are allowed
+
+# Ensure proper handling of CSS, JS, and image files
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico)$">
+    # Allow access to these file types
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
