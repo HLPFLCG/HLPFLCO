@@ -20,7 +20,7 @@
     font-size: 1rem;
     width: auto;
     max-width: none;
-    font-family: var(--ff-body);
+    font-family: var(--font-body);
   }
 
   /* Better mobile navigation */
@@ -32,7 +32,7 @@
   .nav__list a {
     padding: 16px 0;
     font-size: 1.1rem;
-    font-family: var(--ff-body);
+    font-family: var(--font-body);
     border-bottom: 1px solid var(--c-border);
     letter-spacing: 0.02em;
   }
@@ -353,7 +353,7 @@
     display: block;
     padding: 16px 20px;
     font-size: 1rem;
-    font-family: var(--ff-body);
+    font-family: var(--font-body);
   }
 
   /* Red flag content small screen */

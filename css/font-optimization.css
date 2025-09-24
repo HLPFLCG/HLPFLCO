@@ -1,0 +1,30 @@
+/* ===== FONT OPTIMIZATION ===== */
+/* Optimize font loading and rendering */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 16px; /* Slightly smaller base font size on mobile */
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p, li, a {
+    font-size: 1rem;
+  }
+}
+
+/* Improve font rendering */
+html, body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

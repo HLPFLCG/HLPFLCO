@@ -18,7 +18,8 @@
 
   /* Typography */
   --font-display: "Iceland", system-ui, sans-serif;
-  --font-body: "Montserrat", sans-serif;
+  --font-heading: "Montserrat", Arial, "Helvetica Neue", sans-serif;
+  --font-body: "Source Sans Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Transitions */
   --transition-quick: 0.3s ease;
@@ -30,6 +31,24 @@
 
   /* Layout */
   --container-width: 90%;
+  --container-max-width: 1400px;
+  --container-padding: clamp(15px, 4vw, 30px);
+}
+
+/* ===== RESET & BASE STYLES ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+  overflow-x: hidden;
+}
   --container-max-width: 1400px;
   --container-padding: clamp(15px, 4vw, 30px);
 }
@@ -77,6 +96,8 @@ ul {
 h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
   overflow-wrap: break-word;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
 /* ===== LAYOUT COMPONENTS ===== */
