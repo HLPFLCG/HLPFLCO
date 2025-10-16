@@ -187,6 +187,17 @@
   color: var(--c-text-light);
 }
 
+/* Section Headers on Light Backgrounds */
+.services-preview .section-title,
+.contact .section-title {
+  color: var(--c-text);
+}
+
+.services-preview .section-subtitle,
+.contact .section-subtitle {
+  color: var(--c-text-muted);
+}
+
 /* Navigation */
 .header {
   background: rgba(26, 29, 35, 0.95);
