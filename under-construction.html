@@ -26,293 +26,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/color-scheme.css">
+   <link rel="stylesheet" href="css/under-construction.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
-    <style>
-:root {
-    /* === FOUNDATION COLORS === */
-    /* Clean, minimal base with warm beige foundation */
-    --c-bg-primary: #f5f2ed;     /* Soft beige canvas */
-    --c-bg-secondary: #f9f6f1;   /* Light beige sections */
-    --c-bg-tertiary: #e8e4df;    /* Muted beige layers */
-    --c-bg-card: #ffffff;        /* Pure white cards */
-
-    /* === READABLE TEXT === */
-    /* Deep blue for trust and clarity */
-    --c-white: #ffffff;          /* Clean white */
-    --c-text: #2c3e50;           /* Deep navy for trust */
-    --c-text-muted: #546e7a;     /* Muted blue-gray */
-    --c-text-light: #78909c;     /* Light blue-gray */
-
-    /* === SIGNATURE COLORS === */
-    /* Minimal beige with navy accents */
-    --c-gold: #e8dcc6;           /* Warm beige accent */
-    --c-gold-light: #f0e6d2;     /* Light beige highlight */
-    --c-gold-dark: #d4c4a8;      /* Deeper beige */
-    --c-accent: #34495e;         /* Deep navy blue */
-    --c-accent-light: #5d6d7e;   /* Soft navy */
-
-    /* === STRUCTURE & LINES === */
-    /* Subtle beige-toned boundaries */
-    --c-border: #e0d6c7;         /* Warm beige borders */
-    --c-border-light: #ebe2d6;   /* Whisper beige lines */
-
-    /* === FEEDBACK COLORS === */
-    /* Consistent with minimal palette */
-    --c-success: #34495e;        /* Navy for success */
-    --c-warning: #8d6e63;        /* Warm brown warning */
-
-    /* === DEPTH & ATMOSPHERE === */
-    /* Soft shadows with navy undertones */
-    --shadow-sm: 0 1px 8px rgba(44, 62, 80, 0.04);    /* Whisper shadow */
-    --shadow-md: 0 4px 20px rgba(44, 62, 80, 0.06);   /* Gentle lift */
-    --shadow-lg: 0 10px 35px rgba(44, 62, 80, 0.08);  /* Floating feel */
-    --shadow-xl: 0 20px 50px rgba(44, 62, 80, 0.10);  /* Elevated presence */
-    --glow-gold: 0 0 20px rgba(232, 220, 198, 0.3);   /* Beige warmth */
-    --glow-accent: 0 0 20px rgba(52, 73, 94, 0.15);   /* Navy glow */
-
-    /* === TYPOGRAPHY SYSTEM === */
-    --ff-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --ff-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
-    /* === MOTION & FEEL === */
-    --tr-quick: 0.15s ease-out;
-    --tr-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --tr-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
-    /* === SHAPE & SPACE === */
-    --radius: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --wrapper: 90%;
-    --wrapper-max: 1200px;
-}
-
-
-
-
-
-
-        body {
-            font-family: var(--ff-body);
-            line-height: 1.6;
-            color: var(--c-text);
-            background: var(--c-bg-primary);
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .construction-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
-            padding: 2rem;
-            position: relative;
-        }
-
-        .construction-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(255, 154, 162, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(181, 234, 215, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .construction-content {
-            text-align: center;
-            max-width: 600px;
-            background: var(--c-bg-card);
-            border: 1px solid var(--c-border);
-            border-radius: var(--radius-lg);
-            padding: 3rem 2rem;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            z-index: 2;
-        }
-
-        .construction-icon {
-            font-size: 4rem;
-            color: var(--c-gold);
-            margin-bottom: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        .construction-title {
-            font: 800 2.5rem/1.1 var(--ff-display);
-            color: var(--c-text);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .construction-subtitle {
-            font-size: 1.2rem;
-            color: var(--c-text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .lead-form {
-            background: var(--c-bg-secondary);
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin-top: 2rem;
-            border: 1px solid var(--c-border);
-        }
-
-        .form-title {
-            font: 700 1.5rem var(--ff-display);
-            color: var(--c-gold);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--c-text);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--c-border);
-            border-radius: var(--radius);
-            background: var(--c-white);
-            color: var(--c-text);
-            font-size: 1rem;
-            transition: all var(--tr-smooth);
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--c-gold);
-            box-shadow: 0 0 0 2px rgba(255, 154, 162, 0.2);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--c-text-muted);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, var(--c-gold), var(--c-gold-light));
-            color: var(--c-white);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--tr-smooth);
-            width: 100%;
-            margin-top: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left var(--tr-smooth);
-        }
-
-        .submit-btn:hover::before {
-            left: 100%;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--glow-gold);
-        }
-
-        .back-home {
-            margin-top: 2rem;
-        }
-
-        .back-home a {
-            color: var(--c-gold);
-            text-decoration: none;
-            font-family: var(--ff-display);
-            font-weight: 500;
-            transition: color var(--tr-smooth);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .back-home a:hover {
-            color: var(--c-gold-light);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @media (max-width: 768px) {
-            .construction-content {
-                padding: 2rem 1.5rem;
-                margin: 1rem;
-            }
-            
-            .construction-title {
-                font-size: 2rem;
-            }
-            
-            .lead-form {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .construction-container {
-                padding: 1rem;
-            }
-
-            .construction-content {
-                padding: 1.5rem 1rem;
-            }
-
-            .construction-title {
-                font-size: 1.8rem;
-            }
-
-            .construction-subtitle {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -329,51 +49,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 We're working hard to bring you something amazing. This page is currently under construction, 
                 but we'd love to connect with you in the meantime!
             </p>
-            <form action="https://formsubmit.co/19bf8a18848dddea4f99dc739bbd8944" method="POST">
-                <div class="lead-form">
-                    <h2 class="form-title">Get Notified When We Launch</h2>
-                    <form id="leadForm" action="#" method="POST">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
-                        </div>
+            <form
+                action="https://formspree.co/19bf8a18848dddea4f99dc739bbd8944"
+                method="POST"
+            >
+            <div class="lead-form">
+                <h2 class="form-title">Get Notified When We Launch</h2>
+                <form id="leadForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
-                        </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                        </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="interest">What are you interested in?</label>
-                            <select id="interest" name="interest">
-                                <option value="">Select an option</option>
-                                <option value="music-foundation">Music Foundation</option>
-                                <option value="artist-branding">Artist Branding</option>
-                                <option value="music-rights">Music Rights & Royalties</option>
-                                <option value="career-growth">Career Growth</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="interest">What are you interested in?</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select an option</option>
+                            <option value="music-foundation">Music Foundation</option>
+                            <option value="artist-branding">Artist Branding</option>
+                            <option value="music-rights">Music Rights & Royalties</option>
+                            <option value="career-growth">Career Growth</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="message">Message (Optional)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your music career goals..."></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your music career goals..."></textarea>
+                    </div>
 
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-music"></i>
-                            Get Early Access
-                        </button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-music"></i>
+                        Get Early Access
+                    </button>
                 </form>
             </div>
 
@@ -441,5 +164,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         `;
         document.head.appendChild(style);
     </script>
-</body>
+
+   <!-- Form Validation -->
+   <script src="js/form-validation.js"></script>
+   <!-- Enhanced Analytics Tracking -->
+   <script src="js/analytics.js"></script>
+   
+   </body>
 </html>
