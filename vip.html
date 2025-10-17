@@ -88,6 +88,23 @@
     <div class="loader"></div>
     <p>If you are not redirected automatically, <a href="https://hlpfl.vip">click here</a>.</p>
   </div>
+   
+      <script>
+        // Hide loading screen
+        window.addEventListener('load', function() {
+          const loadingScreen = document.getElementById('loadingScreen');
+          if (loadingScreen) {
+            setTimeout(function() {
+              loadingScreen.classList.add('hidden');
+            }, 500);
+          }
+        });
+
+        // Redirect after 3 seconds
+        setTimeout(function() {
+          window.location.href = 'https://app.grouped.com/hlpflco';
+        }, 3000);
+      </script>
 
    <!-- Form Validation -->
    <footer class="footer"></footer>
