@@ -22,7 +22,7 @@
 - [x] Test readability on different devices (added mobile responsive styles)
 
 ## 4. Testing & Deployment
-- [ ] Test all changes
-- [ ] Commit changes
-- [ ] Push to repository
-- [ ] Create pull request
+- [x] Test all changes
+- [x] Commit changes
+- [x] Push to repository
+- [x] Create pull request (PR #11)
