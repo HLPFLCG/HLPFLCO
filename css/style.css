@@ -1,7 +1,7 @@
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
   /* Colors */
-  --color-primary: #000;
+  --color-primary: #0000;
   --color-secondary: #111;
   --color-tertiary: #1a1a1a;
   --color-white: #fff;
@@ -2365,7 +2365,7 @@ a:not(.btn):hover {
 
 /* ===== TEAM SECTION DARK BACKGROUND ===== */
 .team-section-dark {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 100%, var(--color-secondary) 0%);
   position: relative;
 }
 
