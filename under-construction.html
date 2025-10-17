@@ -178,6 +178,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
    <!-- Form Validation -->
    <footer class="footer"></footer>
+      <script>
+        // Hide loading screen
+        window.addEventListener('load', function() {
+          const loadingScreen = document.getElementById('loadingScreen');
+          if (loadingScreen) {
+            setTimeout(function() {
+              loadingScreen.classList.add('hidden');
+            }, 500);
+          }
+        });
+      </script>
+
 
    <script src="js/form-validation.js"></script>
    <!-- Enhanced Analytics Tracking -->
