@@ -2365,7 +2365,7 @@ a:not(.btn):hover {
 
 /* ===== TEAM SECTION DARK BACKGROUND ===== */
 .team-section-dark {
-  background: #000000;
+  background: #1a1d23 !important;
   position: relative;
 }
 
