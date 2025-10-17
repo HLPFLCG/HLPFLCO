@@ -2386,3 +2386,350 @@ a:not(.btn):hover {
   position: relative;
   z-index: 1;
 }
+
+/* ===== HERO GRADIENT BACKGROUND FOR ALL PAGES ===== */
+
+/* Apply gradient background to body */
+body {
+  background: linear-gradient(135deg, #000000 0%, #1a1d23 50%, #000000 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Add subtle animated gradient overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(200, 121, 65, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(44, 95, 111, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Ensure content is above the gradient */
+.header,
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Override content-section backgrounds to be transparent or semi-transparent */
+.content-section {
+  background: transparent !important;
+}
+
+/* Keep cards with solid backgrounds for readability */
+.team-card,
+.service-card,
+.timeline-content,
+.value-card {
+  background: rgba(26, 29, 35, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== SMOOTH ANIMATIONS ===== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Apply animations to elements */
+.fade-in-up {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger animation delays for multiple elements */
+.fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+.fade-in-up:nth-child(5) { animation-delay: 0.5s; }
+.fade-in-up:nth-child(6) { animation-delay: 0.6s; }
+
+/* Card hover animations */
+.team-card,
+.service-card,
+.value-card,
+.timeline-content {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.team-card:hover,
+.service-card:hover,
+.value-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(200, 121, 65, 0.2);
+}
+
+/* Button animations */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(200, 121, 65, 0.4);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+/* Image hover effects */
+.team-image,
+.founder-image {
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image::after,
+.founder-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(200, 121, 65, 0.3), rgba(44, 95, 111, 0.3));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-image:hover::after,
+.founder-image:hover::after {
+  opacity: 1;
+}
+
+.team-image:hover,
+.founder-image:hover {
+  transform: scale(1.05);
+}
+
+/* Section badge animation */
+.section-badge {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Hero stats animation */
+.stat-item {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.stat-item:nth-child(1) { animation-delay: 0.2s; }
+.stat-item:nth-child(2) { animation-delay: 0.4s; }
+.stat-item:nth-child(3) { animation-delay: 0.6s; }
+.stat-item:nth-child(4) { animation-delay: 0.8s; }
+
+.stat-number {
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  transform: scale(1.2);
+  color: #e09560;
+}
+
+/* Timeline animations */
+.timeline-item {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.timeline-item:nth-child(even) {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+/* Loading animation for images */
+img {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Link hover effects */
+a:not(.btn) {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c87941, #e09560);
+  transition: width 0.3s ease;
+}
+
+a:not(.btn):hover::after {
+  width: 100%;
+}
+
+/* Footer social icons animation */
+.footer-social a,
+.team-social a {
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover,
+.team-social a:hover {
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(200, 121, 65, 0.4);
+}
+
+/* Scroll reveal animation */
+@keyframes scrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this class to elements you want to animate on scroll */
+.scroll-reveal {
+  opacity: 0;
+  animation: scrollReveal 0.8s ease-out forwards;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
