@@ -7,6 +7,7 @@
     justify-content: center;
     background: linear-gradient(135deg, var(--c-bg-primary) 0%, var(--c-bg-secondary) 100%);
     padding: 2rem;
+    padding-top: 120px; /* Account for header */
     position: relative;
 }
 
