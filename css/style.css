@@ -2264,9 +2264,11 @@ a:not(.btn):hover {
 .section-subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   line-height: 1.8;
-  color: rgba(245, 245, 245, 0.85);
+  color: rgba(255, 255, 255, 0.95);
   max-width: 800px;
   margin: 0 auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
 }
 
 /* Content Section */
