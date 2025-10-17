@@ -10,7 +10,7 @@
   <!-- End Google Tag Manager -->
 
   <title>HLPFL Co – Consulting for Dreamers, Visionaries and Pioneers</title>
-  <meta name="description" content="We help first-time founders create legally solid, privacy-first businesses with standout brands. Entity filing, contracts, web, more.">
+  <meta name="description" content="Join the HLPFL VIP Program for exclusive access to premium music business resources, personalized guidance, and priority support.">
   <link rel="canonical" href="https://hlpfl.org/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/mobile.css">
@@ -18,7 +18,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="HLPFL Consulting">
-  <meta property="og:description" content="Chaos → Clarity for your startup.">
+  <meta property="og:description" content="Join the HLPFL VIP Program for exclusive access to premium music business resources, personalized guidance, and priority support.">
   <meta property="og:image" content="https://hlpfl.org/og-cover.jpg">
 
   <!-- meta / fonts / favicon -->
@@ -60,27 +60,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cursor-dot"></div>
   
   <!-- Header / nav -->
-  <header class="header" data-scroll data-scroll-sticky>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="images/header/websiteheader.webp" alt="HLPFL Consulting logo" />
-      </a>
-      <nav aria-label="Main navigation">
-        <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">
-          <span></span><span></span><span></span>
-        </button>
-         <ul class="nav__list" id="main-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-          <li><a href="https://hlpfl.store" target="_blank">Shop</a></li>
-          <li><a href="https://app.grouped.com/hlpflco" target="_blank">VIP</a></li>
-          <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary">Let's talk</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <header class="header" id="header">
+   <!-- Header injected by header-footer.js -->
+   </header>
 
 <body class="redirect-page">
   <div class="redirect-container">
@@ -92,10 +74,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>If you are not redirected automatically, <a href="https://hlpfl.vip">click here</a>.</p>
   </div>
 
+   <!-- Page Enhancements -->
+   <script src="js/page-enhancements.js"></script>
+
+   <!-- Unified Header/Footer -->
+   <script src="js/header-footer.js"></script>
+
    <!-- Form Validation -->
    <script src="js/form-validation.js"></script>
    <!-- Enhanced Analytics Tracking -->
    <script src="js/analytics.js"></script>
+   
+   
+   <script>
+       // Loading Screen
+       window.addEventListener('load', function() {
+           setTimeout(() => {
+               const loadingScreen = document.getElementById('loadingScreen');
+               if (loadingScreen) {
+                   loadingScreen.classList.add('hidden');
+               }
+           }, 500);
+       });
+
+       // Scroll Progress Bar
+       window.addEventListener('scroll', function() {
+           const scrollProgress = document.getElementById('scrollProgress');
+           if (scrollProgress) {
+               const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+               const scrollPercent = (window.pageYOffset / winHeight) * 100;
+               scrollProgress.style.width = scrollPercent + '%';
+           }
+       });
+   </script>
    
    </body>
 </html>

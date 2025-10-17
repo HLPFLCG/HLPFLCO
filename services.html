@@ -12,7 +12,7 @@
   <!-- End Google Tag Manager -->
 
   <title>HLPFL -> Services for Artists</title>
-  <meta name="description" content="Comprehensive services for independent musicians including legal foundation, artist branding, music rights management, and career growth strategies.">
+  <meta name="description" content="Comprehensive music business services for independent artists. From legal foundations to artist branding, we help you build a sustainable music career.">
   <meta charset="UTF-8">
   <link rel="canonical" href="https://hlpfl.org/services">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Music Business Services - HLPFL">
-  <meta property="og:description" content="Comprehensive services for independent musicians including legal foundation, artist branding, music rights management, and career growth strategies.">
+  <meta property="og:description" content="Comprehensive music business services for independent artists. From legal foundations to artist branding, we help you build a sustainable music career.">
   <meta property="og:image" content="https://hlpfl.org/images/og/services-cover.jpg">
   <meta property="og:url" content="https://hlpfl.org/services">
 
@@ -66,6 +66,16 @@
 
 
 <body>
+   <!-- Loading Screen -->
+   <div class="loading-screen" id="loadingScreen">
+       <img src="images/updatedimages/loadinglogo.svg" alt="HLPFL Logo" class="loading-logo">
+       <div class="loading-text">Loading...</div>
+   </div>
+
+   <!-- Scroll Progress Bar -->
+   <div class="scroll-progress" id="scrollProgress"></div>
+
+   
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSPNJ5DR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -75,9 +85,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Header -->
 
 
-  <header class="header" role="banner">
-    <!-- Navigation will be injected by menu-injector.js -->
-  </header>
+  <header class="header" id="header">
+   <!-- Header injected by header-footer.js -->
+   </header>
 
   <!-- Hero Section -->
 
@@ -183,31 +193,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <img src="images/header/websiteheader.webp" alt="HLPFL" class="footer-logo">
-          <p class="footer-description">
-            Transforming music career chaos into clarity. We help independent musicians build legally solid, 
-            privacy-first businesses with standout brands.
-          </p>
-          <div class="footer-social">
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-
-
-
-  <div class="footer-bottom">
-    <p>2019 HLPFL. All rights reserved. Built with care for musicians.</p>
-  </div>
-</div>
-
-  </footer>
+   <!-- Footer injected by header-footer.js -->
+   </footer>
 
 
 
@@ -419,6 +406,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 </script>
 
+
+   <!-- Page Enhancements -->
+   <script src="js/page-enhancements.js"></script>
+
+   <!-- Unified Header/Footer -->
+   <script src="js/header-footer.js"></script>
 
    <!-- Form Validation -->
    <script src="js/form-validation.js"></script>
