@@ -78,7 +78,7 @@
 
 .form-group label {
     display: block;
-    color: var(--c-text);
+    color: rgba(173, 216, 230, 0.95);
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
