@@ -1601,144 +1601,57 @@ body {
 
 /* Red Flag Guide Promo - Enhanced */
 .red-flag-promo {
-    padding: 120px 20px;
+    padding: 150px 20px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: #e6f2f5 !important; /* LIGHT BLUE BACKGROUND - TESTING */
 }
 
-/* Subtle animated background gradient - NO ORANGE */
 .red-flag-promo::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(44, 95, 111, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(44, 95, 111, 0.04) 0%, transparent 50%);
-    pointer-events: none;
-    animation: subtleFloat 20s ease-in-out infinite;
-}
-
-/* Top accent line - NO ORANGE */
-.red-flag-promo::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, var(--c-accent) 50%, transparent 100%);
-    opacity: 0.2;
-}
-
-@keyframes subtleFloat {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-20px) scale(1.05); }
+    height: 4px;
 }
 
 .red-flag-content-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.8fr;
-    gap: 80px;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    width: 100%;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
 }
 
 .red-flag-cover {
     text-align: center;
-    position: relative;
-}
-
-/* Subtle glowing effect behind the image - NO ORANGE */
-.red-flag-cover::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 110%;
-    height: 110%;
-    background: radial-gradient(circle, rgba(44, 95, 111, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(30px);
-    z-index: -1;
-    animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
 }
 
 .red-flag-cover img {
     width: 100%;
-    max-width: 380px;
+    max-width: 300px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    transition: all var(--tr-smooth);
-    position: relative;
+    transition: transform var(--tr-smooth);
 }
 
 .red-flag-cover img:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-}
-
-.red-flag-content {
-    position: relative;
-}
-
-/* Decorative element */
-.red-flag-content::before {
-    content: '🚩';
-    position: absolute;
-    top: -40px;
-    left: 0;
-    font-size: 2.5rem;
-    opacity: 0.1;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    transform: scale(1.05) rotate(2deg);
 }
 
 .red-flag-content h3 {
     font: 700 2.5rem/1.2 var(--ff-display);
     margin-bottom: 20px;
-    color: #2c5f6f !important; /* TEAL TEXT - TESTING */
-    position: relative;
 }
 
 .red-flag-content p {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    line-height: 1.8;
-    color: var(--c-text-muted);
-}
-
-.red-flag-content .btn--accent {
-    padding: 16px 40px;
-    font-size: 1.05rem;
-    box-shadow: var(--shadow-md);
-    transition: all var(--tr-smooth);
-}
-
-.red-flag-content .btn--accent:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg), var(--glow-accent);
+    line-height: 1.7;
 }
 
 /* Red Flag Popup */
