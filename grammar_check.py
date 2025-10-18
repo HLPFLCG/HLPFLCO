@@ -10,8 +10,8 @@ def check_grammar_issues(file_path):
     
     # Extract text content from HTML (simple approach)
     # Remove script and style tags
-    content = re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL)
-    content = re.sub(r'<style[^>]*>.*?</style>', '', content, flags=re.DOTALL)
+    content = re.sub(r'<script[^>]*>.*?</script[^>]*>', '', content, flags=re.DOTALL | re.IGNORECASE)
+    content = re.sub(r'<style[^>]*>.*?</style[^>]*>', '', content, flags=re.DOTALL | re.IGNORECASE)
     
     # Extract text between tags
     text_content = re.sub(r'<[^>]+>', ' ', content)
