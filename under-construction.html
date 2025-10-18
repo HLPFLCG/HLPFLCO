@@ -127,11 +127,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <footer class="footer"></footer>
 
    <script>
-        // Form will submit naturally to Formspree
-        // Formspree will handle the submission and show their thank you page
+        // Handle form submission with AJAX
+        const form = document.getElementById('leadForm');
+        const submitBtn = form.querySelector('.submit-btn');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            
+            try {
+                // Submit to Formspree using fetch
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success!
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Success!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    
+                    // Show success message
+                    alert('Thank you for your interest! We\'ll be in touch soon with updates about your music business journey.');
+                    
+                    // Reset form after 2 seconds
+                    setTimeout(() => {
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                    }, 2000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error handling
+                console.error('Error:', error);
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error - Try Again';
+                submitBtn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                
+                alert('Oops! There was an error submitting the form. Please try again or email us directly.');
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                }, 3000);
+            }
+        });
 
         // Add ripple effect to button
-        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+        submitBtn.addEventListener('click', function(e) {
+            if (this.disabled) return; // Don't add ripple when disabled
+            
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
