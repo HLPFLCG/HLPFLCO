@@ -1363,7 +1363,7 @@ body {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .hero-badge {
@@ -1560,7 +1560,10 @@ body {
 
 /* Red Flag Guide Promo - Enhanced */
 .red-flag-promo {
-    padding: 100px 20px;
+    padding: 150px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
 }
@@ -2732,4 +2735,32 @@ a:not(.btn):hover::after {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ===== SERVICES PREVIEW BLUE COLOR ===== */
+.services-preview .section-title {
+  color: rgba(173, 216, 230, 0.95) !important;
+}
+
+.services-preview .section-subtitle {
+  color: rgba(173, 216, 230, 0.85) !important;
+}
+
+.services-preview .section-badge {
+  color: rgba(173, 216, 230, 0.95) !important;
+  border-color: rgba(173, 216, 230, 0.6) !important;
+  background: rgba(173, 216, 230, 0.1) !important;
+}
+
+/* ===== FOOTER BLUE COLOR ===== */
+.footer-column h4 {
+  color: rgba(173, 216, 230, 0.95) !important;
+}
+
+.footer-description {
+  color: rgba(173, 216, 230, 0.85) !important;
+}
+
+.footer-bottom p {
+  color: rgba(173, 216, 230, 0.8) !important;
 }
