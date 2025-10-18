@@ -121,19 +121,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <footer class="footer"></footer>
 
    <script>
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message
-            alert('Thank you for your interest! We\'ll be in touch soon with updates about your music business journey.');
-            
-            // Reset form
-            this.reset();
-        });
+        // Form will submit naturally to Formspree
+        // Formspree will handle the submission and show their thank you page
 
         // Add ripple effect to button
         document.querySelector('.submit-btn').addEventListener('click', function(e) {
