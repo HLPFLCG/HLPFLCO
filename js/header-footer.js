@@ -103,12 +103,14 @@
                     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
                     navToggle.setAttribute('aria-expanded', !isExpanded);
                     navList.classList.toggle('active');
+                   document.body.classList.toggle('menu-open');
                 });
                 
                 // Close mobile nav when clicking on links
                 navList.addEventListener('click', function(e) {
                     if (e.target.tagName === 'A') {
                         navList.classList.remove('active');
+                           document.body.classList.remove('menu-open');
                         navToggle.setAttribute('aria-expanded', 'false');
                     }
                 });

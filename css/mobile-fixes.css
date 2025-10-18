@@ -3,43 +3,55 @@
 @media (max-width: 992px) {
   /* Fix mobile menu z-index to appear above hero */
   .nav__list {
-    z-index: 1001 !important;
+    z-index: 10000 !important;
+    background: rgba(26, 29, 35, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
   }
   
   .nav__toggle {
-    z-index: 1002 !important;
+    z-index: 10001 !important;
     position: relative;
   }
   
   .header {
-    z-index: 1000 !important;
+    z-index: 9999 !important;
   }
   
   /* Ensure hero doesn't overlap menu */
   .hero {
-    z-index: 1;
+    z-index: 1 !important;
+    position: relative;
   }
   
   /* Fix mobile menu visibility */
   .nav__list.active {
     right: 0 !important;
     display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   /* Improve mobile menu button visibility */
+  .nav__toggle {
+    display: block !important;
+  }
+  
   .nav__toggle span {
     background: #fff !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    display: block !important;
   }
   
   /* Reduce hero top padding on mobile */
   .hero {
-    padding-top: 120px !important;
+    padding-top: 90px !important;
+    margin-top: 0 !important;
   }
   
   /* Reduce gap between hero title and header */
   .hero-content {
-    padding-top: 20px !important;
+    padding-top: 10px !important;
+    margin-top: 0 !important;
   }
   
   .hero__title {
@@ -51,11 +63,11 @@
 @media (max-width: 768px) {
   /* Further reduce hero padding on smaller screens */
   .hero {
-    padding-top: 100px !important;
+    padding-top: 80px !important;
   }
   
   .hero-content {
-    padding-top: 10px !important;
+    padding-top: 5px !important;
   }
   
   /* Ensure menu items are visible and touchable */
@@ -127,11 +139,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 999;
+    z-index: 9998;
     pointer-events: none;
   }
   
