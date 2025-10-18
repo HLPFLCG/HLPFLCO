@@ -16,9 +16,9 @@
                 <ul class="nav__list" id="navList">
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="under-construction.html">VIPs</a></li>
-                    <li><a href="under-construction.html">Shop</a></li>
-                    <li><a href="under-construction.html">Contact</a></li>
+                    <li><a href="vip.html">VIPs</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://calendly.com/founder-hlpfl/30min" class="btn btn--primary" target="_blank">Book Call</a></li>
                 </ul>
                 <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,20 +51,20 @@
                 <div class="footer-column fade-in-up" style="animation-delay: 0.1s">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="under-construction.html">Legal Foundation</a></li>
-                        <li><a href="under-construction.html">Artist Branding</a></li>
-                        <li><a href="under-construction.html">Music Rights & Royalties</a></li>
-                        <li><a href="under-construction.html">Career Growth</a></li>
+                        <li><a href="services.html#legal">Legal Foundation</a></li>
+                        <li><a href="services.html#brand">Artist Branding</a></li>
+                        <li><a href="services.html#rights">Music Rights href="under-construction.html">Music Rights & Royalties Royalties</a></li>
+                        <li><a href="services.html#growth">Career Growth</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column fade-in-up" style="animation-delay: 0.2s">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="under-construction.html">Templates & Guides</a></li>
-                        <li><a href="under-construction.html">VIP Program</a></li>
+                        <li><a href="resources.html">Templates href="under-construction.html">Templates & Guides Guides</a></li>
+                        <li><a href="vip.html">VIP Program</a></li>
                         <li><a href="red-flag-guide.html">Red Flag Guide</a></li>
-                        <li><a href="under-construction.html">Free Consultation</a></li>
+                        <li><a href="https://calendly.com/founder-hlpfl/30min" target="_blank">Free Consultation</a></li>
                     </ul>
                 </div>
 
@@ -72,9 +72,9 @@
                     <h4>Company</h4>
                     <ul>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="under-construction.html">Contact</a></li>
-                        <li><a href="under-construction.html">Privacy Policy</a></li>
-                        <li><a href="under-construction.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
