@@ -1606,7 +1606,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: var(--c-bg-card);
+    background: #e6f2f5 !important; /* LIGHT BLUE BACKGROUND - TESTING */
 }
 
 /* Subtle animated background gradient - NO ORANGE */
@@ -1718,7 +1718,7 @@ body {
 .red-flag-content h3 {
     font: 700 2.5rem/1.2 var(--ff-display);
     margin-bottom: 20px;
-    color: var(--c-text);
+    color: #2c5f6f !important; /* TEAL TEXT - TESTING */
     position: relative;
 }
 
