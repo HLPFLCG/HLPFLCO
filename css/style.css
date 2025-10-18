@@ -1607,6 +1607,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    background: var(--c-bg-primary);
 }
 
 .red-flag-promo::before {
@@ -1646,12 +1647,14 @@ body {
 .red-flag-content h3 {
     font: 700 2.5rem/1.2 var(--ff-display);
     margin-bottom: 20px;
+    color: var(--c-text-on-dark);
 }
 
 .red-flag-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     line-height: 1.7;
+    color: var(--c-text-light);
 }
 
 /* Red Flag Popup */
