@@ -499,3 +499,57 @@
     padding: 45px 35px;
   }
 }
+
+/* Red Flag Section Mobile Improvements */
+@media (max-width: 768px) {
+    .red-flag-promo {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+    
+    .red-flag-content-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 50px !important;
+        padding: 0 30px !important;
+    }
+    
+    .red-flag-cover img {
+        max-width: 320px !important;
+    }
+    
+    .red-flag-content h3 {
+        font-size: 2.2rem !important;
+    }
+    
+    .red-flag-content p {
+        font-size: 1.1rem !important;
+    }
+    
+    .red-flag-content::before {
+        font-size: 2rem;
+        top: -30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .red-flag-promo {
+        padding: 60px 15px;
+    }
+    
+    .red-flag-content-wrapper {
+        gap: 40px !important;
+        padding: 0 20px !important;
+    }
+    
+    .red-flag-cover img {
+        max-width: 280px !important;
+    }
+    
+    .red-flag-content h3 {
+        font-size: 1.9rem !important;
+    }
+    
+    .red-flag-content p {
+        font-size: 1.05rem !important;
+    }
+}
