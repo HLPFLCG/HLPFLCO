@@ -10,7 +10,7 @@
     const headerHTML = `
         <div class="container">
             <a href="/" class="logo">
-                <img src="images/updatedimages/landinglogosmall.svg" alt="HLPFL">
+                <img src="images/favicon/hlpflgradientfullwordsvg.svg" alt="HLPFL">
             </a>
             <nav class="nav">
                 <ul class="nav__list" id="navList">
