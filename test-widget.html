@@ -1,0 +1,176 @@
+## Quick Fix for Chat Widget
+
+The files are in the repository but not serving. Let's try a direct embed approach.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Widget Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>HLPFL Chat Widget Test</h1>
+    
+    <div class="test-section">
+        <h2>Direct Script Embed</h2>
+        <p>If you see a chat button below, it's working!</p>
+    </div>
+
+    <!-- Inline the widget code for testing -->
+    <script>
+        class HLPFLChatWidget {
+            constructor(options = {}) {
+                this.apiUrl = options.apiUrl || 'https://hlpfl.io/api/chat';
+                this.container = options.container || null;
+                this.position = options.position || 'bottom-right';
+                this.conversationHistory = [];
+                this.isOpen = false;
+                
+                this.init();
+            }
+            
+            init() {
+                this.createWidgetHTML();
+                this.attachEventListeners();
+            }
+            
+            createWidgetHTML() {
+                const widgetHTML = `
+                    <div id="hlpfl-chat-widget" class="position-${this.position}">
+                        <div id="chat-toggle">
+                            💬 Chat
+                        </div>
+                        <div id="chat-window" style="display: none;">
+                            <div id="chat-header">
+                                <h3>HLPFL Records</h3>
+                                <span>Grand Rapids, MI</span>
+                                <button id="chat-close">×</button>
+                            </div>
+                            <div id="chat-messages"></div>
+                            <div id="chat-input-container">
+                                <input type="text" id="chat-input" placeholder="Ask about our services...">
+                                <button id="chat-send">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                if (this.container) {
+                    document.getElementById(this.container).innerHTML = widgetHTML;
+                } else {
+                    document.body.insertAdjacentHTML('beforeend', widgetHTML);
+                }
+                
+                this.addStyles();
+            }
+            
+            addStyles() {
+                const styles = `
+                    #hlpfl-chat-widget { position: fixed; z-index: 9999; font-family: Arial, sans-serif; }
+                    .position-bottom-right { bottom: 20px; right: 20px; }
+                    #chat-toggle { background: #667eea; color: white; padding: 12px 20px; border-radius: 25px; cursor: pointer; }
+                    #chat-window { position: absolute; bottom: 60px; right: 0; width: 380px; height: 550px; background: white; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+                    #chat-header { background: #667eea; color: white; padding: 16px; border-radius: 12px 12px 0 0; }
+                    #chat-messages { height: 400px; padding: 16px; overflow-y: auto; }
+                    #chat-input-container { padding: 16px; display: flex; gap: 8px; }
+                    #chat-input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; }
+                    #chat-send { background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
+                    #chat-close { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.2); border: none; color: white; cursor: pointer; }
+                `;
+                
+                const styleSheet = document.createElement('style');
+                styleSheet.textContent = styles;
+                document.head.appendChild(styleSheet);
+            }
+            
+            attachEventListeners() {
+                document.getElementById('chat-toggle').addEventListener('click', () => this.toggleChat());
+                document.getElementById('chat-close').addEventListener('click', () => this.toggleChat());
+                document.getElementById('chat-send').addEventListener('click', () => this.sendMessage());
+                document.getElementById('chat-input').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+                
+                this.addWelcomeMessage();
+            }
+            
+            toggleChat() {
+                const window = document.getElementById('chat-window');
+                this.isOpen = !this.isOpen;
+                window.style.display = this.isOpen ? 'flex' : 'none';
+            }
+            
+            addWelcomeMessage() {
+                const messagesDiv = document.getElementById('chat-messages');
+                messagesDiv.innerHTML = `
+                    <div style="margin-bottom: 12px;">
+                        <div style="background: #f1f1f1; padding: 10px; border-radius: 10px; display: inline-block;">
+                            Welcome to HLPFL Records! I'm here to help you learn about our services.
+                        </div>
+                    </div>
+                `;
+            }
+            
+            async sendMessage() {
+                const input = document.getElementById('chat-input');
+                const message = input.value.trim();
+                if (!message) return;
+                
+                input.value = '';
+                
+                const messagesDiv = document.getElementById('chat-messages');
+                messagesDiv.innerHTML += `
+                    <div style="margin-bottom: 12px; text-align: right;">
+                        <div style="background: #667eea; color: white; padding: 10px; border-radius: 10px; display: inline-block;">
+                            ${message}
+                        </div>
+                    </div>
+                `;
+                
+                try {
+                    const response = await fetch(this.apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message, conversationHistory: this.conversationHistory })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    messagesDiv.innerHTML += `
+                        <div style="margin-bottom: 12px;">
+                            <div style="background: #f1f1f1; padding: 10px; border-radius: 10px; display: inline-block;">
+                                ${data.response}
+                            </div>
+                        </div>
+                    `;
+                    
+                    this.conversationHistory.push(
+                        { role: 'user', content: message },
+                        { role: 'assistant', content: data.response }
+                    );
+                    
+                } catch (error) {
+                    messagesDiv.innerHTML += `
+                        <div style="margin-bottom: 12px;">
+                            <div style="background: #ffe6e6; padding: 10px; border-radius: 10px; display: inline-block;">
+                                Sorry, I'm having trouble connecting. Please try again.
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+        }
+        
+        // Initialize the widget
+        new HLPFLChatWidget({
+            apiUrl: 'https://hlpfl.io/api/chat',
+            position: 'bottom-right'
+        });
+    </script>
+</body>
+</html>
