@@ -28,7 +28,6 @@
 <!-- Stylesheets -->
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/mobile.css">
-<link rel="stylesheet" href="chat-widget.css">
   <link rel="stylesheet" href="css/mobile-fixes.css">
 <link rel="stylesheet" href="css/color-scheme.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -568,19 +567,202 @@
    <script src="js/sticky-cta.js"></script>
    <script src="js/animations.js"></script>
    <script src="chat-widget.js"></script>
-   <script>
-        new HLPFLChatWidget({
-            apiUrl: 'https://hlpfl.io/api/chat',
-            position: 'bottom-right',
-            primaryColor: '#667eea'
-        });
-  </script>
    <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WSPNJ5DR');</script>
+  <!-- COPY THIS CODE - Replace the existing chat widget script in your index.html -->
+
+  <script>
+  class HLPFLChatWidget {
+      constructor(options = {}) {
+          this.apiUrl = options.apiUrl || 'https://hlpfl.io/api/chat';
+          this.container = options.container || null;
+          this.position = options.position || 'bottom-right';
+          this.conversationHistory = [];
+          this.isOpen = false;
+          
+          this.init();
+      }
+      
+      init() {
+          this.createWidgetHTML();
+          this.attachEventListeners();
+      }
+      
+      createWidgetHTML() {
+          const widgetHTML = `
+              <div id="hlpfl-chat-widget" class="position-${this.position}">
+                  <div id="chat-toggle">
+                      💬 Chat
+                  </div>
+                  <div id="chat-window" style="display: none;">
+                      <div id="chat-header">
+                          <h3>HLPFL Records</h3>
+                          <span>Grand Rapids, MI</span>
+                          <button id="chat-close">×</button>
+                      </div>
+                      <div id="chat-messages"></div>
+                      <div id="chat-input-container">
+                          <input type="text" id="chat-input" placeholder="Ask about our services...">
+                          <button id="chat-send">Send</button>
+                      </div>
+                  </div>
+              </div>
+          `;
+          
+          if (this.container) {
+              document.getElementById(this.container).innerHTML = widgetHTML;
+          } else {
+              document.body.insertAdjacentHTML('beforeend', widgetHTML);
+          }
+          
+          this.addStyles();
+      }
+      
+      addStyles() {
+          const styles = `
+              #hlpfl-chat-widget { position: fixed; z-index: 9999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+              .position-bottom-right { bottom: 20px; right: 20px; }
+              #chat-toggle { background: linear-gradient(135deg, #667eea 0%, #667eeadd 100%); color: white; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); transition: all 0.3s ease; }
+              #chat-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4); }
+              #chat-window { position: absolute; bottom: 60px; right: 0; width: 380px; height: 550px; background: white; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); display: flex; flex-direction: column; }
+              #chat-header { background: linear-gradient(135deg, #667eea 0%, #667eeadd 100%); color: white; padding: 16px; border-radius: 12px 12px 0 0; position: relative; }
+              #chat-header h3 { margin: 0; font-size: 18px; font-weight: 600; }
+              #chat-header span { font-size: 12px; opacity: 0.9; }
+              #chat-messages { flex: 1; padding: 16px; overflow-y: auto; background: #f8f9fa; }
+              #chat-input-container { padding: 16px; border-top: 1px solid #e1e5e9; background: white; display: flex; gap: 8px; }
+              #chat-input { flex: 1; padding: 10px 14px; border: 1px solid #e1e5e9; border-radius: 20px; outline: none; font-size: 14px; }
+              #chat-input:focus { border-color: #667eea; }
+              #chat-send { background: linear-gradient(135deg, #667eea 0%, #667eeadd 100%); color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-weight: 600; }
+              #chat-close { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.2); border: none; color: white; cursor: pointer; padding: 4px; width: 28px; height: 28px; border-radius: 50%; }
+              .message { margin-bottom: 12px; max-width: 85%; }
+              .user-message { margin-left: auto; text-align: right; }
+              .bot-message { margin-right: auto; }
+              .message-content { padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.4; word-wrap: break-word; display: inline-block; }
+              .user-message .message-content { background: #667eea; color: white; }
+              .bot-message .message-content { background: white; color: #333; border: 1px solid #e1e5e9; }
+          `;
+          
+          const styleSheet = document.createElement('style');
+          styleSheet.textContent = styles;
+          document.head.appendChild(styleSheet);
+      }
+      
+      attachEventListeners() {
+          document.getElementById('chat-toggle').addEventListener('click', () => this.toggleChat());
+          document.getElementById('chat-close').addEventListener('click', () => this.toggleChat());
+          document.getElementById('chat-send').addEventListener('click', () => this.sendMessage());
+          document.getElementById('chat-input').addEventListener('keypress', (e) => {
+              if (e.key === 'Enter') this.sendMessage();
+          });
+          
+          this.addWelcomeMessage();
+      }
+      
+      toggleChat() {
+          const window = document.getElementById('chat-window');
+          const toggle = document.getElementById('chat-toggle');
+          this.isOpen = !this.isOpen;
+          
+          if (this.isOpen) {
+              window.style.display = 'flex';
+              toggle.style.display = 'none';
+              document.getElementById('chat-input').focus();
+          } else {
+              window.style.display = 'none';
+              toggle.style.display = 'block';
+          }
+      }
+      
+      addWelcomeMessage() {
+          const messagesDiv = document.getElementById('chat-messages');
+          messagesDiv.innerHTML = `
+              <div class="message bot-message">
+                  <div class="message-content">
+                      Welcome to HLPFL Records! I'm here to help you learn about our services and answer any questions about working with us.
+                  </div>
+              </div>
+          `;
+      }
+      
+      async sendMessage() {
+          const input = document.getElementById('chat-input');
+          const message = input.value.trim();
+          if (!message) return;
+          
+          input.value = '';
+          const messagesDiv = document.getElementById('chat-messages');
+          
+          // Add user message
+          messagesDiv.innerHTML += `
+              <div class="message user-message">
+                  <div class="message-content">${message}</div>
+              </div>
+          `;
+          
+          // Add typing indicator
+          messagesDiv.innerHTML += `
+              <div class="message bot-message">
+                  <div class="message-content">
+                      <span>●</span><span>●</span><span>●</span>
+                  </div>
+              </div>
+          `;
+          
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+          
+          try {
+              const response = await fetch(this.apiUrl, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ message, conversationHistory: this.conversationHistory })
+              });
+              
+              const data = await response.json();
+              
+              // Remove typing indicator and add bot response
+              const typingMessage = messagesDiv.lastElementChild;
+              typingMessage.remove();
+              
+              messagesDiv.innerHTML += `
+                  <div class="message bot-message">
+                      <div class="message-content">${data.response}</div>
+                  </div>
+              `;
+              
+              this.conversationHistory.push(
+                  { role: 'user', content: message },
+                  { role: 'assistant', content: data.response }
+              );
+              
+          } catch (error) {
+              // Remove typing indicator and add error message
+              const typingMessage = messagesDiv.lastElementChild;
+              typingMessage.remove();
+              
+              messagesDiv.innerHTML += `
+                  <div class="message bot-message">
+                      <div class="message-content">
+                          Sorry, I'm having trouble connecting. Please try again later or contact us directly at info@hlpfl.org.
+                      </div>
+                  </div>
+              `;
+          }
+          
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      }
+  }
+  
+  // Initialize the widget
+  new HLPFLChatWidget({
+      apiUrl: 'https://hlpfl.io/api/chat',
+      position: 'bottom-right'
+  });
+  </script>
+  <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
     <!-- End Google Tag Manager -->
    </body>
 </html>
